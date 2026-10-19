@@ -1,5 +1,5 @@
 /* =========================================================
-   Verdant — garden business site
+   Hinks Garden Maintenance — website
    Layout and feel modelled on a framed, editorial "tech" style.
    All values come from design.md; tokens live in :root.
    ========================================================= */
@@ -10,6 +10,11 @@
   --font-inter: "Inter", system-ui, sans-serif;
   --font-geist-mono: "Geist Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   --display-weight: 300;
+  --font-logo: "Merriweather", Georgia, serif;   /* logo wordmark only */
+
+  /* Brand (sampled from the Hinks logo) */
+  --brand-green: #66bf40;
+  --brand-green-dark: #4a9e2c;
 
   /* Colour */
   --canvas: #f5f3ef;        /* page background */
@@ -25,12 +30,12 @@
   --card-line: #3a3735;
   --card-btn: #e4e0da;
   --deep: #10261d;          /* dark band */
-  --link: #2a7d4f;          /* inline links */
+  --link: #3b7d22;          /* inline links (brand green, darkened for AA contrast) */
   --sky: #c4defb;           /* gradient blue */
   --sun: #fdb54e;           /* gradient orange */
   --label-blue: #4b8bff;
   --label-orange: #f39a3d;
-  --label-green: #5cc98b;
+  --label-green: #6cc24a;
 
   /* Shape & motion */
   --radius-btn: 6px;
@@ -114,10 +119,17 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 /* ---------- Nav ---------- */
 .nav { position: sticky; top: 0; z-index: 50; background: rgba(245,243,239,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .nav__inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad); border-inline-color: var(--line); }
-.logo { display: inline-flex; align-items: center; gap: 6px; font: 500 22px/1 var(--font-inter); letter-spacing: -.03em; color: var(--ink); text-decoration: none; }
-.logo svg { width: 24px; height: 24px; }
-.logo path { fill: var(--ink); }
-.logo .logo__vein { fill: none; stroke: var(--canvas); stroke-width: 1.6; stroke-linecap: round; }
+/* Logo: recreated wordmark (see design.md → Brand) */
+.logo { display: inline-grid; justify-items: start; padding-top: 9px; color: var(--ink); text-decoration: none; line-height: 1; }
+.logo__word {
+  position: relative; margin-right: 20px;
+  font: 900 25px/1 var(--font-logo); letter-spacing: -.01em;
+}
+.logo__sprout { position: absolute; left: calc(100% - 9px); top: -13px; width: 30px; height: 24px; overflow: visible; }
+.logo__stem { fill: none; stroke: var(--brand-green-dark); stroke-width: 2.2; stroke-linecap: round; }
+.logo__leaf-l { fill: var(--brand-green-dark); }
+.logo__leaf-r { fill: var(--brand-green); }
+.logo__sub { margin-top: 3px; font: 400 10.5px/1 var(--font-inter); letter-spacing: .015em; color: var(--brand-green-dark); white-space: nowrap; }
 
 .nav__links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; }
 .nav__links > a:not(.btn), .nav__trigger {
@@ -275,9 +287,9 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
   -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 4px; cursor: pointer;
   background: linear-gradient(90deg, var(--label-green) var(--fill), rgba(255,255,255,.15) var(--fill));
 }
-.slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 6px rgba(92,201,139,.25); transition: box-shadow .2s; }
-.slider:hover::-webkit-slider-thumb { box-shadow: 0 0 0 9px rgba(92,201,139,.25); }
-.slider::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 6px rgba(92,201,139,.25); }
+.slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 6px rgba(108,194,74,.28); transition: box-shadow .2s; }
+.slider:hover::-webkit-slider-thumb { box-shadow: 0 0 0 9px rgba(108,194,74,.28); }
+.slider::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 6px rgba(108,194,74,.28); }
 .slider__scale { display: flex; justify-content: space-between; margin-top: 8px; color: rgba(255,255,255,.4); }
 
 .segmented { display: grid; grid-template-columns: repeat(4, 1fr); padding: 3px; border-radius: 8px; background: rgba(255,255,255,.06); }

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Marketing website for **Verdant**, a garden design, landscaping and maintenance business (the brand name is a placeholder). The goal is to win enquiries: the site should feel modern, clean and tech-forward while staying professional and trustworthy.
+Marketing website for **Hinks Garden Maintenance**, a garden maintenance, design and landscaping business. Repo: https://github.com/whalex190-cmd/HinksGardenMaintenance The goal is to win enquiries: the site should feel modern, clean and tech-forward while staying professional and trustworthy.
 
 ## Stack
 
@@ -47,6 +47,6 @@ Key rules:
 
 ## Placeholders to replace before launch
 
-Brand name, phone (`0000 000 000`), email (`hello@example.com`), `[Your Area]` / `[Your Town]`, the "1,400+ gardens" stat, the reviews and ratings, and the trust-strip claims. **Never publish invented reviews, statistics or accreditations.**
+Phone (`0000 000 000`), email (`hello@example.com`), `[Your Area]` / `[Your Town]`, the "1,400+ gardens" stat, the reviews and ratings, and the trust-strip claims. **Never publish invented reviews, statistics or accreditations.**
 
 All photos in `images/` are CC0 stock (from StockSnap and the WordPress Photo Directory), so they're free to use commercially. The "Recent work" gallery, though, must show the business's **real** projects before launch, because presenting stock photos as your own work is misleading.

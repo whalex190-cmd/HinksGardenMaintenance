@@ -1,4 +1,4 @@
-# Design System — Verdant
+# Design System — Hinks Garden Maintenance
 
 The visual rules for the site. When a value here differs from the CSS, this file wins: update the CSS to match.
 
@@ -10,6 +10,18 @@ The visual rules for the site. When a value here differs from the CSS, this file
 - **Scenery does the selling.** Big, bright garden photography carries the emotion; the UI around it stays quiet.
 - **Editorial structure.** Content sits in a ruled frame with clear sections and numbered sequences (01, 02, 03), the way a well-made technical product site would present it.
 - **Professional first.** Every section ends in a clear path to a quote. Copy is plain, specific and free of hype.
+
+---
+
+## Brand — Logo
+
+The logo is the word **"Hinks"** in a heavy serif, with a green two-leaf sprout growing from the top of the "s", and **"Garden Maintenance"** in green sans-serif underneath.
+
+- **Built in code**, not as an image (the original file is only 150px). It's in `index.html` as `.logo`: the wordmark is Merriweather 900, loaded for just the five letters, the sprout is inline SVG, and the subline is Inter.
+- **Colours:** `--brand-green: #66bf40` (right leaf) and `--brand-green-dark: #4a9e2c` (left leaf, stem, subline). The word is `--ink` on light backgrounds; use white on dark ones.
+- **Favicon:** `images/favicon.svg`, the sprout on a dark rounded tile.
+- Merriweather is a **logo-only exception** to the three-family rule below. Never use it for headings or text.
+- Don't stretch, recolour or restyle the logo, and keep at least 16px of clear space around it.
 
 ---
 
@@ -98,12 +110,14 @@ On mobile (≤640px), H1 and H2 step down to 36px, and card headings and step nu
   --card-ink: #a9a49e;  /* body text on dark cards */
   --card-btn: #e4e0da;  /* light button inside dark cards */
   --deep:     #10261d;  /* dark band (estimator) */
-  --link:     #2a7d4f;  /* inline links with arrow */
+  --link:     #3b7d22;  /* inline links with arrow (brand green, darkened for AA contrast) */
   --sky:      #c4defb;  /* gradient blue */
   --sun:      #fdb54e;  /* gradient orange glow */
   --label-blue:   #4b8bff;  /* card label: Design */
   --label-orange: #f39a3d;  /* card label: Build */
-  --label-green:  #5cc98b;  /* card label: Care, and accents on dark */
+  --label-green:  #6cc24a;  /* card label: Care, and accents on dark */
+  --brand-green:      #66bf40;  /* logo only */
+  --brand-green-dark: #4a9e2c;  /* logo only */
 }
 ```
 
