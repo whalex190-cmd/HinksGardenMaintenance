@@ -1,0 +1,14 @@
+{
+ "id": "prop-mower",
+ "poses": [
+  "wheels-a",
+  "wheels-b",
+  "wheels-c"
+ ],
+ "cell": [
+  12,
+  16
+ ],
+ "anchorX": 6,
+ "fit": 15
+}

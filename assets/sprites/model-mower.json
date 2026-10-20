@@ -1,0 +1,15 @@
+{
+ "id": "model-mower",
+ "poses": [
+  "front",
+  "back",
+  "left side",
+  "three-quarter back"
+ ],
+ "cell": [
+  17,
+  34
+ ],
+ "anchorX": 8,
+ "fit": 33
+}

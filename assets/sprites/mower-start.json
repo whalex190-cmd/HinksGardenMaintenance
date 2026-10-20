@@ -1,0 +1,15 @@
+{
+ "id": "mower-start",
+ "poses": [
+  "idle",
+  "shift",
+  "lean",
+  "first-step"
+ ],
+ "cell": [
+  20,
+  34
+ ],
+ "anchorX": 9,
+ "fit": 33
+}

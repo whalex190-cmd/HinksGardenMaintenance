@@ -8,169 +8,785 @@
     "tree": "tree surgeon in green overalls, an orange helmet with a mesh visor and ear defenders, a climbing harness"
   },
   "sheets": [
-    { "id": "model-mower", "character": "mower", "poses": ["front", "back", "left side", "three-quarter back"], "desc": "character model sheet, standing, arms relaxed" },
-    { "id": "model-planter", "character": "planter", "poses": ["front", "back", "right side", "kneeling right side"], "desc": "character model sheet holding a hand trowel" },
-    { "id": "model-hedge", "character": "hedge", "poses": ["front", "back", "right side", "holding long-handled shears"], "desc": "character model sheet" },
-    { "id": "model-tree", "character": "tree", "poses": ["front", "back", "side hanging in harness", "holding a top-handle chainsaw"], "desc": "character model sheet, rope rising from the harness" },
-
-    { "id": "mower-start", "character": "mower", "view": "back", "desc": "seen from behind, hands on an (undrawn) push-mower handle at waist height", "poses": [
-      { "name": "idle", "desc": "standing still, both hands on the handle, weight even" },
-      { "name": "shift", "desc": "same, weight shifted onto his right leg, shoulders tilted 1px" },
-      { "name": "lean", "desc": "torso leaning forward about 10 degrees, arms extended to push" },
-      { "name": "first-step", "desc": "leaning forward, left foot stepping ahead, right heel lifting" } ] },
-    { "id": "mower-walk", "character": "mower", "view": "back", "desc": "seen from behind, walking away pushing an (undrawn) mower, hands on the handle, slow casual pace", "poses": [
-      { "name": "P1", "desc": "contact: left heel down ahead, right toe behind" },
-      { "name": "P2", "desc": "down: weight on left, left knee bent, body 1px lower" },
-      { "name": "P3", "desc": "passing: right leg swinging past the left, body rising" },
-      { "name": "P4", "desc": "up: left leg pushing off, body 1px higher" },
-      { "name": "P5", "desc": "contact: right heel down ahead, left toe behind" },
-      { "name": "P6", "desc": "down: weight on right, right knee bent, body 1px lower" },
-      { "name": "P7", "desc": "passing: left leg swinging past the right, body rising" },
-      { "name": "P8", "desc": "up: right leg pushing off, body 1px higher" } ] },
-    { "id": "mower-finish", "character": "mower", "view": "back", "desc": "seen from behind, at an (undrawn) push mower", "poses": [
-      { "name": "half-step", "desc": "short final half step, feet close" },
-      { "name": "stop", "desc": "standing still, both hands on the handle" },
-      { "name": "hand-off", "desc": "left hand still on the handle, right hand lifting off towards his face" },
-      { "name": "wipe-1", "desc": "right forearm wiping across his brow under the hat brim" },
-      { "name": "wipe-2", "desc": "right forearm at the other side of his brow, head tilted" },
-      { "name": "rest", "desc": "both hands resting on the handle, shoulders relaxed" } ] },
-    { "id": "prop-mower", "character": null, "view": "back", "desc": "a red petrol push lawnmower seen from behind and slightly above, black wheels, black handle bar at the top, grass box; identical in every frame except the wheels", "poses": [
-      { "name": "wheels-a", "desc": "wheel tread pattern phase 1" },
-      { "name": "wheels-b", "desc": "wheel tread pattern rotated one third" },
-      { "name": "wheels-c", "desc": "wheel tread pattern rotated two thirds" } ] },
-
-    { "id": "planter-kneel", "character": "planter", "view": "side facing right", "desc": "getting down to work at a border", "poses": [
-      { "name": "stand-look", "desc": "standing upright, looking down at the ground in front" },
-      { "name": "step", "desc": "left foot stepping forward" },
-      { "name": "bend", "desc": "bending at the hips and knees" },
-      { "name": "knee-lower", "desc": "right knee lowering towards the ground" },
-      { "name": "knee-touch", "desc": "right knee touching the ground, left knee up" },
-      { "name": "settle", "desc": "kneeling on both knees, back straight" },
-      { "name": "lean", "desc": "kneeling, leaning forward over the ground" } ] },
-    { "id": "planter-dig", "character": "planter", "view": "side facing right", "desc": "kneeling, digging with a hand trowel in the right hand, left hand flat on the ground in every frame", "poses": [
-      { "name": "anticipation", "desc": "trowel raised high above the ground" },
-      { "name": "strike", "desc": "trowel blade half buried in the soil" },
-      { "name": "lever", "desc": "wrist bent back, levering the soil" },
-      { "name": "lift", "desc": "trowel lifting a clump of soil" },
-      { "name": "carry", "desc": "trowel carried sideways to the right with the soil" },
-      { "name": "tip", "desc": "trowel tipped, soil falling off" },
-      { "name": "shake", "desc": "trowel shaken empty over the heap" },
-      { "name": "return", "desc": "trowel swinging back towards the hole" } ] },
-    { "id": "planter-unpot-a", "character": "planter", "view": "side facing right", "desc": "kneeling, taking a plant in a small black pot out of its pot", "poses": [
-      { "name": "reach", "desc": "reaching down to the left for the pot" },
-      { "name": "lift", "desc": "pot lifted to chest height in both hands" },
-      { "name": "invert", "desc": "pot upside down, fingers spread around the stem" },
-      { "name": "tap-1", "desc": "tapping the pot base with the palm" },
-      { "name": "tap-2", "desc": "second tap, hand raised slightly" } ] },
-    { "id": "planter-unpot-b", "character": "planter", "view": "side facing right", "desc": "kneeling, finishing unpotting and placing the plant", "poses": [
-      { "name": "slide-off", "desc": "pot sliding off, root ball showing" },
-      { "name": "toss", "desc": "tossing the empty pot behind him" },
-      { "name": "tease", "desc": "both hands teasing the roots" },
-      { "name": "upright", "desc": "plant turned upright in both hands" },
-      { "name": "lower", "desc": "lowering the plant into the hole" },
-      { "name": "release", "desc": "hands opening, plant standing in the hole" } ] },
-    { "id": "planter-backfill", "character": "planter", "view": "side facing right", "desc": "kneeling, filling a planting hole", "poses": [
-      { "name": "sweep-reach", "desc": "cupped hands reaching to the soil heap" },
-      { "name": "sweep-pull", "desc": "cupped hands sweeping soil towards the plant" },
-      { "name": "press", "desc": "both palms pressing down either side of the stem, shoulders dropped" },
-      { "name": "sit-back", "desc": "sitting back on his heels" },
-      { "name": "look", "desc": "sitting back, head tilted, looking at the plant" } ] },
-    { "id": "planter-move", "character": "planter", "view": "side facing right", "desc": "kneeling", "poses": [
-      { "name": "lay-trowel", "desc": "laying the trowel down beside his knee" },
-      { "name": "shuffle-1", "desc": "lifting the right knee forward" },
-      { "name": "shuffle-2", "desc": "bringing the left knee up after it" },
-      { "name": "shuffle-3", "desc": "settled, hands on thighs" },
-      { "name": "pick-trowel", "desc": "picking the trowel back up" } ] },
-    { "id": "planter-finish", "character": "planter", "view": "side facing right", "desc": "standing after planting", "poses": [
-      { "name": "clap-1", "desc": "gloved hands apart, about to clap off dirt" },
-      { "name": "clap-2", "desc": "gloved hands together" },
-      { "name": "hips", "desc": "hands on hips" },
-      { "name": "admire", "desc": "hands on hips, head tilted, smiling at the planting" } ] },
-    { "id": "prop-planting", "character": null, "view": "side", "desc": "two small garden plants", "poses": [
-      { "name": "lavender-pot", "desc": "lavender (grey-green narrow leaves, purple spikes) in a small black pot" },
-      { "name": "lavender-rootball", "desc": "the lavender out of its pot, brown root ball with pale root lines" },
-      { "name": "lavender-planted", "desc": "the lavender planted, ring of dark fresh soil at its base" },
-      { "name": "geranium-pot", "desc": "pink geranium (round leaves, pink flower cluster) in a small black pot" },
-      { "name": "geranium-rootball", "desc": "the geranium out of its pot, root ball showing" },
-      { "name": "geranium-planted", "desc": "the geranium planted, ring of dark fresh soil" } ] },
-    { "id": "prop-tray", "character": null, "view": "side", "desc": "a black plastic seed tray and small black pots", "poses": [
-      { "name": "tray-two", "desc": "tray holding the two potted plants" },
-      { "name": "tray-one", "desc": "tray holding one potted geranium" },
-      { "name": "tray-empty", "desc": "empty tray" },
-      { "name": "pot-upturned", "desc": "one empty black pot lying upside down" },
-      { "name": "pot-upright", "desc": "one empty black pot standing upright" },
-      { "name": "pot-stack", "desc": "two empty black pots stacked" } ] },
-    { "id": "prop-soil", "character": null, "view": "side, slightly above", "desc": "garden soil in a border", "poses": [
-      { "name": "hole-scuffed", "desc": "scuffed bare soil, a few weeds" },
-      { "name": "hole-shallow", "desc": "shallow dug hole" },
-      { "name": "hole-deep", "desc": "full-depth hole with a dark interior" },
-      { "name": "mound-1", "desc": "tiny soil heap" },
-      { "name": "mound-2", "desc": "small soil heap" },
-      { "name": "mound-3", "desc": "medium soil heap" },
-      { "name": "mound-4", "desc": "large soil heap" } ] },
-
-    { "id": "hedge-start", "character": "hedge", "view": "back, slightly from the left", "desc": "on the third rung from the top of an (undrawn) ladder, knees braced, holding long-handled shears", "poses": [
-      { "name": "idle", "desc": "shears lowered, standing still" },
-      { "name": "shift", "desc": "weight shifting, shears coming up" },
-      { "name": "raise", "desc": "shears raised to hedge-top height" },
-      { "name": "ready", "desc": "shears horizontal at hedge-top height, blades closed" } ] },
-    { "id": "hedge-snip", "character": "hedge", "view": "back, slightly from the left", "desc": "on an (undrawn) ladder trimming the top of a hedge with long-handled shears; feet and knees identical in every frame", "poses": [
-      { "name": "open", "desc": "handles apart, elbows wide, blades in a wide V" },
-      { "name": "hold", "desc": "blades open, held over the growth" },
-      { "name": "close", "desc": "impact: blades snapped shut, arms together" },
-      { "name": "recoil", "desc": "arms bounced 1px back after the cut" },
-      { "name": "settle", "desc": "blades starting to open again" } ] },
-    { "id": "hedge-finish", "character": "hedge", "view": "back, slightly from the left", "desc": "on an (undrawn) ladder with long-handled shears", "poses": [
-      { "name": "final", "desc": "final snip, blades shut" },
-      { "name": "lower", "desc": "lowering the shears" },
-      { "name": "check", "desc": "leaning back, looking along the hedge top" },
-      { "name": "shoulder", "desc": "shears resting on his shoulder" },
-      { "name": "idle", "desc": "shears on shoulder, relaxed" } ] },
-    { "id": "prop-ladder", "character": null, "view": "side, slightly from the left", "desc": "a wooden A-frame stepladder and hedge clippings", "poses": [
-      { "name": "ladder", "desc": "the A-frame ladder alone" },
-      { "name": "pile-1", "desc": "a few green hedge clippings on the ground" },
-      { "name": "pile-2", "desc": "a small pile of clippings" },
-      { "name": "pile-3", "desc": "a larger pile of clippings" } ] },
-
-    { "id": "tree-prep", "character": "tree", "view": "front, slightly from the left", "desc": "in a tree canopy: feet on an (undrawn) limb, leaning back into the harness, rope rising taut from the harness to the top of the cell", "poses": [
-      { "name": "hang-idle", "desc": "hanging still, hands on the rope" },
-      { "name": "step-feet", "desc": "walking his feet one step sideways" },
-      { "name": "pull-rope", "desc": "pulling down on the rope" },
-      { "name": "settle", "desc": "settled again, leaning back" } ] },
-    { "id": "tree-start", "character": "tree", "view": "front, slightly from the left", "desc": "in the harness, rope taut, with a top-handle chainsaw on a lanyard", "poses": [
-      { "name": "unclip", "desc": "unclipping the chainsaw from his harness" },
-      { "name": "cord-pull-1", "desc": "pulling the starter cord, arm extended" },
-      { "name": "cord-snap", "desc": "arm snapped back, saw jolted" },
-      { "name": "cord-pull-2", "desc": "second pull of the cord" },
-      { "name": "running", "desc": "holding the running saw ready" } ] },
-    { "id": "tree-undercut", "character": "tree", "view": "front, slightly from the left", "desc": "in the harness, cutting the underside of an (undrawn) branch to his right with the chainsaw", "poses": [
-      { "name": "enter", "desc": "saw blade angled up into the branch underside" },
-      { "name": "cut-a", "desc": "cutting, arms braced" },
-      { "name": "cut-b", "desc": "cutting, arms shifted 1px" },
-      { "name": "withdraw", "desc": "pulling the saw back out" } ] },
-    { "id": "tree-topcut", "character": "tree", "view": "front, slightly from the left", "desc": "in the harness, cutting down through the top of an (undrawn) branch to his right with the chainsaw", "poses": [
-      { "name": "reposition", "desc": "moving the saw above the branch" },
-      { "name": "cut-a", "desc": "blade cutting down, arms braced" },
-      { "name": "cut-b", "desc": "blade cutting down, arms shifted 1px" },
-      { "name": "flinch", "desc": "leaning back as the branch cracks away" } ] },
-    { "id": "tree-finish", "character": "tree", "view": "front, slightly from the left", "desc": "in the harness with the chainsaw", "poses": [
-      { "name": "flush-a", "desc": "final flush cut against the trunk" },
-      { "name": "flush-b", "desc": "final cut, arms shifted 1px" },
-      { "name": "stop", "desc": "stopping the saw, holding it away" },
-      { "name": "clip", "desc": "clipping the saw to his harness" },
-      { "name": "look-down", "desc": "hands on the rope, looking down at his work" } ] },
-    { "id": "prop-branch", "character": null, "view": "side", "desc": "one dead oak branch (bare grey-brown twigs, a few brown leaves) with a lowering rope tied round it", "poses": [
-      { "name": "attached", "desc": "horizontal" },
-      { "name": "sag", "desc": "tilted down slightly at its tip" },
-      { "name": "swing-1", "desc": "swinging down at 40 degrees" },
-      { "name": "swing-2", "desc": "hanging at 70 degrees" },
-      { "name": "swing-3", "desc": "nearly vertical" },
-      { "name": "on-ground", "desc": "lying flat on grass" } ] },
-    { "id": "prop-canopy", "character": null, "view": "front", "desc": "a small patch of oak canopy", "poses": [
-      { "name": "dead", "desc": "dead bare twigs" },
-      { "name": "healthy", "desc": "the same patch with healthy green foliage" } ] },
-    { "id": "ambient-butterfly", "character": null, "view": "side", "desc": "a small white butterfly", "poses": [
-      { "name": "wing-1", "desc": "wings up" }, { "name": "wing-2", "desc": "wings half" },
-      { "name": "wing-3", "desc": "wings down" }, { "name": "wing-4", "desc": "wings half, rising" } ] }
+    {
+      "id": "model-mower",
+      "character": "mower",
+      "poses": [
+        "front",
+        "back",
+        "left side",
+        "three-quarter back"
+      ],
+      "desc": "character model sheet, standing, arms relaxed"
+    },
+    {
+      "id": "model-planter",
+      "character": "planter",
+      "poses": [
+        "front",
+        "back",
+        "right side",
+        "kneeling right side"
+      ],
+      "desc": "character model sheet holding a hand trowel"
+    },
+    {
+      "id": "model-hedge",
+      "character": "hedge",
+      "poses": [
+        "front",
+        "back",
+        "right side",
+        "holding long-handled shears"
+      ],
+      "desc": "character model sheet"
+    },
+    {
+      "id": "model-tree",
+      "character": "tree",
+      "poses": [
+        "front",
+        "back",
+        "side hanging in harness",
+        "holding a top-handle chainsaw"
+      ],
+      "desc": "character model sheet, rope rising from the harness"
+    },
+    {
+      "id": "mower-start",
+      "character": "mower",
+      "view": "back",
+      "desc": "seen from behind, hands on an (undrawn) push-mower handle at waist height",
+      "poses": [
+        {
+          "name": "idle",
+          "desc": "standing still, both hands on the handle, weight even"
+        },
+        {
+          "name": "shift",
+          "desc": "same, weight shifted onto his right leg, shoulders tilted 1px"
+        },
+        {
+          "name": "lean",
+          "desc": "torso leaning forward about 10 degrees, arms extended to push"
+        },
+        {
+          "name": "first-step",
+          "desc": "leaning forward, left foot stepping ahead, right heel lifting"
+        }
+      ]
+    },
+    {
+      "id": "mower-walk",
+      "character": "mower",
+      "view": "back",
+      "desc": "seen from behind, walking away pushing an (undrawn) mower, hands on the handle, slow casual pace",
+      "poses": [
+        {
+          "name": "P1",
+          "desc": "contact: left heel down ahead, right toe behind"
+        },
+        {
+          "name": "P2",
+          "desc": "down: weight on left, left knee bent, body 1px lower"
+        },
+        {
+          "name": "P3",
+          "desc": "passing: right leg swinging past the left, body rising"
+        },
+        {
+          "name": "P4",
+          "desc": "up: left leg pushing off, body 1px higher"
+        },
+        {
+          "name": "P5",
+          "desc": "contact: right heel down ahead, left toe behind"
+        },
+        {
+          "name": "P6",
+          "desc": "down: weight on right, right knee bent, body 1px lower"
+        },
+        {
+          "name": "P7",
+          "desc": "passing: left leg swinging past the right, body rising"
+        },
+        {
+          "name": "P8",
+          "desc": "up: right leg pushing off, body 1px higher"
+        }
+      ]
+    },
+    {
+      "id": "mower-finish",
+      "character": "mower",
+      "view": "back",
+      "desc": "seen from behind, standing still after mowing. IMPORTANT: draw ONLY the man, with NO lawnmower, NO handle, NO machine and NO tools anywhere in the image; where his hands rest on the handle they simply hover in a loose fist at waist height",
+      "poses": [
+        {
+          "name": "half-step",
+          "desc": "short final half step, feet close"
+        },
+        {
+          "name": "stop",
+          "desc": "standing still, both hands on the handle"
+        },
+        {
+          "name": "hand-off",
+          "desc": "left hand still on the handle, right hand lifting off towards his face"
+        },
+        {
+          "name": "wipe-1",
+          "desc": "right forearm wiping across his brow under the hat brim"
+        },
+        {
+          "name": "wipe-2",
+          "desc": "right forearm at the other side of his brow, head tilted"
+        },
+        {
+          "name": "rest",
+          "desc": "both hands resting on the handle, shoulders relaxed"
+        }
+      ]
+    },
+    {
+      "id": "prop-mower",
+      "character": null,
+      "view": "back",
+      "desc": "a red petrol push lawnmower seen from behind and slightly above, black wheels, black handle bar at the top, grass box; identical in every frame except the wheels",
+      "poses": [
+        {
+          "name": "wheels-a",
+          "desc": "wheel tread pattern phase 1"
+        },
+        {
+          "name": "wheels-b",
+          "desc": "wheel tread pattern rotated one third"
+        },
+        {
+          "name": "wheels-c",
+          "desc": "wheel tread pattern rotated two thirds"
+        }
+      ]
+    },
+    {
+      "id": "planter-kneel",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "getting down to work at a border",
+      "poses": [
+        {
+          "name": "stand-look",
+          "desc": "standing upright, looking down at the ground in front"
+        },
+        {
+          "name": "step",
+          "desc": "left foot stepping forward"
+        },
+        {
+          "name": "bend",
+          "desc": "bending at the hips and knees"
+        },
+        {
+          "name": "knee-lower",
+          "desc": "right knee lowering towards the ground"
+        },
+        {
+          "name": "knee-touch",
+          "desc": "right knee touching the ground, left knee up"
+        },
+        {
+          "name": "settle",
+          "desc": "kneeling on both knees, back straight"
+        },
+        {
+          "name": "lean",
+          "desc": "kneeling, leaning forward over the ground"
+        }
+      ]
+    },
+    {
+      "id": "planter-dig",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "kneeling, digging with a hand trowel in the right hand, left hand flat on the ground in every frame",
+      "poses": [
+        {
+          "name": "anticipation",
+          "desc": "trowel raised high above the ground"
+        },
+        {
+          "name": "strike",
+          "desc": "trowel blade half buried in the soil"
+        },
+        {
+          "name": "lever",
+          "desc": "wrist bent back, levering the soil"
+        },
+        {
+          "name": "lift",
+          "desc": "trowel lifting a clump of soil"
+        },
+        {
+          "name": "carry",
+          "desc": "trowel carried sideways to the right with the soil"
+        },
+        {
+          "name": "tip",
+          "desc": "trowel tipped, soil falling off"
+        },
+        {
+          "name": "shake",
+          "desc": "trowel shaken empty over the heap"
+        },
+        {
+          "name": "return",
+          "desc": "trowel swinging back towards the hole"
+        }
+      ]
+    },
+    {
+      "id": "planter-unpot-a",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "kneeling, taking a plant in a small black pot out of its pot",
+      "poses": [
+        {
+          "name": "reach",
+          "desc": "reaching down to the left for the pot"
+        },
+        {
+          "name": "lift",
+          "desc": "pot lifted to chest height in both hands"
+        },
+        {
+          "name": "invert",
+          "desc": "pot upside down, fingers spread around the stem"
+        },
+        {
+          "name": "tap-1",
+          "desc": "tapping the pot base with the palm"
+        },
+        {
+          "name": "tap-2",
+          "desc": "second tap, hand raised slightly"
+        }
+      ]
+    },
+    {
+      "id": "planter-unpot-b",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "kneeling, finishing unpotting and placing the plant",
+      "poses": [
+        {
+          "name": "slide-off",
+          "desc": "pot sliding off, root ball showing"
+        },
+        {
+          "name": "toss",
+          "desc": "tossing the empty pot behind him"
+        },
+        {
+          "name": "tease",
+          "desc": "both hands teasing the roots"
+        },
+        {
+          "name": "upright",
+          "desc": "plant turned upright in both hands"
+        },
+        {
+          "name": "lower",
+          "desc": "lowering the plant into the hole"
+        },
+        {
+          "name": "release",
+          "desc": "hands opening, plant standing in the hole"
+        }
+      ]
+    },
+    {
+      "id": "planter-backfill",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "kneeling, filling a planting hole",
+      "poses": [
+        {
+          "name": "sweep-reach",
+          "desc": "cupped hands reaching to the soil heap"
+        },
+        {
+          "name": "sweep-pull",
+          "desc": "cupped hands sweeping soil towards the plant"
+        },
+        {
+          "name": "press",
+          "desc": "both palms pressing down either side of the stem, shoulders dropped"
+        },
+        {
+          "name": "sit-back",
+          "desc": "sitting back on his heels"
+        },
+        {
+          "name": "look",
+          "desc": "sitting back, head tilted, looking at the plant"
+        }
+      ]
+    },
+    {
+      "id": "planter-move",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "kneeling",
+      "poses": [
+        {
+          "name": "lay-trowel",
+          "desc": "laying the trowel down beside his knee"
+        },
+        {
+          "name": "shuffle-1",
+          "desc": "lifting the right knee forward"
+        },
+        {
+          "name": "shuffle-2",
+          "desc": "bringing the left knee up after it"
+        },
+        {
+          "name": "shuffle-3",
+          "desc": "settled, hands on thighs"
+        },
+        {
+          "name": "pick-trowel",
+          "desc": "picking the trowel back up"
+        }
+      ]
+    },
+    {
+      "id": "planter-finish",
+      "character": "planter",
+      "view": "side facing right",
+      "desc": "standing after planting",
+      "poses": [
+        {
+          "name": "clap-1",
+          "desc": "gloved hands apart, about to clap off dirt"
+        },
+        {
+          "name": "clap-2",
+          "desc": "gloved hands together"
+        },
+        {
+          "name": "hips",
+          "desc": "hands on hips"
+        },
+        {
+          "name": "admire",
+          "desc": "hands on hips, head tilted, smiling at the planting"
+        }
+      ]
+    },
+    {
+      "id": "prop-planting",
+      "character": null,
+      "view": "side",
+      "desc": "two small garden plants",
+      "poses": [
+        {
+          "name": "lavender-pot",
+          "desc": "lavender (grey-green narrow leaves, purple spikes) in a small black pot"
+        },
+        {
+          "name": "lavender-rootball",
+          "desc": "the lavender out of its pot, brown root ball with pale root lines"
+        },
+        {
+          "name": "lavender-planted",
+          "desc": "the lavender planted, ring of dark fresh soil at its base"
+        },
+        {
+          "name": "geranium-pot",
+          "desc": "pink geranium (round leaves, pink flower cluster) in a small black pot"
+        },
+        {
+          "name": "geranium-rootball",
+          "desc": "the geranium out of its pot, root ball showing"
+        },
+        {
+          "name": "geranium-planted",
+          "desc": "the geranium planted, ring of dark fresh soil"
+        }
+      ]
+    },
+    {
+      "id": "prop-tray",
+      "character": null,
+      "view": "side",
+      "desc": "a black plastic seed tray and small black pots",
+      "poses": [
+        {
+          "name": "tray-two",
+          "desc": "tray holding the two potted plants"
+        },
+        {
+          "name": "tray-one",
+          "desc": "tray holding one potted geranium"
+        },
+        {
+          "name": "tray-empty",
+          "desc": "empty tray"
+        },
+        {
+          "name": "pot-upturned",
+          "desc": "one empty black pot lying upside down"
+        },
+        {
+          "name": "pot-upright",
+          "desc": "one empty black pot standing upright"
+        },
+        {
+          "name": "pot-stack",
+          "desc": "two empty black pots stacked"
+        }
+      ]
+    },
+    {
+      "id": "prop-soil",
+      "character": null,
+      "view": "side, slightly above",
+      "desc": "garden soil in a border",
+      "poses": [
+        {
+          "name": "hole-scuffed",
+          "desc": "scuffed bare soil, a few weeds"
+        },
+        {
+          "name": "hole-shallow",
+          "desc": "shallow dug hole"
+        },
+        {
+          "name": "hole-deep",
+          "desc": "full-depth hole with a dark interior"
+        },
+        {
+          "name": "mound-1",
+          "desc": "tiny soil heap"
+        },
+        {
+          "name": "mound-2",
+          "desc": "small soil heap"
+        },
+        {
+          "name": "mound-3",
+          "desc": "medium soil heap"
+        },
+        {
+          "name": "mound-4",
+          "desc": "large soil heap"
+        }
+      ]
+    },
+    {
+      "id": "hedge-start",
+      "character": "hedge",
+      "view": "back, slightly from the left",
+      "desc": "on the third rung from the top of an (undrawn) ladder, knees braced, holding long-handled shears",
+      "poses": [
+        {
+          "name": "idle",
+          "desc": "shears lowered, standing still"
+        },
+        {
+          "name": "shift",
+          "desc": "weight shifting, shears coming up"
+        },
+        {
+          "name": "raise",
+          "desc": "shears raised to hedge-top height"
+        },
+        {
+          "name": "ready",
+          "desc": "shears horizontal at hedge-top height, blades closed"
+        }
+      ]
+    },
+    {
+      "id": "hedge-snip",
+      "character": "hedge",
+      "view": "back, slightly from the left",
+      "desc": "on an (undrawn) ladder trimming the top of a hedge with long-handled shears; feet and knees identical in every frame",
+      "poses": [
+        {
+          "name": "open",
+          "desc": "handles apart, elbows wide, blades in a wide V"
+        },
+        {
+          "name": "hold",
+          "desc": "blades open, held over the growth"
+        },
+        {
+          "name": "close",
+          "desc": "impact: blades snapped shut, arms together"
+        },
+        {
+          "name": "recoil",
+          "desc": "arms bounced 1px back after the cut"
+        },
+        {
+          "name": "settle",
+          "desc": "blades starting to open again"
+        }
+      ]
+    },
+    {
+      "id": "hedge-finish",
+      "character": "hedge",
+      "view": "back, slightly from the left",
+      "desc": "on an (undrawn) ladder with long-handled shears",
+      "poses": [
+        {
+          "name": "final",
+          "desc": "final snip, blades shut"
+        },
+        {
+          "name": "lower",
+          "desc": "lowering the shears"
+        },
+        {
+          "name": "check",
+          "desc": "leaning back, looking along the hedge top"
+        },
+        {
+          "name": "shoulder",
+          "desc": "shears resting on his shoulder"
+        },
+        {
+          "name": "idle",
+          "desc": "shears on shoulder, relaxed"
+        }
+      ]
+    },
+    {
+      "id": "prop-ladder",
+      "character": null,
+      "view": "side, slightly from the left",
+      "desc": "a wooden A-frame stepladder and hedge clippings",
+      "poses": [
+        {
+          "name": "ladder",
+          "desc": "the A-frame ladder alone"
+        },
+        {
+          "name": "pile-1",
+          "desc": "a few green hedge clippings on the ground"
+        },
+        {
+          "name": "pile-2",
+          "desc": "a small pile of clippings"
+        },
+        {
+          "name": "pile-3",
+          "desc": "a larger pile of clippings"
+        }
+      ]
+    },
+    {
+      "id": "tree-prep",
+      "character": "tree",
+      "view": "front, slightly from the left",
+      "desc": "in a tree canopy: feet on an (undrawn) limb, leaning back into the harness, rope rising taut from the harness to the top of the cell",
+      "poses": [
+        {
+          "name": "hang-idle",
+          "desc": "hanging still, hands on the rope"
+        },
+        {
+          "name": "step-feet",
+          "desc": "walking his feet one step sideways"
+        },
+        {
+          "name": "pull-rope",
+          "desc": "pulling down on the rope"
+        },
+        {
+          "name": "settle",
+          "desc": "settled again, leaning back"
+        }
+      ]
+    },
+    {
+      "id": "tree-start",
+      "character": "tree",
+      "view": "front, slightly from the left",
+      "desc": "in the harness, rope taut, with a top-handle chainsaw on a lanyard",
+      "poses": [
+        {
+          "name": "unclip",
+          "desc": "unclipping the chainsaw from his harness"
+        },
+        {
+          "name": "cord-pull-1",
+          "desc": "pulling the starter cord, arm extended"
+        },
+        {
+          "name": "cord-snap",
+          "desc": "arm snapped back, saw jolted"
+        },
+        {
+          "name": "cord-pull-2",
+          "desc": "second pull of the cord"
+        },
+        {
+          "name": "running",
+          "desc": "holding the running saw ready"
+        }
+      ]
+    },
+    {
+      "id": "tree-undercut",
+      "character": "tree",
+      "view": "front, slightly from the left",
+      "desc": "in the harness, cutting the underside of an (undrawn) branch to his right with the chainsaw",
+      "poses": [
+        {
+          "name": "enter",
+          "desc": "saw blade angled up into the branch underside"
+        },
+        {
+          "name": "cut-a",
+          "desc": "cutting, arms braced"
+        },
+        {
+          "name": "cut-b",
+          "desc": "cutting, arms shifted 1px"
+        },
+        {
+          "name": "withdraw",
+          "desc": "pulling the saw back out"
+        }
+      ]
+    },
+    {
+      "id": "tree-topcut",
+      "character": "tree",
+      "view": "front, slightly from the left",
+      "desc": "in the harness, cutting down through the top of an (undrawn) branch to his right with the chainsaw",
+      "poses": [
+        {
+          "name": "reposition",
+          "desc": "moving the saw above the branch"
+        },
+        {
+          "name": "cut-a",
+          "desc": "blade cutting down, arms braced"
+        },
+        {
+          "name": "cut-b",
+          "desc": "blade cutting down, arms shifted 1px"
+        },
+        {
+          "name": "flinch",
+          "desc": "leaning back as the branch cracks away"
+        }
+      ]
+    },
+    {
+      "id": "tree-finish",
+      "character": "tree",
+      "view": "front, slightly from the left",
+      "desc": "in the harness with the chainsaw",
+      "poses": [
+        {
+          "name": "flush-a",
+          "desc": "final flush cut against the trunk"
+        },
+        {
+          "name": "flush-b",
+          "desc": "final cut, arms shifted 1px"
+        },
+        {
+          "name": "stop",
+          "desc": "stopping the saw, holding it away"
+        },
+        {
+          "name": "clip",
+          "desc": "clipping the saw to his harness"
+        },
+        {
+          "name": "look-down",
+          "desc": "hands on the rope, looking down at his work"
+        }
+      ]
+    },
+    {
+      "id": "prop-branch",
+      "character": null,
+      "view": "side",
+      "desc": "one dead oak branch (bare grey-brown twigs, a few brown leaves) with a lowering rope tied round it",
+      "poses": [
+        {
+          "name": "attached",
+          "desc": "horizontal"
+        },
+        {
+          "name": "sag",
+          "desc": "tilted down slightly at its tip"
+        },
+        {
+          "name": "swing-1",
+          "desc": "swinging down at 40 degrees"
+        },
+        {
+          "name": "swing-2",
+          "desc": "hanging at 70 degrees"
+        },
+        {
+          "name": "swing-3",
+          "desc": "nearly vertical"
+        },
+        {
+          "name": "on-ground",
+          "desc": "lying flat on grass"
+        }
+      ]
+    },
+    {
+      "id": "prop-canopy",
+      "character": null,
+      "view": "front",
+      "desc": "a small patch of oak canopy",
+      "poses": [
+        {
+          "name": "dead",
+          "desc": "dead bare twigs"
+        },
+        {
+          "name": "healthy",
+          "desc": "the same patch with healthy green foliage"
+        }
+      ]
+    },
+    {
+      "id": "ambient-butterfly",
+      "character": null,
+      "view": "side",
+      "desc": "a small white butterfly",
+      "poses": [
+        {
+          "name": "wing-1",
+          "desc": "wings up"
+        },
+        {
+          "name": "wing-2",
+          "desc": "wings half"
+        },
+        {
+          "name": "wing-3",
+          "desc": "wings down"
+        },
+        {
+          "name": "wing-4",
+          "desc": "wings half, rising"
+        }
+      ]
+    }
   ]
 }

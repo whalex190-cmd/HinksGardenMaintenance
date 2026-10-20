@@ -1,15 +1,21 @@
 {
   "_note": "Every frame range, position, scale, particle amount and mask setting for the scroll hero. Positions are fractions of the scene (0-1); sizes in scene pixels on the 480x272 grid. Changing this and re-running `npm run plan` / `npm run frames` never calls the API.",
-
   "frameCount": 120,
   "scene": {
-    "native": [480, 272],
+    "native": [
+      480,
+      272
+    ],
     "untidy": "assets/garden-untidy-clean.png",
     "tidy": "assets/garden-tidy-clean.png",
     "regions": "images/hero/regions-desktop.json",
-    "output": { "desktopScale": 1, "mobileScale": 0.5, "format": "webp", "lossless": true }
+    "output": {
+      "desktopScale": 1,
+      "mobileScale": 0.5,
+      "format": "webp",
+      "lossless": true
+    }
   },
-
   "global": {
     "untidyUntil": 35,
     "tidyFrom": 36,
@@ -17,74 +23,334 @@
     "fullyTidyFrom": 115,
     "direction": "front-to-back",
     "maskFeather": 6,
-    "unassignedRegions": ["hedges-l", "borders-l", "pool", "lawn-outside-mower-stripe", "far-borders", "pots-and-debris"]
+    "unassignedRegions": [
+      "hedges-l",
+      "borders-l",
+      "pool",
+      "lawn-outside-mower-stripe",
+      "far-borders",
+      "pots-and-debris"
+    ]
   },
-
   "characters": {
     "heightPx": 33,
     "maxColours": 10,
     "spriteDensity": 1
   },
-
   "mower": {
     "stripe": 4,
-    "start": { "y": 0.6706 },
-    "end": { "scale": 0.75 },
-    "scaleStart": 1.0,
-    "ranges": { "idle": [1, 9], "postureShift": [5, 7], "easeIn": [10, 11], "walk": [12, 107], "slow": [108, 112], "wipeBrow": [113, 116], "rest": [117, 120] },
+    "start": {
+      "y": 0.6706
+    },
+    "end": {
+      "scale": 0.75
+    },
+    "scaleStart": 1,
+    "ranges": {
+      "idle": [
+        1,
+        9
+      ],
+      "postureShift": [
+        5,
+        7
+      ],
+      "easeIn": [
+        10,
+        11
+      ],
+      "walk": [
+        12,
+        107
+      ],
+      "slow": [
+        108,
+        112
+      ],
+      "wipeBrow": [
+        113,
+        116
+      ],
+      "rest": [
+        117,
+        120
+      ]
+    },
     "jitterPx": 1,
     "wheelPhases": 3,
     "exhaustEvery": 16,
-    "clippingsPerStep": [3, 6],
-    "cutLineRaggedPx": [1, 2]
+    "clippingsPerStep": [
+      3,
+      6
+    ],
+    "cutLineRaggedPx": [
+      1,
+      2
+    ],
+    "mowerAheadPx": 3,
+    "shadow": [
+      18,
+      4,
+      0.35
+    ],
+    "cutBrighten": 1.08
   },
-
   "planter": {
-    "x": 0.772, "y": 0.713,
+    "x": 0.772,
+    "y": 0.713,
     "shufflePx": 20,
     "ranges": {
-      "stand": [1, 3], "kneel": [4, 9], "dig1": [10, 33], "trowelDown": [34, 35], "unpot1": [36, 49], "backfill1": [50, 61],
-      "shuffle": [62, 69], "dig2": [70, 85], "unpot2": [86, 95], "backfill2": [96, 105], "standUp": [106, 110], "brush": [111, 114], "admire": [115, 120]
+      "stand": [
+        1,
+        3
+      ],
+      "kneel": [
+        4,
+        9
+      ],
+      "dig1": [
+        10,
+        33
+      ],
+      "trowelDown": [
+        34,
+        35
+      ],
+      "unpot1": [
+        36,
+        49
+      ],
+      "backfill1": [
+        50,
+        61
+      ],
+      "shuffle": [
+        62,
+        69
+      ],
+      "dig2": [
+        70,
+        85
+      ],
+      "unpot2": [
+        86,
+        95
+      ],
+      "backfill2": [
+        96,
+        105
+      ],
+      "standUp": [
+        106,
+        110
+      ],
+      "brush": [
+        111,
+        114
+      ],
+      "admire": [
+        115,
+        120
+      ]
     },
-    "hole1Stages": [[10, 17], [18, 25], [26, 33]],
-    "hole2Stages": [[70, 77], [78, 85], [78, 85]],
-    "holeOffsetPx": 12, "moundOffsetPx": 22, "trayOffsetPx": -16
+    "hole1Stages": [
+      [
+        10,
+        17
+      ],
+      [
+        18,
+        25
+      ],
+      [
+        26,
+        33
+      ]
+    ],
+    "hole2Stages": [
+      [
+        70,
+        77
+      ],
+      [
+        78,
+        85
+      ],
+      [
+        78,
+        85
+      ]
+    ],
+    "holeOffsetPx": 12,
+    "moundOffsetPx": 22,
+    "trayOffsetPx": -16
   },
-
   "hedge": {
-    "x": 0.842, "y": 0.622,
-    "ranges": { "idle": [1, 5], "raise": [6, 9], "snips": [10, 99], "finalSnip": [100, 104], "check": [105, 112], "rest": [113, 120] },
+    "x": 0.842,
+    "y": 0.622,
+    "ranges": {
+      "idle": [
+        1,
+        5
+      ],
+      "raise": [
+        6,
+        9
+      ],
+      "snips": [
+        10,
+        99
+      ],
+      "finalSnip": [
+        100,
+        104
+      ],
+      "check": [
+        105,
+        112
+      ],
+      "rest": [
+        113,
+        120
+      ]
+    },
     "snipFrames": 5,
     "sections": 18,
     "freshFadeFrames": 12,
-    "reachEvery": 3, "reachPx": 2,
+    "reachEvery": 3,
+    "reachPx": 2,
     "wobbleEvery": 5,
-    "leafBurst": [4, 8]
+    "leafBurst": [
+      4,
+      8
+    ]
   },
-
   "tree": {
-    "x": 0.640, "y": 0.318,
-    "branch": { "x": 0.60, "y": 0.30, "landX": 0.565, "landY": 0.485 },
+    "x": 0.64,
+    "y": 0.318,
+    "branch": {
+      "x": 0.6,
+      "y": 0.3,
+      "landX": 0.565,
+      "landY": 0.485
+    },
     "ranges": {
-      "idle": [1, 4], "reposition": [5, 9], "startSaw": [10, 16], "undercut": [17, 41], "topCut": [42, 73], "crack": [74, 75],
-      "lower": [76, 95], "flushCut": [96, 103], "stopSaw": [104, 109], "look": [110, 120]
+      "idle": [
+        1,
+        4
+      ],
+      "reposition": [
+        5,
+        9
+      ],
+      "startSaw": [
+        10,
+        16
+      ],
+      "undercut": [
+        17,
+        41
+      ],
+      "topCut": [
+        42,
+        73
+      ],
+      "crack": [
+        74,
+        75
+      ],
+      "lower": [
+        76,
+        95
+      ],
+      "flushCut": [
+        96,
+        103
+      ],
+      "stopSaw": [
+        104,
+        109
+      ],
+      "look": [
+        110,
+        120
+      ]
     },
     "undercutDepth": 0.33,
-    "sag": { "64": 1, "70": 2 },
-    "canopySpring": { "frames": [76, 78], "px": 2 },
-    "canopyHeal": [96, 110],
-    "branchFade": [110, 118],
-    "sawdustPerFrame": [2, 4]
+    "sag": {
+      "64": 1,
+      "70": 2
+    },
+    "canopySpring": {
+      "frames": [
+        76,
+        78
+      ],
+      "px": 2
+    },
+    "canopyHeal": [
+      96,
+      110
+    ],
+    "branchFade": [
+      110,
+      118
+    ],
+    "sawdustPerFrame": [
+      2,
+      4
+    ]
   },
-
   "ambient": {
     "mistPxPerFrame": 0.25,
     "poolShimmerRows": 4,
     "flowerSwayPeriod": 2,
-    "butterfly": { "frames": [40, 80], "from": [0.20, 0.50], "to": [0.62, 0.42] },
+    "butterfly": {
+      "frames": [
+        40,
+        80
+      ],
+      "from": [
+        0.2,
+        0.5
+      ],
+      "to": [
+        0.62,
+        0.42
+      ]
+    },
     "sunRisePx": 4,
     "seed": 20261020
   },
-
-  "particles": { "clippingLife": 6, "soilLife": 4, "sawdustLife": 8, "leafLife": 10 }
+  "particles": {
+    "clippingLife": 6,
+    "soilLife": 4,
+    "sawdustLife": 8,
+    "leafLife": 10
+  },
+  "spriteFit": {
+    "_note": "Native-px height of the tallest pose in each sheet at perspective scale 1.",
+    "default": 33,
+    "prop-mower": 22,
+    "prop-planting": 10,
+    "prop-tray": 8,
+    "prop-soil": 6,
+    "prop-ladder": 22,
+    "prop-branch": 18,
+    "prop-canopy": 14,
+    "ambient-butterfly": 5,
+    "hedge-start": 30,
+    "hedge-snip": 30,
+    "hedge-finish": 30,
+    "tree-prep": 40,
+    "tree-start": 40,
+    "tree-undercut": 40,
+    "tree-topcut": 40,
+    "tree-finish": 40,
+    "planter-dig": 24,
+    "planter-unpot-a": 24,
+    "planter-unpot-b": 24,
+    "planter-backfill": 24,
+    "planter-move": 24
+  }
 }

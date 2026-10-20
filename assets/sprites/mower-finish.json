@@ -1,0 +1,17 @@
+{
+ "id": "mower-finish",
+ "poses": [
+  "half-step",
+  "stop",
+  "hand-off",
+  "wipe-1",
+  "wipe-2",
+  "rest"
+ ],
+ "cell": [
+  18,
+  34
+ ],
+ "anchorX": 9,
+ "fit": 33
+}

@@ -7,10 +7,15 @@
     "dev": "node scripts/serve.js",
     "plan": "node scripts/plan.js",
     "assets": "node scripts/generate-assets.js",
-    "assets:process": "node scripts/generate-assets.js --no-generate"
+    "assets:process": "node scripts/generate-assets.js --no-generate",
+    "sprites": "node scripts/sprites.js",
+    "frames": "node scripts/frames.js",
+    "preview": "node scripts/preview.js"
   },
   "devDependencies": {
+    "ffmpeg-static": "^5.2.0",
     "gifenc": "^1.0.3",
-    "pngjs": "^7.0.0"
+    "pngjs": "^7.0.0",
+    "sharp": "^0.34.4"
   }
 }
