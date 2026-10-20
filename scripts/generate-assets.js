@@ -21,6 +21,7 @@ const path = require("path");
 const zlib = require("zlib");
 const { PNG } = require("pngjs");
 const { GIFEncoder } = require("gifenc");
+const { drawFallback } = require("./fallback-sprites");
 
 const ROOT = path.resolve(__dirname, "..");
 const P = (...p) => path.join(ROOT, ...p);
@@ -479,7 +480,17 @@ function processSheet(sheet, pal, snap) {
   const tallest = Math.max(...boxes.map((b) => b.h));
   const s = sheet.fit / tallest;
   const frames = boxes.map((b) => downscale(img, b, s, pal.length));
+  return alignFrames(sheet, frames, warnings, { scale: s, method });
+}
 
+/* Code-drawn fallback: frames are already on the scene grid in palette colours. */
+function fallbackSheet(sheet, pal) {
+  const frames = drawFallback(sheet.id, pal).map(trimIdx);
+  return alignFrames(sheet, frames, ["code-drawn fallback (OpenAI generation unavailable)"], { scale: 1, method: "fallback" });
+}
+
+function alignFrames(sheet, frames, warnings, info) {
+  const n = frames.length;
   // equal cells, every frame trimmed and anchored bottom-centre on one baseline
   const cw = Math.max(...frames.map((f) => f.w)) + 2, ch = Math.max(...frames.map((f) => f.h)) + 1;
   const cells = frames.map((f) => {
@@ -489,7 +500,7 @@ function processSheet(sheet, pal, snap) {
   });
 
   // drift / repetition checks
-  const hs = boxes.map((b) => b.h), spread = (Math.max(...hs) - Math.min(...hs)) / Math.max(...hs);
+  const hs = frames.map((f) => f.h), spread = (Math.max(...hs) - Math.min(...hs)) / Math.max(...hs);
   if (sheet.id.startsWith("mower") || sheet.id === "hedge-snip" || sheet.id === "tree-cutting") {
     if (spread > 0.15) warnings.push(`frame heights vary by ${Math.round(spread * 100)}% in a cycle that should keep its size`);
   }
@@ -497,7 +508,7 @@ function processSheet(sheet, pal, snap) {
     let diff = 0; for (let k = 0; k < cells[i].length; k++) if (cells[i][k] !== cells[j][k]) diff++;
     if (diff / cells[i].length < 0.01) warnings.push(`frames ${i + 1} and ${j + 1} are identical`);
   }
-  return { id: sheet.id, cw, ch, cells, scale: s, warnings, method };
+  return { id: sheet.id, cw, ch, cells, scale: info.scale, warnings, method: info.method };
 }
 
 const toRgba = (cells, cw, ch, pal) => {
@@ -623,9 +634,11 @@ async function main() {
   const snap = makeSnapper(pal);
   const results = [];
   for (const s of SHEETS) {
-    if (!fs.existsSync(path.join(DIR.raw, s.id + ".png"))) { console.log(`- ${s.id}: not generated`); continue; }
+    const hasRaw = fs.existsSync(path.join(DIR.raw, s.id + ".png"));
+    if (!hasRaw && !args.fallback) { console.log(`- ${s.id}: not generated (run with --fallback to draw it in code)`); continue; }
     try {
-      const r = processSheet(s, pal, snap);
+      const r = hasRaw ? processSheet(s, pal, snap) : fallbackSheet(s, pal);
+      if (!hasRaw) { manifest.sheets[s.id] = { ...(manifest.sheets[s.id] || { attempts: 0 }), fallback: true }; saveManifest(manifest); }
       r.fps = s.fps; r.frameList = s.frames;
       const sheetImg = toRgba(r.cells, r.cw, r.ch, pal);
       writePng(path.join(DIR.out, s.id + ".png"), sheetImg.W, sheetImg.H, sheetImg.rgba);

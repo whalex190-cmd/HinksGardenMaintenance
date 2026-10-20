@@ -1,0 +1,11 @@
+{
+  "id": "hedge-snip",
+  "frames": 6,
+  "frameWidth": 22,
+  "frameHeight": 52,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 8
+}

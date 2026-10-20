@@ -1,0 +1,11 @@
+{
+  "id": "tree-finish",
+  "frames": 4,
+  "frameWidth": 26,
+  "frameHeight": 48,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 5
+}

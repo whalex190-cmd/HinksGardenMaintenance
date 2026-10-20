@@ -1,0 +1,11 @@
+{
+  "id": "mower-walk-back",
+  "frames": 8,
+  "frameWidth": 25,
+  "frameHeight": 36,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 10
+}

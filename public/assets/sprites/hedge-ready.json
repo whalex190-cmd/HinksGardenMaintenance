@@ -1,0 +1,11 @@
+{
+  "id": "hedge-ready",
+  "frames": 4,
+  "frameWidth": 20,
+  "frameHeight": 52,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 6
+}

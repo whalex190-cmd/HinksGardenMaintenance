@@ -1,0 +1,11 @@
+{
+  "id": "planter-dig",
+  "frames": 6,
+  "frameWidth": 30,
+  "frameHeight": 29,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 7
+}

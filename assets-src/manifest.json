@@ -1,3 +1,77 @@
 {
-  "sheets": {}
+  "sheets": {
+    "prop-potstack": {
+      "attempts": 0,
+      "lastError": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+      "fallback": true
+    },
+    "mower-walk-back": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-kneel": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-dig": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-unpot": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-backfill": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-shuffle": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "planter-standup": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "hedge-ready": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "hedge-snip": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "hedge-finish": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "tree-brace": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "tree-sawstart": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "tree-cutting": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "tree-finish": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "prop-branch": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "prop-plants": {
+      "attempts": 0,
+      "fallback": true
+    },
+    "prop-soil": {
+      "attempts": 0,
+      "fallback": true
+    }
+  }
 }

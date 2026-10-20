@@ -1,0 +1,11 @@
+{
+  "id": "tree-brace",
+  "frames": 4,
+  "frameWidth": 19,
+  "frameHeight": 48,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 5
+}

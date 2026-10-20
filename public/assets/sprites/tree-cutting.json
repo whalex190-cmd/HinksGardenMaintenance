@@ -1,0 +1,11 @@
+{
+  "id": "tree-cutting",
+  "frames": 6,
+  "frameWidth": 26,
+  "frameHeight": 42,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 9
+}

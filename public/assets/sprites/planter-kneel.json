@@ -1,0 +1,11 @@
+{
+  "id": "planter-kneel",
+  "frames": 5,
+  "frameWidth": 26,
+  "frameHeight": 36,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 6
+}

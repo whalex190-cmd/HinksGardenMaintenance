@@ -1,0 +1,11 @@
+{
+  "id": "prop-plants",
+  "frames": 3,
+  "frameWidth": 11,
+  "frameHeight": 14,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 3
+}
