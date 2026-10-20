@@ -5,6 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "node scripts/serve.js",
+    "plan": "node scripts/plan.js",
     "assets": "node scripts/generate-assets.js",
     "assets:process": "node scripts/generate-assets.js --no-generate"
   },

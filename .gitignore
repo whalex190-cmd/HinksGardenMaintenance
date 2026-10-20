@@ -16,3 +16,7 @@ node_modules/
 # Asset generation: raw API outputs are the local cache (never regenerated), QC previews
 assets-src/raw/
 qc/
+
+# Scroll-hero pipeline: API cache and PNG masters stay local
+assets/cache/
+assets/masters/
