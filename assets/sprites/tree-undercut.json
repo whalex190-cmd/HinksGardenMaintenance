@@ -1,0 +1,15 @@
+{
+ "id": "tree-undercut",
+ "poses": [
+  "enter",
+  "cut-a",
+  "cut-b",
+  "withdraw"
+ ],
+ "cell": [
+  28,
+  41
+ ],
+ "anchorX": 11,
+ "fit": 40
+}

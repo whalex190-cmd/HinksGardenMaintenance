@@ -257,12 +257,12 @@
     "topEdgeY": 0.443
   },
   "tree": {
-    "x": 0.64,
-    "y": 0.318,
+    "x": 0.652,
+    "y": 0.268,
     "branch": {
-      "x": 0.6,
-      "y": 0.3,
-      "landX": 0.565,
+      "x": 0.695,
+      "y": 0.27,
+      "landX": 0.57,
       "landY": 0.485
     },
     "ranges": {
@@ -330,7 +330,22 @@
     "sawdustPerFrame": [
       2,
       4
-    ]
+    ],
+    "heightPx": 18,
+    "ropeAnchor": [
+      0.635,
+      0.14
+    ],
+    "cut": [
+      0.676,
+      0.262
+    ],
+    "branchHeightPx": 22,
+    "canopy": {
+      "x": 0.672,
+      "y": 0.262,
+      "heightPx": 9
+    }
   },
   "ambient": {
     "mistPxPerFrame": 0.25,
@@ -348,7 +363,8 @@
       "to": [
         0.62,
         0.42
-      ]
+      ],
+      "heightPx": 4
     },
     "sunRisePx": 4,
     "seed": 20261020,

@@ -1,0 +1,16 @@
+{
+ "id": "tree-start",
+ "poses": [
+  "unclip",
+  "cord-pull-1",
+  "cord-snap",
+  "cord-pull-2",
+  "running"
+ ],
+ "cell": [
+  36,
+  41
+ ],
+ "anchorX": 16,
+ "fit": 40
+}

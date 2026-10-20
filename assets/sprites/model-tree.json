@@ -1,0 +1,15 @@
+{
+ "id": "model-tree",
+ "poses": [
+  "front",
+  "back",
+  "side hanging in harness",
+  "holding a top-handle chainsaw"
+ ],
+ "cell": [
+  23,
+  34
+ ],
+ "anchorX": 8,
+ "fit": 33
+}

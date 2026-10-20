@@ -1,0 +1,16 @@
+{
+ "id": "tree-finish",
+ "poses": [
+  "flush-a",
+  "flush-b",
+  "stop",
+  "clip",
+  "look-down"
+ ],
+ "cell": [
+  23,
+  41
+ ],
+ "anchorX": 8,
+ "fit": 40
+}

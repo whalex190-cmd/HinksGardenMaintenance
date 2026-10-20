@@ -330,6 +330,54 @@ function drawHedge(img, fr, f) {
   }
 }
 
+/* ── tree cutter: on the oak's right limb, cutting a dead branch and lowering it to the lawn ── */
+const T = cfg.tree;
+const ROPE = nearestPal([206, 172, 110]), KERF = nearestPal([40, 30, 24]), FLASH = nearestPal([250, 246, 230]);
+const SAWDUST = [[226, 196, 140], [200, 170, 120]].map(nearestPal);
+function line(dst, x0, y0, x1, y1, c) {
+  const n = Math.max(1, Math.ceil(Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0))));
+  for (let i = 0; i <= n; i++) dot(dst, x0 + ((x1 - x0) * i) / n, y0 + ((y1 - y0) * i) / n, c);
+}
+function drawTree(img, fr, f) {
+  const t = fr.tree, pr = t.props, h = T.heightPx;
+  const fx = T.x * W + (pr.vibrationPx || 0), fy = T.y * H;
+  const [cx, cy] = [T.cut[0] * W, T.cut[1] * H];
+  // dead twigs in the canopy give way to healthy foliage once the branch is gone
+  const cp = T.canopy, heal = pr.canopyHealed, spring = pr.canopySpringPx || 0;
+  if (heal < 1) placeSprite(img, "prop-canopy", poseIdx("prop-canopy", "dead"), cp.heightPx, cp.x * W, cp.y * H - spring, 1 - heal);
+  // the branch (attached / sagging / swinging on the lowering rope / on the lawn, then cleared)
+  const b = pr.branch;
+  if (b.alpha > 0) {
+    const attached = b.pose === "attached" || b.pose === "sag";
+    const px2 = b.x * W, py2 = b.y * H + (attached ? b.sagPx || 0 : -(b.bouncePx || 0));   // plan.js gives the path
+    if (b.pose !== "on-ground" && !attached) line(img, cx, cy - 2, px2, py2 - T.branchHeightPx * 0.5, ROPE);   // lowering rope
+    placeSprite(img, "prop-branch", b.index, T.branchHeightPx, px2, py2, b.alpha);
+    // the saw cut through the branch: undercut grows up from below, top cut grows down to meet it
+    if (attached) {
+      const thick = 4, u = Math.round(pr.kerf.under * 3 * thick), d = Math.round(pr.kerf.top * 1.5 * thick);
+      for (let j = 0; j < Math.min(thick, u); j++) dot(img, cx, cy + (b.sagPx || 0) - j, KERF);
+      for (let j = 0; j < Math.min(thick, d); j++) dot(img, cx, cy - thick + 1 + j, KERF);
+    }
+  }
+  // climbing rope from its anchor above down to his harness
+  line(img, T.ropeAnchor[0] * W, T.ropeAnchor[1] * H, fx, fy - h * 0.55, ROPE);
+  placeSprite(img, t.sheet, t.index, h, fx, fy);
+  const r = px.rng(A.seed * 23 + f);
+  if (pr.sawdust) for (let k = Math.max(1, f - 7); k <= f; k++) {              // a stream drifting down from the cut
+    const rr = px.rng(A.seed * 29 + k), age = f - k;
+    for (let j = 0; j < 3; j++) dot(img, cx + (rr() * 3 - 1) + age * 0.3, cy + 1 + age * 2 + rr() * 2, SAWDUST[j % 2]);
+  }
+  if (pr.crackFlash) for (let j = 0; j < 5; j++) dot(img, cx + (r() * 4 - 2), cy - 2 + r() * 4, FLASH);
+  if (pr.crackFlash) for (let j = 0; j < 4; j++) dot(img, cx + 3 + r() * 8, cy - 4 + r() * 6, LEAF[j % 3]);
+  if (pr.smoke) for (let j = 0; j < 3; j++) dot(img, fx + 5 + j, fy - h * 0.6 - j, SMOKE[j % 2]);
+}
+
+function drawButterfly(img, fr) {
+  const b = fr.ambient.butterfly;
+  if (!b) return;
+  placeSprite(img, "ambient-butterfly", poseIdx("ambient-butterfly", b.pose), A.butterfly.heightPx, b.x * W, b.y * H);
+}
+
 /* ── main ── */
 (async () => {
   for (const d of ["assets/masters", "public/frames"]) px.ensureDir(path.join(px.ROOT, d));
@@ -337,12 +385,13 @@ function drawHedge(img, fr, f) {
     const m = fr.mower, moving = fr.frame >= M.ranges.easeIn[0];
     m.props.cutStripe.cutFrontY = moving ? Math.round(m.y * H - M.mowerAheadPx * m.scale - fit("prop-mower") * m.scale * 0.4) : undefined;
   }
-  const draw = { mower: drawMower, planter: drawPlanter, hedge: drawHedge };
+  const draw = { mower: drawMower, planter: drawPlanter, hedge: drawHedge, tree: drawTree };
   const depth = (st, fr) => ({ mower: fr.mower.y, planter: P.y, hedge: HG.y - 0.001, tree: 0 }[st]);   // farther (smaller y) first
   const from = +args.from || 1, to = +args.to || plan.frameCount, t0 = Date.now();
   for (let f = from; f <= to; f++) {
     const fr = plan.frames[f - 1], img = background(fr);
     for (const st of STATIONS.filter((x) => draw[x]).sort((a, b) => depth(a, fr) - depth(b, fr))) draw[st](img, fr, f);
+    drawButterfly(img, fr);
     const name = "frame_" + String(f).padStart(3, "0");
     px.writePng(`assets/masters/${name}.png`, img);
     await sharp(Buffer.from(img.data.buffer), { raw: { width: W, height: H, channels: 4 } }).webp({ lossless: true }).toFile(path.join(px.ROOT, "public", "frames", name + ".webp"));

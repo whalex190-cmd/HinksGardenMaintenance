@@ -1,0 +1,17 @@
+{
+ "id": "prop-branch",
+ "poses": [
+  "attached",
+  "sag",
+  "swing-1",
+  "swing-2",
+  "swing-3",
+  "on-ground"
+ ],
+ "cell": [
+  20,
+  18
+ ],
+ "anchorX": 7,
+ "fit": 18
+}

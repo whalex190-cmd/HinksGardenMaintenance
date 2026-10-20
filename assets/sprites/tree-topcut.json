@@ -1,0 +1,15 @@
+{
+ "id": "tree-topcut",
+ "poses": [
+  "reposition",
+  "cut-a",
+  "cut-b",
+  "flinch"
+ ],
+ "cell": [
+  31,
+  41
+ ],
+ "anchorX": 12,
+ "fit": 40
+}

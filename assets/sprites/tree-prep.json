@@ -1,0 +1,15 @@
+{
+ "id": "tree-prep",
+ "poses": [
+  "hang-idle",
+  "step-feet",
+  "pull-rope",
+  "settle"
+ ],
+ "cell": [
+  27,
+  41
+ ],
+ "anchorX": 8,
+ "fit": 40
+}

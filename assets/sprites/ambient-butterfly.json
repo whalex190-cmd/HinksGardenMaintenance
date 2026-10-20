@@ -1,0 +1,15 @@
+{
+ "id": "ambient-butterfly",
+ "poses": [
+  "wing-1",
+  "wing-2",
+  "wing-3",
+  "wing-4"
+ ],
+ "cell": [
+  6,
+  6
+ ],
+ "anchorX": 2,
+ "fit": 5
+}

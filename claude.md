@@ -6,7 +6,7 @@ Marketing website for **Hinks Garden Maintenance**, a garden maintenance, design
 
 - Static HTML, CSS and vanilla JavaScript. No framework, bundler or build step.
 - **Preview with `npm run dev`**, then open http://localhost:8080. WebGL can't load textures over `file://`. Opening `index.html` directly still works, but it falls back to the older DOM sprites.
-- **External dependencies:** Google Fonts, and PixiJS 8.6.6 from jsDelivr (pinned), which draws the hero's sprite layer. Don't add other libraries unless asked.
+- **External dependencies:** Google Fonts, and GSAP 3.12.5 + ScrollTrigger from cdnjs (pinned), which scrub the hero. Don't add other libraries unless asked.
 
 ## Structure
 
@@ -15,7 +15,7 @@ index.html       Single page: nav, hero, trust marquee, services (dark cards), s
                  tabs, estimator, work gallery, reviews, FAQ, scenic contact form, footer
 css/styles.css   All styles. Design tokens live in :root at the top
 js/main.js       All interactions (menu, dropdown, tabs, reveal, estimator, form), in one IIFE
-js/hero.js       The animated hero (mowing, wipe, station gardeners). Tweak values in CONFIG/SCENES at the top
+js/scroll-hero.js  The scroll-scrubbed hero: draws public/frames/frame_###.webp onto a canvas as you scroll. CONFIG at the top
 images/          Site photography (CC0 stock placeholders, see below)
 design.md        Design system: typography, colour, layout frame, motion, components
 ```
@@ -52,34 +52,19 @@ Assets are generated **offline on the developer's PC** and saved into `images/`.
 - Keep web assets small: re-encode images to ≤1920px wide, JPEG at about 80%. Keep hero videos short (≤8s), muted and looping, with a poster image.
 - Edit mode: `generate-image.ps1 -Image a.png[,ref.png...] [-Mask m.png] [-Transparent] -Style pixel|photo|none`. Edits go to `/v1/images/edits`; transparent pixels in the mask mark the area to change.
 
-## Sprite generation (Node, build time only)
+## Scroll hero (pixel-art frame sequence)
 
-`scripts/generate-assets.js` generates every gardener and prop sprite sheet with OpenAI. It's the only place the API is called. The website only loads static files from `public/assets/`.
+The hero is 120 pre-rendered frames scrubbed by scroll (pinned ~500vh, GSAP ScrollTrigger, `js/scroll-hero.js`). Frames are built offline by a Node pipeline; the website never calls OpenAI.
 
-- **Run it:** `npm run assets` generates missing sheets, then post-processes. `npm run assets:process` post-processes only, with no API calls. You need Node 24, which is installed per-user under `%LOCALAPPDATA%\Programs\node-v24.20.0-win-x64`, plus `npm install` for the dev-only `pngjs` and `gifenc`.
-- **Key:** read from `OPENAI_API_KEY` or `.env`. It's never printed, logged or written to disk.
-- **Sheets:** defined in `SHEETS`, one per action, each with a frame-by-frame pose list. Each one is a single row on `#FF00FF`, generated with the edit endpoint using the references in `assets-src/refs/`.
-- **Cache:** `assets-src/raw/<id>.png` is git-ignored, and a cached sheet is never regenerated. To retry one, pass `--regenerate=<id>`. Each sheet gets 2 attempts at most (tracked in `assets-src/manifest.json`); after that, draw it in code instead.
-- **Output:** `public/assets/sprites/<id>.png` + `.json`, `atlas.png` + `atlas.json` (PixiJS spritesheet format, anchor at the feet), and `public/assets/palette.json`, which comes from the backgrounds. QC previews go in `qc/index.html`. Check them before wiring sheets into the scene.
-- **Pixel density:** `SPRITE_DENSITY` (4/3) makes the sprites one step finer than the 480×272 scene grid. `atlas.meta.pixelRatio` (0.75) and `atlas.meta.fps` tell `js/hero.js` how to scale and time each sheet.
-- **In the scene:** `js/hero.js` loads the atlas into PixiJS.
-  - The mower man uses `mower-walk-back` and `mower-walk-front`.
-  - The station gardeners follow `STATIONS`: per-scene scripted step lists with positions in scene fractions. Steps can loop to fill the mowing time (`fill`, sharing the spare time), hold a frame as a breather (`hold`), shuffle sideways (`move`), leave a plant (`plant`) or drop the branch. A `ground` patch is drawn under a station so it stands on real ground (the planter's dug bed, the mulch under the ladder).
-  - Pacing lives in `CONFIG`: `stripeTime` (20 s per stripe), `walkRamp`, `pause`, `shiftTime`, `turnFade`, `stationSpeed` and `stepFade`. The whole sequence is about 4 min 45 s; `#hero[data-duration]` shows the exact figure.
-  - If PixiJS or the atlas can't load, the page falls back to the old DOM sprites in `public/assets/hero/`.
-
-## Hero animation assets (pixel art)
-
-The animated hero (an untidy garden tidied by Hinks gardeners) is built in **`js/hero.js`**, ported from the Claude Design prototype (https://claude.ai/artifact/CVS22ibfBZ3NeCiLEfUYc1). Its art is generated with **`images/hero/RUNBOOK.md`**.
-
-- **What the site loads:** the native-size scenes in `images/hero/web/` (480×272 and 272×480, scaled up crisply with `image-rendering: pixelated`), plus the sprite sheets in `images/hero/`. The ×4 PNGs in `images/hero/` are masters.
-- **Scenes:** `<picture>` chooses desktop or portrait at `(max-aspect-ratio: 4/5)`, and the script rebuilds for the art that loaded. `SCENES.*.lawn` must equal `lawn` in `regions-*.json`.
-- **Checking a moment:** add `#t=12` to the URL to jump 12 seconds in. Headless browsers don't advance the animation in virtual time, so screenshot with `#t=`.
-
-- `tools/hero-assets.ps1` handles the offline jobs, which are free: `mask`, `stripe`, `composite`, `pixelate`, `diff`, `slice`, `pack`, `crop`, `place` and `check`. It uses `tools/ImageTools.cs`, which must compile as C# 5 because that's what PowerShell 5.1 uses.
-- Never re-prompt a whole scene to get a variant. Make a masked edit, then `composite`, so the untidy and tidy scenes stay pixel-aligned. `check` must PASS.
-- The lawn stripes are drawn by `stripe` from the `lawn` geometry in `regions-*.json`. That geometry must match the engine's `CONFIG.lawn`.
-- Prompts live in `images/hero/prompts/`. Working files go in `images/hero/src/`, which is git-ignored except `reference/`. Finals go in `images/hero/`.
+- **Pipeline** (Node 24, per-user install; `npm install` once):
+  - `npm run plan`: `assets/config.json` → `assets/frames.json` (every station's pose, position and prop state per frame). No API.
+  - `npm run sprites`: generates the sheets listed in `assets/sprites.json` with the OpenAI image edit endpoint. It prints a call estimate and asks to confirm (`--yes` skips the prompt). Results are cached in `assets/cache/` by a prompt hash (git-ignored); `--force=<id>` regenerates one sheet, with at most 2 attempts each. QC sheets and GIFs go in `qc/sprites/`.
+  - `npm run frames`: composites `assets/masters/frame_###.png` and `public/frames/frame_###.webp` at the native 480×272. No API. `--only=mower,planter` limits the stations.
+  - `npm run preview`: writes `qc/contact-sheet.png` and `qc/preview.mp4` (12 fps).
+- **Backgrounds:** `assets/garden-untidy-clean.png` and `garden-tidy-clean.png` (×4 masters, aligned). The patio right of the pool was a masked edit applied to both; its working files are in `assets/patio/`.
+- **Ambient effects:** drifting clouds, wind sway in foliage, the banded sun glow and a butterfly. Their settings are in `config.ambient`.
+- **Checking scroll:** headless browsers with virtual time don't fire scroll updates. Test with a real-time DevTools-protocol script instead.
+- **Older material:** `public/assets/hero/`, `public/assets/sprites/`, `scripts/generate-assets.js` and `images/hero/` are from earlier hero versions. The current page no longer loads them.
 
 ## Configurable values
 

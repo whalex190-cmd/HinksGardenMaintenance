@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <!-- Logo wordmark only: loads just the glyphs for "Hinks" -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&text=Hinks&display=block" rel="stylesheet">
-  <link rel="preload" as="image" href="public/assets/hero/d-untidy.png" media="(min-aspect-ratio: 4/5)">
-  <link rel="preload" as="image" href="public/assets/hero/p-untidy.png" media="(max-aspect-ratio: 4/5)">
+  <link rel="preload" as="image" href="public/frames/frame_001.webp">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -56,49 +55,24 @@
 
   <main id="top">
 
-    <!-- ================= HERO (animated pixel-art garden, js/hero.js) ================= -->
-    <section class="band hero" id="hero" aria-label="Introduction">
-      <!-- Tidy scene: the no-JS / reduced-motion view, and the source the animation reveals -->
-      <picture class="hero__pic hero__pic--tidy">
-        <source media="(max-aspect-ratio: 4/5)" srcset="public/assets/hero/p-tidy.png">
-        <img class="hero__tidy-src" src="public/assets/hero/d-tidy.png" alt="A tidy English country garden at sunrise: striped lawn, clipped hedges, full borders and a clear pool" width="480" height="272">
-      </picture>
-      <!-- Untidy scene: what the animation opens on -->
-      <picture class="hero__pic hero__pic--untidy" aria-hidden="true">
-        <source media="(max-aspect-ratio: 4/5)" srcset="public/assets/hero/p-untidy.png">
-        <img src="public/assets/hero/d-untidy.png" alt="" width="480" height="272">
-      </picture>
-      <canvas class="hero__canvas hero__done" aria-hidden="true"></canvas>
-      <canvas class="hero__canvas hero__live" aria-hidden="true"></canvas>
-      <div class="hero__reveal" aria-hidden="true"><canvas class="hero__tidy"></canvas></div>
-      <div class="hero__stations" aria-hidden="true"></div>
-      <div class="hero__sprite" aria-hidden="true">
-        <div class="hero__shadow"></div>
-        <div class="hero__fig hero__fig--back">
-          <div class="hero__layer hero__layer--mower hero__sheet--back-mower"></div>
-          <div class="hero__layer hero__layer--man hero__sheet--back-man"></div>
+    <!-- ================= HERO: scroll-scrubbed pixel-art sequence (js/scroll-hero.js) =================
+         120 frames in public/frames, drawn onto a canvas as the visitor scrolls (pinned for ~500vh). -->
+    <section class="band hero" id="hero" aria-label="Introduction" data-frames="120" data-frame-path="public/frames/frame_{n}.webp">
+      <div class="hero__stage">
+        <img class="hero__still" src="public/frames/frame_120.webp" alt="Four Hinks gardeners at work in an English country garden at sunrise: mowing the lawn, planting the border, trimming the hedge and cutting a dead branch from the oak" width="480" height="272">
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+        <div class="hero__loader" role="progressbar" aria-label="Loading the garden" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <div class="hero__card">
+          <p class="hero__eyebrow mono">Garden care · Design · Landscaping</p>
+          <h1 class="hero__title">Most gardeners mow and go. We look after the whole garden.</h1>
+          <p class="hero__lead">Regular care, design and landscaping from one fixed-price team, so it looks this good all year.</p>
+          <div class="hero__ctas">
+            <a href="#contact" class="btn btn--dark btn--lg">Get a free quote</a>
+            <a href="#estimate" class="btn btn--light btn--lg">See prices instantly</a>
+          </div>
         </div>
-        <div class="hero__fig hero__fig--front">
-          <div class="hero__layer hero__layer--man hero__sheet--front-man"></div>
-          <div class="hero__layer hero__layer--mower hero__sheet--front-mower"></div>
-        </div>
+        <p class="hero__hint mono" aria-hidden="true">Scroll to see the team at work ↓</p>
       </div>
-      <canvas class="hero__canvas hero__pixi" aria-hidden="true"></canvas>
-      <canvas class="hero__canvas hero__fx" aria-hidden="true"></canvas>
-
-      <div class="hero__card">
-        <p class="hero__eyebrow mono">Garden care · Design · Landscaping</p>
-        <h1 class="hero__title">Most gardeners mow and go. We look after the whole garden.</h1>
-        <p class="hero__lead">Regular care, design and landscaping from one fixed-price team, so it looks this good all year.</p>
-        <div class="hero__ctas">
-          <a href="#contact" class="btn btn--dark btn--lg">Get a free quote</a>
-          <a href="#estimate" class="btn btn--light btn--lg">See prices instantly</a>
-        </div>
-      </div>
-      <button type="button" class="hero__replay" hidden>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg>
-        Replay
-      </button>
     </section>
 
     <!-- ================= TRUST STRIP ================= -->
@@ -373,7 +347,8 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pixi.js@8.6.6/dist/pixi.min.js"></script>
-  <script src="js/hero.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/scroll-hero.js"></script>
 </body>
 </html>

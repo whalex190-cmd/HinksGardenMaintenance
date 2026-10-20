@@ -1,0 +1,13 @@
+{
+ "id": "prop-canopy",
+ "poses": [
+  "dead",
+  "healthy"
+ ],
+ "cell": [
+  27,
+  15
+ ],
+ "anchorX": 14,
+ "fit": 14
+}

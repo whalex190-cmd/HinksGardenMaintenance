@@ -166,60 +166,21 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 .nav__toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
 .nav__toggle[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
-/* ---------- Hero: full-bleed animated pixel-art garden (js/hero.js) ----------
-   Timings for the wipe live here; everything else (mowing speed, sizes, stations) is CONFIG in js/hero.js. */
-.hero {
-  --hold: 3s;            /* untidy garden shown before the wipe */
-  --wipe: 9s;            /* length of the front-to-back wipe (the rest of the garden tidying) */
-  --feather: 15vh;       /* softness of the wipe edge */
-  --travel: calc(100% + var(--feather));
-  position: relative; overflow: hidden;
-  height: calc(100svh - var(--nav-h)); min-height: 560px;
-  background: var(--deep);
-}
-.hero__pic, .hero__pic img, .hero__canvas, .hero__reveal, .hero__stations { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
-.hero__pic img {
-  display: block; object-fit: cover; object-position: center;
-  image-rendering: pixelated; image-rendering: crisp-edges;      /* native 480x272 art, scaled up crisply */
-  user-select: none; -webkit-user-drag: none;
-}
-.hero__pic--untidy { display: none; }
-.js .hero__pic--untidy { display: block; }
-.js .hero__pic--tidy { visibility: hidden; }                     /* still loads: it's the reveal's source */
-.hero__canvas, .hero__reveal, .hero__stations { pointer-events: none; }
-.hero__done, .hero__live { z-index: 1; }
-.hero__fx { z-index: 5; }
-.hero__pixi { z-index: 4; image-rendering: pixelated; }     /* PixiJS sprite layer (gardeners + props) */
-.hero.has-pixi .hero__fig, .hero.has-pixi .hero__stations { display: none; }
+/* ---------- Hero: scroll-scrubbed pixel-art sequence (js/scroll-hero.js) ----------
+   The section is tall; .hero__stage is pinned by GSAP ScrollTrigger while the frames scrub. */
+.hero { position: relative; background: var(--deep); }
+.hero__stage { position: relative; height: calc(100svh - var(--nav-h)); min-height: 520px; overflow: hidden; }
+.hero__still, .hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__still { object-fit: cover; image-rendering: pixelated; image-rendering: crisp-edges; }
+.js .hero__still { visibility: hidden; }                    /* JS draws to the canvas instead */
+.hero__canvas { image-rendering: pixelated; }
 
-/* The tidy garden (lawn cut out) rises inside a feathered mask; the canvas is counter-moved so only the edge travels. */
-.hero__reveal {
-  top: calc(-1 * var(--feather)); height: calc(100% + var(--feather)); z-index: 2;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--feather));
-          mask-image: linear-gradient(to bottom, transparent 0, #000 var(--feather));
-  transform: translateY(var(--travel));
-}
-.hero__tidy { position: absolute; left: 0; top: var(--feather); width: 100%; height: calc(100% - var(--feather)); transform: translateY(calc(-1 * var(--travel))); }
-.hero.is-wiping .hero__reveal { animation: hero-wipe var(--wipe) cubic-bezier(.45, 0, .55, 1) var(--hold) forwards; }
-.hero.is-wiping .hero__tidy { animation: hero-counter var(--wipe) cubic-bezier(.45, 0, .55, 1) var(--hold) forwards; }
-.hero.is-done .hero__reveal, .hero.is-done .hero__tidy { transform: none; }
-@keyframes hero-wipe { to { transform: translateY(0); } }
-@keyframes hero-counter { to { transform: translateY(0); } }
+/* stepped "pixel" loading bar */
+.hero__loader { position: absolute; z-index: 7; left: 50%; top: 50%; width: 160px; height: 12px; transform: translate(-50%, -50%); padding: 2px; background: #1a1918; box-shadow: 0 0 0 2px #f5f3ef; }
+.hero__loader span { display: block; height: 100%; width: 0; background: repeating-linear-gradient(90deg, var(--label-green) 0 6px, transparent 6px 8px); transition: width .15s steps(4); }
+.hero__loader.is-done { display: none; }
+.hero__loader:not(.is-visible) { opacity: 0; }
 
-/* Sprites: 0x0 anchors at each figure's feet, positioned by the script */
-.hero__stations { z-index: 3; }
-.hero__sprite, .hero__station { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
-.hero__sprite { z-index: 4; }
-.hero__shadow { position: absolute; left: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(12,22,8,.9) 0%, rgba(12,22,8,.4) 42%, rgba(12,22,8,0) 70%); }
-.hero__fig { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; }
-.hero__fig.is-visible { opacity: 1; }
-.hero__layer { position: absolute; left: 0; bottom: 0; background-repeat: no-repeat; image-rendering: pixelated; image-rendering: crisp-edges; }
-.hero__sheet--back-man    { background-image: url(../public/assets/hero/mower-man-back.png); }
-.hero__sheet--back-mower  { background-image: url(../public/assets/hero/mower-back.png); }
-.hero__sheet--front-man   { background-image: url(../public/assets/hero/mower-man-front.png); }
-.hero__sheet--front-mower { background-image: url(../public/assets/hero/mower-front.png); }
-
-/* Copy card, bottom-left, aligned with the page frame */
 .hero__card {
   position: absolute; z-index: 6;
   left: max(24px, calc((100% - var(--frame)) / 2 + var(--pad))); bottom: 32px;
@@ -233,18 +194,9 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 .hero__lead { margin-top: 16px; font-size: 16px; line-height: 1.55; color: var(--ink-2); }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .hero__ctas .btn--lg { min-width: 0; }
-
-.hero__replay {
-  position: absolute; z-index: 6; right: 24px; bottom: 32px;
-  display: inline-flex; align-items: center; gap: 6px;
-  height: 36px; padding: 0 14px; border: 0; border-radius: var(--radius-btn);
-  background: rgba(245,243,239,.88); color: var(--ink); cursor: pointer;
-  font: 500 13px/1 var(--font-inter); backdrop-filter: blur(8px);
-  transition: background .2s, box-shadow .2s;
-}
-.hero__replay[hidden] { display: none; }
-.hero__replay:hover { background: #fff; box-shadow: 0 4px 14px -6px rgba(0,0,0,.3); }
-.hero__replay svg { width: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hero__hint { position: absolute; z-index: 6; right: 24px; bottom: 32px; padding: 6px 10px; border-radius: 6px; background: rgba(26,25,24,.6); color: #f5f3ef; transition: opacity .4s; }
+.hero.is-scrolled .hero__hint { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .hero__hint { display: none; } }
 
 /* ---------- Marquee ---------- */
 .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
@@ -493,7 +445,7 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
   h2 { font-size: 36px; line-height: 1.12; letter-spacing: -.72px; }
   .card h3, .steps__num { font-size: 28px; }
   .calc__price { font-size: 32px; }
-  .hero { min-height: 620px; }
+  .hero__stage { min-height: 560px; }
   /* compact card: it must stay below the lawn, where the mowing happens */
   .hero__card { left: 12px; right: 12px; bottom: 12px; width: auto; padding: 16px 16px 14px; }
   .hero__eyebrow { margin-bottom: 6px; }
@@ -501,7 +453,7 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
   .hero__lead { display: none; }
   .hero__ctas { margin-top: 14px; flex-wrap: nowrap; gap: 8px; }
   .hero__ctas .btn { flex: 1 1 0; padding: 0 10px; height: 42px; font-size: 13.5px; }
-  .hero__replay { top: 12px; right: 12px; bottom: auto; }
+  .hero__hint { top: 12px; right: 12px; bottom: auto; }
   .marquee__track span { padding: 28px 0 28px 32px; gap: 32px; font-size: 16px; }
   .services { padding: 80px var(--pad) 100px; }
   .tabs { display: flex; flex-direction: column; gap: 0; border-bottom: 0; }
