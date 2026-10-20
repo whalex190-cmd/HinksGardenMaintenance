@@ -1,8 +1,8 @@
 {
   "id": "tree-cutting",
   "frames": 6,
-  "frameWidth": 26,
-  "frameHeight": 42,
+  "frameWidth": 18,
+  "frameHeight": 27,
   "anchor": {
     "x": 0.5,
     "y": 1

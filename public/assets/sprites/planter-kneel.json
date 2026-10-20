@@ -1,8 +1,8 @@
 {
   "id": "planter-kneel",
   "frames": 5,
-  "frameWidth": 26,
-  "frameHeight": 36,
+  "frameWidth": 24,
+  "frameHeight": 33,
   "anchor": {
     "x": 0.5,
     "y": 1

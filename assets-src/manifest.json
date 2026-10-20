@@ -1,77 +1,130 @@
 {
   "sheets": {
     "prop-potstack": {
-      "attempts": 0,
-      "lastError": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:28:36.278Z"
     },
     "mower-walk-back": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:33:29.812Z"
     },
     "planter-kneel": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:29:55.657Z"
     },
     "planter-dig": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:33:27.423Z"
     },
     "planter-unpot": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:30:44.050Z"
     },
     "planter-backfill": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:31:32.521Z"
     },
     "planter-shuffle": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:33:28.376Z"
     },
     "planter-standup": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:32:21.943Z"
     },
     "hedge-ready": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:29:42.531Z"
     },
     "hedge-snip": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:30:30.110Z"
     },
     "hedge-finish": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:31:19.105Z"
     },
     "tree-brace": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:29:54.335Z"
     },
     "tree-sawstart": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:30:41.023Z"
     },
     "tree-cutting": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:31:29.387Z"
     },
     "tree-finish": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:32:18.198Z"
     },
     "prop-branch": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:33:24.494Z"
     },
     "prop-plants": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:29:52.794Z"
     },
     "prop-soil": {
-      "attempts": 0,
-      "fallback": true
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:29:21.945Z"
     }
   }
 }

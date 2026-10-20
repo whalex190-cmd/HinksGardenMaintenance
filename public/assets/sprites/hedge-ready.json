@@ -1,8 +1,8 @@
 {
   "id": "hedge-ready",
   "frames": 4,
-  "frameWidth": 20,
-  "frameHeight": 52,
+  "frameWidth": 28,
+  "frameHeight": 47,
   "anchor": {
     "x": 0.5,
     "y": 1

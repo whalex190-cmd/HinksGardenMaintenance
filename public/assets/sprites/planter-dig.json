@@ -1,8 +1,8 @@
 {
   "id": "planter-dig",
   "frames": 6,
-  "frameWidth": 30,
-  "frameHeight": 29,
+  "frameWidth": 27,
+  "frameHeight": 25,
   "anchor": {
     "x": 0.5,
     "y": 1

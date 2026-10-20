@@ -414,6 +414,13 @@ function splitFrames(img, n) {
     for (let i = 0; i < runs.length - 1; i++) { const g = runs[i + 1].s - runs[i].e; if (g < gmin) { gmin = g; gi = i; } }
     runs.splice(gi, 2, { s: runs[gi].s, e: runs[gi + 1].e, mass: runs[gi].mass + runs[gi + 1].mass });
   }
+  while (runs.length < n && runs.length) {                    // two frames touching (e.g. flying soil): split the widest
+    let wi = 0; runs.forEach((r, i) => { if (r.e - r.s > runs[wi].e - runs[wi].s) wi = i; });
+    const r = runs[wi], a = r.s + Math.floor((r.e - r.s) * 0.2), b = r.e - Math.floor((r.e - r.s) * 0.2);
+    if (r.e - r.s < (w / n) * 1.3) break;                     // not wide enough to hold two frames
+    let cut = a; for (let x = a; x < b; x++) if (col[x] < col[cut]) cut = x;
+    runs.splice(wi, 1, { s: r.s, e: cut, mass: 0 }, { s: cut + 1, e: r.e, mass: 0 });
+  }
   if (runs.length === n) return { ranges: runs.map((r) => [r.s, r.e]), method: "gaps" };
   const cw = w / n;
   return { ranges: Array.from({ length: n }, (_, i) => [Math.round(i * cw), Math.round((i + 1) * cw)]), method: "equal-cells" };

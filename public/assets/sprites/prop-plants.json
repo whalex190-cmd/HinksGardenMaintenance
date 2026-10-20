@@ -1,8 +1,8 @@
 {
   "id": "prop-plants",
   "frames": 3,
-  "frameWidth": 11,
-  "frameHeight": 14,
+  "frameWidth": 14,
+  "frameHeight": 13,
   "anchor": {
     "x": 0.5,
     "y": 1
