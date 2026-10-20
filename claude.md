@@ -5,8 +5,8 @@ Marketing website for **Hinks Garden Maintenance**, a garden maintenance, design
 ## Stack
 
 - Static HTML, CSS and vanilla JavaScript. No framework, bundler or build step.
-- Preview by opening `index.html` in a browser.
-- The only external dependency is Google Fonts. Don't add libraries unless asked.
+- **Preview with `npm run dev`**, then open http://localhost:8080. WebGL can't load textures over `file://`. Opening `index.html` directly still works, but it falls back to the older DOM sprites.
+- **External dependencies:** Google Fonts, and PixiJS 8.6.6 from jsDelivr (pinned), which draws the hero's sprite layer. Don't add other libraries unless asked.
 
 ## Structure
 
@@ -61,6 +61,11 @@ Assets are generated **offline on the developer's PC** and saved into `images/`.
 - **Sheets:** defined in `SHEETS`, one per action, each with a frame-by-frame pose list. Each one is a single row on `#FF00FF`, generated with the edit endpoint using the references in `assets-src/refs/`.
 - **Cache:** `assets-src/raw/<id>.png` is git-ignored, and a cached sheet is never regenerated. To retry one, pass `--regenerate=<id>`. Each sheet gets 2 attempts at most (tracked in `assets-src/manifest.json`); after that, draw it in code instead.
 - **Output:** `public/assets/sprites/<id>.png` + `.json`, `atlas.png` + `atlas.json` (PixiJS spritesheet format, anchor at the feet), and `public/assets/palette.json`, which comes from the backgrounds. QC previews go in `qc/index.html`. Check them before wiring sheets into the scene.
+- **Pixel density:** `SPRITE_DENSITY` (4/3) makes the sprites one step finer than the 480×272 scene grid. `atlas.meta.pixelRatio` (0.75) and `atlas.meta.fps` tell `js/hero.js` how to scale and time each sheet.
+- **In the scene:** `js/hero.js` loads the atlas into PixiJS.
+  - The mower man uses `mower-walk-back` and `mower-walk-front`.
+  - The station gardeners follow `STATIONS`: per-scene scripted step lists with positions in scene fractions. Steps can loop to fill the mowing time, the planter can shuffle sideways and leave plants behind, and the tree climber can drop the branch.
+  - If PixiJS or the atlas can't load, the page falls back to the old DOM sprites in `public/assets/hero/`.
 
 ## Hero animation assets (pixel art)
 

@@ -1,8 +1,8 @@
 {
   "id": "planter-unpot",
   "frames": 6,
-  "frameWidth": 22,
-  "frameHeight": 25,
+  "frameWidth": 29,
+  "frameHeight": 33,
   "anchor": {
     "x": 0.5,
     "y": 1

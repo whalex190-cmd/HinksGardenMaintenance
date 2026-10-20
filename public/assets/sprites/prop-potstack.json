@@ -1,8 +1,8 @@
 {
   "id": "prop-potstack",
   "frames": 3,
-  "frameWidth": 12,
-  "frameHeight": 13,
+  "frameWidth": 15,
+  "frameHeight": 17,
   "anchor": {
     "x": 0.5,
     "y": 1

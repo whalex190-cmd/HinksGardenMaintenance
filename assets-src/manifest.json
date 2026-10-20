@@ -125,6 +125,13 @@
       "quality": "max",
       "size": "2304x768",
       "generated": "2026-10-20T11:29:21.945Z"
+    },
+    "mower-walk-front": {
+      "attempts": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "max",
+      "size": "2304x768",
+      "generated": "2026-10-20T11:40:40.233Z"
     }
   }
 }

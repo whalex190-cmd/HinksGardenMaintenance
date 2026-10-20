@@ -4,6 +4,7 @@
   "description": "Static website. Node is only used at build time to generate pixel-art assets (scripts/generate-assets.js).",
   "type": "commonjs",
   "scripts": {
+    "dev": "node scripts/serve.js",
     "assets": "node scripts/generate-assets.js",
     "assets:process": "node scripts/generate-assets.js --no-generate"
   },

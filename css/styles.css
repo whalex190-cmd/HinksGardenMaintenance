@@ -189,6 +189,8 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 .hero__canvas, .hero__reveal, .hero__stations { pointer-events: none; }
 .hero__done, .hero__live { z-index: 1; }
 .hero__fx { z-index: 5; }
+.hero__pixi { z-index: 4; image-rendering: pixelated; }     /* PixiJS sprite layer (gardeners + props) */
+.hero.has-pixi .hero__fig, .hero.has-pixi .hero__stations { display: none; }
 
 /* The tidy garden (lawn cut out) rises inside a feathered mask; the canvas is counter-moved so only the edge travels. */
 .hero__reveal {

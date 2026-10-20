@@ -1,8 +1,8 @@
 {
   "id": "planter-standup",
   "frames": 5,
-  "frameWidth": 22,
-  "frameHeight": 33,
+  "frameWidth": 28,
+  "frameHeight": 44,
   "anchor": {
     "x": 0.5,
     "y": 1

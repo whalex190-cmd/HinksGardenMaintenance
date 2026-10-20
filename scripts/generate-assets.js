@@ -44,6 +44,9 @@ const API = {
 const KEY_RGB = [255, 0, 255];
 const BACKGROUNDS = ["d-tidy.png", "d-untidy.png", "p-tidy.png", "p-untidy.png"].map((f) => P("public", "assets", "hero", f));
 const PALETTE_SIZE = 64;
+/* Sprite pixel density relative to the scene grid. 1 = sprite pixels exactly match the 480x272 background;
+   4/3 = one step finer (a sprite pixel is 3 screen px where a scene pixel is 4 at 1920 wide). */
+const SPRITE_DENSITY = 4 / 3;
 
 const CHARACTER = "the same gardener as in the reference model sheet: white short-sleeved work shirt, olive-green work trousers, " +
   "dark brown boots, wide-brim straw hat with a dark green band, dark green gloves, short brown hair, friendly face, no sunglasses";
@@ -61,6 +64,21 @@ const SHEETS = [
       "passing pose: left leg swinging forward past the right leg, legs close together, body rising",
       "up pose: left foot lifting forward, right leg straight, body at its highest",
       "contact pose: left foot forward with heel down, right foot back on its toes, legs at their widest",
+      "down pose: left foot flat taking his weight, right knee bending, body at its lowest",
+      "passing pose: right leg swinging forward past the left leg, legs close together, body rising",
+      "up pose: right foot lifting forward, left leg straight, body at its highest",
+    ],
+  },
+  {
+    id: "mower-walk-front", fps: 10, fit: 34, refs: ["gardener-model.png", "mower-model.png", "scene-desktop.png"], after: ["mower-walk-back"],
+    subject: `${CHARACTER}, seen from directly in front, walking straight towards the viewer while pushing a red petrol lawnmower in front of him. ` +
+      "The mower (red deck, black wheels, black engine, black handle) is identical in every frame, in front of his legs and the same distance ahead of him; his gloved hands grip the handle bar in every frame",
+    frames: [
+      "contact pose: right foot forward with heel down, left foot back, legs at their widest",
+      "down pose: right foot flat taking his weight, left knee bending, body at its lowest",
+      "passing pose: left leg swinging forward past the right leg, legs close together, body rising",
+      "up pose: left foot lifting forward, right leg straight, body at its highest",
+      "contact pose: left foot forward with heel down, right foot back, legs at their widest",
       "down pose: left foot flat taking his weight, right knee bending, body at its lowest",
       "passing pose: right leg swinging forward past the left leg, legs close together, body rising",
       "up pose: right foot lifting forward, left leg straight, body at its highest",
@@ -485,7 +503,7 @@ function processSheet(sheet, pal, snap) {
 
   // one scale for the whole sheet: the tallest frame becomes `fit` scene pixels
   const tallest = Math.max(...boxes.map((b) => b.h));
-  const s = sheet.fit / tallest;
+  const s = (sheet.fit * SPRITE_DENSITY) / tallest;     // `fit` is in scene pixels; sprites are drawn SPRITE_DENSITY finer
   const frames = boxes.map((b) => downscale(img, b, s, pal.length));
   return alignFrames(sheet, frames, warnings, { scale: s, method });
 }
@@ -584,6 +602,8 @@ function buildAtlas(results, pal) {
   const json = {
     frames, animations,
     meta: { app: "scripts/generate-assets.js", version: "1", image: "atlas.png", format: "RGBA8888", size: { w: W, h: H }, scale: "1",
+      pixelRatio: 1 / SPRITE_DENSITY,     // one sprite pixel = this many scene (480x272) pixels
+      fps: Object.fromEntries(results.map((r) => [r.id, r.fps])),
       note: "Pixel art on the scene's 480x272 grid: scale by the same factor as the background, with nearest-neighbour sampling. Anchor = feet (bottom-centre)." },
   };
   return { W, H, rgba: out, json };

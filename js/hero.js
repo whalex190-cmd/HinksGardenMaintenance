@@ -55,6 +55,33 @@
   };
   const REF_HEIGHT = 128, FRAMES = 8;
   const CLIP_COLOURS = ["#8fbf4a", "#a7d35a", "#6f9f3a", "#c9e07a", "#7fb043"];
+
+  /* PixiJS sprite layer (public/assets/sprites/atlas.json, made by scripts/generate-assets.js).
+     Used when PixiJS and the atlas load (needs http, e.g. `npm run dev`); otherwise the DOM sprites above are used.
+     Sizes are in atlas sprite pixels; the man's walk sheets are ~46 px tall. */
+  const ATLAS_URL = "public/assets/sprites/atlas.json";
+  const GFX = {
+    back:  { anim: "mower-walk-back",  cutAhead: 10, spawnY: 8 },
+    front: { anim: "mower-walk-front", cutAhead: 6,  spawnY: 4 },
+    height: 46, stride: 18,              // walk-sheet height; sprite px per 8-frame cycle
+    shadow: [24, 7],
+  };
+  /* Station scripts: each step plays an animation `loops` times; `fill` stretches that step's loops so the station
+     finishes at about the time the mowing does. Positions are scene fractions (feet = bottom-centre). */
+  const STATIONS = {
+    desktop: [
+      { name: "planter", x: 0.748, y: 0.712, delay: 0.6, steps: [
+        { anim: "planter-kneel" }, { anim: "planter-dig" }, { anim: "planter-unpot" }, { anim: "planter-backfill", plant: true },
+        { anim: "planter-shuffle", move: 12 }, { anim: "planter-dig" }, { anim: "planter-unpot" }, { anim: "planter-backfill", plant: true },
+        { anim: "planter-standup" }] },
+      { name: "hedge", x: 0.842, y: 0.622, delay: 1.2, steps: [
+        { anim: "hedge-ready" }, { anim: "hedge-snip", fill: true }, { anim: "hedge-finish" }] },
+      { name: "tree", x: 0.640, y: 0.318, delay: 1.8, steps: [
+        { anim: "tree-brace" }, { anim: "tree-sawstart" }, { anim: "tree-cutting", fill: true }, { anim: "tree-finish", dropBranch: 1 }] },
+    ],
+    portrait: [],
+  };
+  const BRANCH = { fall: 1.4, rest: 2.5, fade: 1, landX: 0.565, landY: 0.485, dx: 0.035 };   // seconds; landing spot (far-right corner of the lawn); x offset from the climber
   /* ───────────────────────────────────────────────────────────────────────── */
 
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -88,6 +115,34 @@
 
   let run = null;            // the current scene's animation (rebuilt if the picture switches scene)
 
+  /* Set up PixiJS once. Resolves to { app, anims, ratio } or null (no PixiJS, file://, no WebGL). */
+  let gfxPromise = null;
+  function initPixi() {
+    if (gfxPromise) return gfxPromise;
+    gfxPromise = (async () => {
+      if (!window.PIXI || location.protocol === "file:") return null;
+      try {
+        const P = window.PIXI;
+        P.TextureSource.defaultOptions.scaleMode = "nearest";
+        // decode on the main thread: worker-based ImageBitmap loading can stall (e.g. some embedded/headless browsers)
+        P.Assets.setPreferences({ preferWorkers: false, preferCreateImageBitmap: false });
+        const app = new P.Application();
+        await app.init({ canvas: q(".hero__pixi"), backgroundAlpha: 0, antialias: false, autoStart: false, roundPixels: true,
+          resolution: Math.min(2, window.devicePixelRatio || 1), autoDensity: true, width: hero.clientWidth, height: hero.clientHeight });
+        app.ticker.stop();
+        const sheet = await P.Assets.load(ATLAS_URL);
+        sheet.textureSource.scaleMode = "nearest";
+        hero.classList.add("has-pixi");
+        const meta = sheet.data.meta || {};
+        return { P, app, anims: sheet.animations, ratio: meta.pixelRatio || 0.75, fpsMap: meta.fps || {} };
+      } catch (e) {
+        console.warn("Hero: PixiJS layer unavailable, using DOM sprites.", e);
+        return null;
+      }
+    })();
+    return gfxPromise;
+  }
+
   function start() {
     if (run) run.stop();
     const portrait = /\/p-tidy\.png/.test(tidyImg.currentSrc || tidyImg.src);
@@ -96,11 +151,11 @@
     const stationUrls = S.stations.map((s) => "public/assets/hero/" + s.sheet + ".png");
     const sheetUrls = Object.values(layers).flatMap((l) => [urlOf(l.man), urlOf(l.mower)]).filter(Boolean);
     const untidyImg = q(".hero__pic--untidy img");
-    Promise.all([loaded(tidyImg), loaded(untidyImg)].concat(sheetUrls.map(preload), stationUrls.map(preload)))
-      .then(() => { run = animate(S, L, N); });
+    Promise.all([initPixi(), loaded(tidyImg), loaded(untidyImg)].concat(sheetUrls.map(preload), stationUrls.map(preload)))
+      .then(([gfx]) => { run = animate(S, L, N, gfx, portrait ? STATIONS.portrait : STATIONS.desktop); });
   }
 
-  function animate(S, L, N) {
+  function animate(S, L, N, gfx, stationDefs) {
     const C = CONFIG, F = C.feather, M = F + 2;
     let stopped = false, raf = 0;
 
@@ -108,6 +163,11 @@
     const halfW = (y) => L.halfNear * (y - L.vpY) / (L.nearY - L.vpY);
     const edgeX = (k, y) => L.vpX - halfW(y) + 2 * halfW(y) * k / N;
     const sizeAt = (y) => lerp(S.scaleNear, S.scaleFar, (S.path.nearY - y) / (S.path.nearY - S.path.farY));
+    // screen px per sprite px for the mower man at scene height y. With PixiJS he is exactly on the sprite grid at
+    // the near end of the lawn and shrinks with distance.
+    const kMan = (y) => (gfx ? (sp * gfx.ratio * sizeAt(y)) / S.scaleNear : px * sizeAt(y));
+    const STRIDE = gfx ? GFX.stride : C.stride;
+    const CUT = gfx ? { back: GFX.back, front: GFX.front } : SHEETS;
 
     // ── timeline: one walk per stripe, alternating up and down, then back to the pool end
     const order = Array.from({ length: N }, (_, i) => (C.fromRight ? N - 1 - i : i));
@@ -138,7 +198,7 @@
     const mowEnd = segs[segs.length - 2].t1;
 
     // ── screen geometry: where the cover-fitted scene sits, at any aspect ratio
-    let W = 1, H = 1, box = { x: 0, y: 0, w: 1, h: 1 }, px = 1;
+    let W = 1, H = 1, box = { x: 0, y: 0, w: 1, h: 1 }, px = 1, sp = 1;   // sp = screen px per scene pixel
     const X = (fx) => box.x + fx * box.w, Y = (fy) => box.y + fy * box.h;
 
     const tracePoly = (c, pts) => { c.beginPath(); pts.forEach((p, i) => (i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1]))); c.closePath(); };
@@ -203,12 +263,12 @@
         const cum = [0]; let acc = 0, prev = null;
         for (let i = 0; i <= 32; i++) {
           const e = easeInOut(i / 32), fx = lerp(s.from.x, s.to.x, e), fy = lerp(s.from.y, s.to.y, e);
-          const p = { x: X(fx), y: Y(fy), k: px * sizeAt(fy) };
+          const p = { x: X(fx), y: Y(fy), k: kMan(fy) };
           if (prev) { acc += Math.hypot(p.x - prev.x, p.y - prev.y) / ((p.k + prev.k) / 2); cum.push(acc); }
           prev = p;
         }
         s.cum = cum; s.dist = acc || 1;
-        s.halfSteps = Math.max(1, Math.round(acc / (C.stride / 2)));   // whole steps: he always stops standing
+        s.halfSteps = Math.max(1, Math.round(acc / (STRIDE / 2)));     // whole steps: he always stops standing
         s.endFrame = (frame + s.halfSteps * 4) % FRAMES;
         frame = s.endFrame;
       });
@@ -230,7 +290,8 @@
       });
     };
     const placeShadow = (k) => {
-      const sw = Math.round(60 * k), sh = Math.round(16 * k);
+      const [bw, bh] = gfx ? GFX.shadow : [60, 16];
+      const sw = Math.round(bw * k), sh = Math.round(bh * k);
       shadow.style.width = sw + "px"; shadow.style.height = sh + "px";
       shadow.style.left = -Math.round(sw / 2) + "px"; shadow.style.bottom = Math.round(2 * k - sh / 2) + "px";
     };
@@ -264,13 +325,121 @@
       if (f !== s.frame) { s.frame = f; s.layer.style.backgroundPosition = -f * s.w + "px 0px"; }
     });
 
+    // ── PixiJS layer: the mower man, the station gardeners and their props
+    const G = gfx && (() => {
+      const P = gfx.P, stage = gfx.app.stage;
+      stage.removeChildren();
+      const fps = (gfx.fpsMap = gfx.fpsMap || {});
+      const mk = (anim, parent = stage) => { const s = new P.Sprite(gfx.anims[anim][0]); s.anchor.set(0.5, 1); parent.addChild(s); return s; };
+      const byName = Object.fromEntries(stationDefs.map((d) => [d.name, d]));
+      const build = (def) => {
+        if (!def) return null;
+        // the step timeline; `fill` steps loop until the station would end with the mowing
+        const dur = (anim) => gfx.anims[anim].length / (fps[anim] || 6);
+        const fixed = def.steps.filter((s) => !s.fill).reduce((a, s) => a + dur(s.anim), 0);
+        let t = 0;
+        const steps = def.steps.map((s) => {
+          const loops = s.fill ? Math.max(1, Math.round((mowEnd - def.delay - fixed) / dur(s.anim))) : 1;
+          const st = { ...s, t0: t, t1: t + dur(s.anim) * loops, n: gfx.anims[s.anim].length, fps: fps[s.anim] || 6 };
+          t = st.t1; return st;
+        });
+        return { def, steps, end: t, props: [], sprite: null };
+      };
+      const tree = build(byName.tree), hedge = build(byName.hedge), planter = build(byName.planter);
+      // back to front: tree + branch, hedge, the mower man, the planter (nearest the camera) and his props
+      if (tree) { tree.branch = mk("prop-branch"); tree.sprite = mk(tree.steps[0].anim); }
+      if (hedge) hedge.sprite = mk(hedge.steps[0].anim);
+      const man = { back: mk(GFX.back.anim), front: mk(GFX.front.anim), alpha: { back: 1, front: 0 } };
+      if (planter) {
+        planter.pots = mk("prop-potstack");
+        planter.plants = planter.steps.filter((s) => s.plant).map(() => { const s = mk("prop-plants"); s.texture = gfx.anims["prop-plants"][1]; s.visible = false; return s; });
+        planter.sprite = mk(planter.steps[0].anim);
+      }
+      return { stage, man, stations: [tree, hedge, planter].filter(Boolean), tree, planter };
+    })();
+    if (gfx) shadow.parentNode.style.zIndex = 3;           // the DOM shadow sits under the PixiJS layer
+
+    // where a station is at time t: { step, frame, rel }
+    const stationAt = (st, t) => {
+      const rel = t - st.def.delay;
+      if (rel <= 0) return { step: st.steps[0], frame: 0, rel, i: 0 };
+      for (let i = 0; i < st.steps.length; i++) {
+        const s = st.steps[i];
+        if (rel < s.t1) return { step: s, frame: Math.floor((rel - s.t0) * s.fps) % s.n, rel, i };
+      }
+      const s = st.steps[st.steps.length - 1];
+      return { step: s, frame: s.n - 1, rel, i: st.steps.length - 1, done: true };
+    };
+    const updateGfxStations = (t) => {
+      const k = sp * gfx.ratio;                            // stations stand still: exactly on the sprite grid
+      for (const st of G.stations) {
+        const a = stationAt(st, t), d = st.def;
+        let ox = 0;                                         // planter: sideways shuffle, in sprite px
+        st.steps.forEach((s, i) => {
+          if (!s.move || i > a.i) return;
+          ox += i < a.i || a.done ? s.move : s.move * Math.min(1, (a.rel - s.t0) / (s.t1 - s.t0));
+        });
+        st.sprite.texture = gfx.anims[a.step.anim][a.frame];
+        st.sprite.position.set(Math.round(X(d.x) + ox * k), Math.round(Y(d.y)));
+        st.sprite.scale.set(k);
+        if (st === G.planter) {
+          let unpots = 0, plantI = 0, moved = 0;
+          st.steps.forEach((s, i) => {
+            const finished = i < a.i || a.done;
+            if (s.anim === "planter-unpot" && finished) unpots++;
+            if (s.move && finished) moved += s.move;
+            if (s.plant) {
+              const p = st.plants[plantI++];
+              p.visible = finished;                        // the plant left in the ground once he moves on
+              p.position.set(Math.round(X(d.x) + (moved + 10) * k), Math.round(Y(d.y)));
+              p.scale.set(k);
+            }
+          });
+          st.pots.texture = gfx.anims["prop-potstack"][Math.min(2, unpots)];
+          st.pots.position.set(Math.round(X(d.x) - 15 * k), Math.round(Y(d.y)));
+          st.pots.scale.set(k);
+        }
+        if (st === G.tree) {
+          const b = st.branch, fin = st.steps.find((s) => s.dropBranch !== undefined);
+          const drop = st.def.delay + fin.t0 + fin.dropBranch / fin.fps;    // when it comes away
+          const hx = X(d.x + BRANCH.dx), hy = Y(d.y) - 22 * k;
+          const since = t - drop;
+          b.scale.set(k); b.alpha = 1; b.visible = true;
+          if (since < 0) { b.texture = gfx.anims["prop-branch"][0]; b.position.set(Math.round(hx), Math.round(hy)); }
+          else if (since < BRANCH.fall) {
+            const e = since / BRANCH.fall, f = Math.min(3, Math.floor(e * 4));
+            b.texture = gfx.anims["prop-branch"][f];
+            b.position.set(Math.round(lerp(hx, X(BRANCH.landX), e)), Math.round(lerp(hy, Y(BRANCH.landY), e * e)));
+          } else {
+            b.texture = gfx.anims["prop-branch"][4];
+            b.position.set(Math.round(X(BRANCH.landX)), Math.round(Y(BRANCH.landY)));
+            const fadeT = since - BRANCH.fall - BRANCH.rest;     // then it's cleared away
+            b.alpha = fadeT <= 0 ? 1 : Math.max(0, 1 - fadeT / BRANCH.fade);
+            b.visible = b.alpha > 0;
+          }
+        }
+      }
+    };
+    const updateGfxMan = (ax, ay, frame, k, view, dt, manDy) => {
+      for (const v of ["back", "front"]) {
+        const s = G.man[v], target = v === view ? 1 : 0;
+        G.man.alpha[v] += Math.sign(target - G.man.alpha[v]) * Math.min(Math.abs(target - G.man.alpha[v]), dt / C.turnFade);
+        s.alpha = dt === 0 ? target : G.man.alpha[v];
+        s.texture = gfx.anims[GFX[v].anim][frame];
+        s.position.set(ax, ay + manDy);
+        s.scale.set(k);
+      }
+    };
+
     // ── grass clippings
     const parts = [];
     const spawnClipping = (ax, ay, k, view) => {
       if (parts.length > 160) return;
       const side = Math.random() < 0.5 ? -1 : 1;
+      const spawnY = CUT[view].spawnY * k;
+      if (gfx) k *= GFX.height / REF_HEIGHT;               // the physics below is tuned in old 128-px sprite units
       parts.push({
-        x: ax + side * (12 + Math.random() * 10) * k, y: ay - (SHEETS[view].spawnY + Math.random() * 6) * k,
+        x: ax + side * (12 + Math.random() * 10) * k, y: ay - spawnY - Math.random() * 6 * k,
         vx: side * (20 + Math.random() * 45) * k, vy: -(40 + Math.random() * 70) * k, g: 260 * k,
         size: Math.max(1, Math.round(1.5 * k)), life: C.clippingLife * (0.6 + Math.random() * 0.4), age: 0,
         col: CLIP_COLOURS[Math.floor(Math.random() * CLIP_COLOURS.length)],
@@ -296,6 +465,8 @@
       const s = Math.max(W / iw, H / ih);
       box = { x: (W - iw * s) / 2, y: (H - ih * s) / 2, w: iw * s, h: ih * s };
       px = (S.baseHeight * box.h) / REF_HEIGHT;
+      sp = box.h / ih;
+      if (gfx) gfx.app.renderer.resize(W, H);
       const dpr = Math.min(2, window.devicePixelRatio || 1);
       Object.keys(cv).forEach((k) => {
         cv[k].width = Math.round(W * dpr); cv[k].height = Math.round(H * dpr);
@@ -319,10 +490,13 @@
 
     if (reduced) {                         // finished garden, gardener resting by the pool
       hero.classList.add("is-done");
-      const home = segs[segs.length - 1].at, k = px * sizeAt(home.y);
+      const home = segs[segs.length - 1].at, k = kMan(home.y);
       sprite.style.transform = "translate(" + Math.round(X(home.x)) + "px," + Math.round(Y(home.y)) + "px)";
-      place("front", 0, k); placeShadow(k); show("front"); offsetMan(Math.round(C.idleStep * k), 0);
-      tickStations(0);
+      placeShadow(k);
+      if (gfx) {
+        const draw = () => { updateGfxMan(Math.round(X(home.x)), Math.round(Y(home.y)), 0, kMan(home.y), "front", 0, 0); updateGfxStations(1e6); gfx.app.render(); };
+        draw(); new ResizeObserver(draw).observe(hero);
+      } else { place("front", 0, k); show("front"); offsetMan(Math.round(C.idleStep * k), 0); tickStations(0); }
       return { stop() { ro.disconnect(); } };
     }
 
@@ -366,28 +540,32 @@
       } else {
         fx = seg.at.x; fy = seg.at.y; frame = seg.endFrame;
         if (seg.type === "idle") {                           // step aside from the mower, then breathe
-          const k = px * sizeAt(fy);
+          const k = kMan(fy);
           manDx = Math.round(C.idleStep * k * easeInOut(Math.min(1, tl / 0.5)));
           manDy = tl > 0.5 && Math.floor((tl - 0.5) / 1.1) % 2 ? -1 : 0;
           if (tl < 0.5) frame = (seg.startFrame + Math.floor((tl / 0.5) * 4)) % FRAMES;
         }
       }
-      const k = px * sizeAt(fy);
+      const k = kMan(fy);
       const ax = Math.round(X(fx)), ay = Math.round(Y(fy));
       const speed = walking ? Math.min(1, Math.abs(prog - lastProg) / Math.max(dt, 1e-3) / ((seg.halfSteps * 4) / seg.dur)) : 0;
       lastProg = prog;
 
       sprite.style.transform = "translate(" + ax + "px," + ay + "px)";
-      place("back", frame, k); place("front", frame, k); placeShadow(k); show(view); offsetMan(manDx, manDy);
-      const j = walking || seg.type === "pause" ? (Math.floor(t * C.vibrateRate) % 2) * C.vibrate : 0;   // engine off when idle
-      if (j !== lastJitter) { lastJitter = j; layers.back.mower.style.transform = layers.front.mower.style.transform = "translateX(" + j + "px)"; }
+      placeShadow(k);
+      if (gfx) updateGfxMan(ax, ay, frame, k, view, dt, manDy);   // mower is part of the sheet: no separate shake
+      else {
+        place("back", frame, k); place("front", frame, k); show(view); offsetMan(manDx, manDy);
+        const j = walking || seg.type === "pause" ? (Math.floor(t * C.vibrateRate) % 2) * C.vibrate : 0;   // engine off when idle
+        if (j !== lastJitter) { lastJitter = j; layers.back.mower.style.transform = layers.front.mower.style.transform = "translateX(" + j + "px)"; }
+      }
 
       // the cut line follows the mower deck: reveal the stripe behind it
       if (seg.type === "walk" && seg.n !== undefined && seg.n >= committed) {
         if (liveStripe !== seg.stripe) { ctx.live.clearRect(0, 0, W, H); liveStripe = seg.stripe; }
         const P = stripePoly(seg.stripe), xs = P.pts.map((p) => p[0]), ys = P.pts.map((p) => p[1]);
         ctx.live.clearRect(Math.min(...xs) - 2, Math.min(...ys) - 2, Math.max(...xs) - Math.min(...xs) + 4, Math.max(...ys) - Math.min(...ys) + 4);
-        let lead = ay - SHEETS[view].cutAhead * k;
+        let lead = ay - CUT[view].cutAhead * k;
         const e = easeInOut(tl / seg.dur);
         if (e > 0.85) {                                     // in the last stretch the cut runs out to the stripe's end
           const w = easeInOut((e - 0.85) / 0.15);
@@ -401,12 +579,13 @@
         while (emitAcc >= 1) { emitAcc -= 1; spawnClipping(ax, ay, k, view); }
       }
       drawClippings(dt);
-      tickStations(t);
+      if (gfx) { updateGfxStations(t); gfx.app.render(); }
+      else tickStations(t);
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
 
-    return { stop() { stopped = true; cancelAnimationFrame(raf); ro.disconnect(); } };
+    return { stop() { stopped = true; cancelAnimationFrame(raf); ro.disconnect(); if (gfx) gfx.app.stage.removeChildren(); } };
   }
 
   // The <picture> swaps scene at the portrait breakpoint: rebuild the animation for the new art.

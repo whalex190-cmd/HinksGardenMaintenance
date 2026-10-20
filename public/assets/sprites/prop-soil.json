@@ -1,8 +1,8 @@
 {
   "id": "prop-soil",
   "frames": 4,
-  "frameWidth": 15,
-  "frameHeight": 8,
+  "frameWidth": 20,
+  "frameHeight": 10,
   "anchor": {
     "x": 0.5,
     "y": 1

@@ -1,8 +1,8 @@
 {
   "id": "tree-sawstart",
   "frames": 4,
-  "frameWidth": 21,
-  "frameHeight": 27,
+  "frameWidth": 27,
+  "frameHeight": 36,
   "anchor": {
     "x": 0.5,
     "y": 1

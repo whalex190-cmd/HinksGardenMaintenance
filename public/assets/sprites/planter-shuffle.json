@@ -1,8 +1,8 @@
 {
   "id": "planter-shuffle",
   "frames": 4,
-  "frameWidth": 24,
-  "frameHeight": 25,
+  "frameWidth": 31,
+  "frameHeight": 33,
   "anchor": {
     "x": 0.5,
     "y": 1

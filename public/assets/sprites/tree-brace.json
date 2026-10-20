@@ -1,8 +1,8 @@
 {
   "id": "tree-brace",
   "frames": 4,
-  "frameWidth": 22,
-  "frameHeight": 27,
+  "frameWidth": 28,
+  "frameHeight": 36,
   "anchor": {
     "x": 0.5,
     "y": 1

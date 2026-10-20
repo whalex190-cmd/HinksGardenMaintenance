@@ -1,0 +1,11 @@
+{
+  "id": "mower-walk-front",
+  "frames": 8,
+  "frameWidth": 20,
+  "frameHeight": 46,
+  "anchor": {
+    "x": 0.5,
+    "y": 1
+  },
+  "fps": 10
+}

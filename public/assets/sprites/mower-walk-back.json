@@ -1,8 +1,8 @@
 {
   "id": "mower-walk-back",
   "frames": 8,
-  "frameWidth": 16,
-  "frameHeight": 35,
+  "frameWidth": 21,
+  "frameHeight": 46,
   "anchor": {
     "x": 0.5,
     "y": 1
