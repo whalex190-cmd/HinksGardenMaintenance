@@ -1,0 +1,17 @@
+{
+ "id": "prop-planting",
+ "poses": [
+  "lavender-pot",
+  "lavender-rootball",
+  "lavender-planted",
+  "geranium-pot",
+  "geranium-rootball",
+  "geranium-planted"
+ ],
+ "cell": [
+  9,
+  11
+ ],
+ "anchorX": 4,
+ "fit": 10
+}

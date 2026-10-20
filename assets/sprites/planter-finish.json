@@ -1,0 +1,15 @@
+{
+ "id": "planter-finish",
+ "poses": [
+  "clap-1",
+  "clap-2",
+  "hips",
+  "admire"
+ ],
+ "cell": [
+  22,
+  34
+ ],
+ "anchorX": 9,
+ "fit": 33
+}

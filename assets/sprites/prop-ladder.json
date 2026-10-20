@@ -1,0 +1,15 @@
+{
+ "id": "prop-ladder",
+ "poses": [
+  "ladder",
+  "pile-1",
+  "pile-2",
+  "pile-3"
+ ],
+ "cell": [
+  41,
+  42
+ ],
+ "anchorX": 21,
+ "fit": 41
+}

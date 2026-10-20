@@ -1,0 +1,18 @@
+{
+ "id": "planter-kneel",
+ "poses": [
+  "stand-look",
+  "step",
+  "bend",
+  "knee-lower",
+  "knee-touch",
+  "settle",
+  "lean"
+ ],
+ "cell": [
+  23,
+  34
+ ],
+ "anchorX": 13,
+ "fit": 33
+}

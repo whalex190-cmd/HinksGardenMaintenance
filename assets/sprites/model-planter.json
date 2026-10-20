@@ -1,0 +1,15 @@
+{
+ "id": "model-planter",
+ "poses": [
+  "front",
+  "back",
+  "right side",
+  "kneeling right side"
+ ],
+ "cell": [
+  25,
+  34
+ ],
+ "anchorX": 13,
+ "fit": 33
+}

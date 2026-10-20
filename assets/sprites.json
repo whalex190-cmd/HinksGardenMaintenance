@@ -540,7 +540,7 @@
       "id": "hedge-finish",
       "character": "hedge",
       "view": "back, slightly from the left",
-      "desc": "on an (undrawn) ladder with long-handled shears",
+      "desc": "standing on a ladder rung with long-handled shears. IMPORTANT: draw ONLY the man and his shears: NO ladder, NO rungs, NO rails, NO hedge, nothing under his boots",
       "poses": [
         {
           "name": "final",
@@ -568,11 +568,11 @@
       "id": "prop-ladder",
       "character": null,
       "view": "side, slightly from the left",
-      "desc": "a wooden A-frame stepladder and hedge clippings",
+      "desc": "a tall wooden A-frame stepladder (about one and a half times the height of a person, six rungs) and hedge clippings",
       "poses": [
         {
           "name": "ladder",
-          "desc": "the A-frame ladder alone"
+          "desc": "the tall A-frame ladder alone, standing open on the ground"
         },
         {
           "name": "pile-1",

@@ -1,0 +1,17 @@
+{
+ "id": "planter-unpot-b",
+ "poses": [
+  "slide-off",
+  "toss",
+  "tease",
+  "upright",
+  "lower",
+  "release"
+ ],
+ "cell": [
+  24,
+  24
+ ],
+ "anchorX": 10,
+ "fit": 23
+}

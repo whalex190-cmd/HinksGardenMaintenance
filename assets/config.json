@@ -96,8 +96,8 @@
     "cutBrighten": 1.08
   },
   "planter": {
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "shufflePx": 20,
     "ranges": {
       "stand": [
@@ -182,12 +182,23 @@
       ]
     ],
     "holeOffsetPx": 12,
-    "moundOffsetPx": 22,
-    "trayOffsetPx": -16
+    "moundOffsetPx": 19,
+    "trayOffsetPx": -15,
+    "shuffleDir": [
+      -0.84,
+      -0.54
+    ],
+    "potOffsetPx": -22,
+    "area": [
+      0.6,
+      0.54,
+      0.7,
+      0.62
+    ]
   },
   "hedge": {
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "ranges": {
       "idle": [
         1,
@@ -223,7 +234,27 @@
     "leafBurst": [
       4,
       8
-    ]
+    ],
+    "ladderTopY": 0.45,
+    "manFeetBelowTopPx": 9,
+    "manOffsetPx": -1,
+    "trim": {
+      "x": [
+        0.8,
+        0.9
+      ],
+      "top": [
+        0.425,
+        0.478
+      ],
+      "face": [
+        0.478,
+        0.535
+      ]
+    },
+    "freshBrighten": 1.12,
+    "pileOffsetPx": 8,
+    "topEdgeY": 0.443
   },
   "tree": {
     "x": 0.64,
@@ -320,7 +351,29 @@
       ]
     },
     "sunRisePx": 4,
-    "seed": 20261020
+    "seed": 20261020,
+    "clouds": {
+      "maxY": 0.19,
+      "pxPerFrame": 0.3,
+      "sunKeepPx": 9
+    },
+    "sunGlow": {
+      "radius": 24,
+      "bands": 4,
+      "strength": 9,
+      "pulseFrames": 30
+    },
+    "wind": {
+      "periodFrames": 24,
+      "amplitude": 0.6,
+      "exclude": [
+        "lawn",
+        "pool",
+        "patio-r",
+        "hedges-r",
+        "hedges-l"
+      ]
+    }
   },
   "particles": {
     "clippingLife": 6,
@@ -335,22 +388,23 @@
     "prop-planting": 10,
     "prop-tray": 8,
     "prop-soil": 6,
-    "prop-ladder": 22,
+    "prop-ladder": 41,
     "prop-branch": 18,
     "prop-canopy": 14,
     "ambient-butterfly": 5,
-    "hedge-start": 30,
-    "hedge-snip": 30,
-    "hedge-finish": 30,
+    "hedge-start": 34,
+    "hedge-snip": 34,
+    "hedge-finish": 34,
     "tree-prep": 40,
     "tree-start": 40,
     "tree-undercut": 40,
     "tree-topcut": 40,
     "tree-finish": 40,
-    "planter-dig": 24,
-    "planter-unpot-a": 24,
-    "planter-unpot-b": 24,
-    "planter-backfill": 24,
-    "planter-move": 24
-  }
+    "planter-dig": 23,
+    "planter-unpot-a": 23,
+    "planter-unpot-b": 23,
+    "planter-backfill": 23,
+    "planter-move": 23
+  },
+  "stationOrder": "by-depth"
 }

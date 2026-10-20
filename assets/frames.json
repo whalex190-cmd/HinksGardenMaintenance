@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T12:21:47.337Z",
+ "generated": "2026-10-20T12:59:42.759Z",
  "frameCount": 120,
  "native": [
   480,
@@ -43,8 +43,8 @@
     "sheet": "planter-kneel",
     "pose": "stand-look",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -64,8 +64,8 @@
     "sheet": "hedge-start",
     "pose": "idle",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -156,8 +156,8 @@
     "sheet": "planter-kneel",
     "pose": "stand-look",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -177,8 +177,8 @@
     "sheet": "hedge-start",
     "pose": "idle",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -269,8 +269,8 @@
     "sheet": "planter-kneel",
     "pose": "stand-look",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -290,8 +290,8 @@
     "sheet": "hedge-start",
     "pose": "idle",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -382,8 +382,8 @@
     "sheet": "planter-kneel",
     "pose": "step",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -403,8 +403,8 @@
     "sheet": "hedge-start",
     "pose": "idle",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -495,8 +495,8 @@
     "sheet": "planter-kneel",
     "pose": "bend",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -516,8 +516,8 @@
     "sheet": "hedge-start",
     "pose": "idle",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -608,8 +608,8 @@
     "sheet": "planter-kneel",
     "pose": "knee-lower",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -629,8 +629,8 @@
     "sheet": "hedge-start",
     "pose": "shift",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -721,8 +721,8 @@
     "sheet": "planter-kneel",
     "pose": "knee-touch",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -742,8 +742,8 @@
     "sheet": "hedge-start",
     "pose": "raise",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -834,8 +834,8 @@
     "sheet": "planter-kneel",
     "pose": "settle",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -855,8 +855,8 @@
     "sheet": "hedge-start",
     "pose": "raise",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -947,8 +947,8 @@
     "sheet": "planter-kneel",
     "pose": "lean",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": null,
@@ -968,8 +968,8 @@
     "sheet": "hedge-start",
     "pose": "ready",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1060,8 +1060,8 @@
     "sheet": "planter-dig",
     "pose": "anticipation",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1081,8 +1081,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1173,8 +1173,8 @@
     "sheet": "planter-dig",
     "pose": "strike",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1194,8 +1194,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1289,8 +1289,8 @@
     "sheet": "planter-dig",
     "pose": "lever",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1310,8 +1310,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1405,8 +1405,8 @@
     "sheet": "planter-dig",
     "pose": "lift",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1426,8 +1426,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1521,8 +1521,8 @@
     "sheet": "planter-dig",
     "pose": "carry",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1542,8 +1542,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1637,8 +1637,8 @@
     "sheet": "planter-dig",
     "pose": "tip",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1658,8 +1658,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1753,8 +1753,8 @@
     "sheet": "planter-dig",
     "pose": "shake",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1774,8 +1774,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1869,8 +1869,8 @@
     "sheet": "planter-dig",
     "pose": "return",
     "index": 7,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-scuffed",
@@ -1890,8 +1890,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -1985,8 +1985,8 @@
     "sheet": "planter-dig",
     "pose": "anticipation",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2006,8 +2006,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2101,8 +2101,8 @@
     "sheet": "planter-dig",
     "pose": "strike",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2122,8 +2122,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2217,8 +2217,8 @@
     "sheet": "planter-dig",
     "pose": "lever",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2238,8 +2238,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2333,8 +2333,8 @@
     "sheet": "planter-dig",
     "pose": "lift",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2354,8 +2354,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2449,8 +2449,8 @@
     "sheet": "planter-dig",
     "pose": "carry",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2470,8 +2470,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2565,8 +2565,8 @@
     "sheet": "planter-dig",
     "pose": "tip",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2586,8 +2586,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2681,8 +2681,8 @@
     "sheet": "planter-dig",
     "pose": "shake",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2702,8 +2702,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -2797,8 +2797,8 @@
     "sheet": "planter-dig",
     "pose": "return",
     "index": 7,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-shallow",
@@ -2818,8 +2818,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -2913,8 +2913,8 @@
     "sheet": "planter-dig",
     "pose": "anticipation",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -2934,8 +2934,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3029,8 +3029,8 @@
     "sheet": "planter-dig",
     "pose": "strike",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3050,8 +3050,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3145,8 +3145,8 @@
     "sheet": "planter-dig",
     "pose": "lever",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3166,8 +3166,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3261,8 +3261,8 @@
     "sheet": "planter-dig",
     "pose": "lift",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3282,8 +3282,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3377,8 +3377,8 @@
     "sheet": "planter-dig",
     "pose": "carry",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3398,8 +3398,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3493,8 +3493,8 @@
     "sheet": "planter-dig",
     "pose": "tip",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3514,8 +3514,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3609,8 +3609,8 @@
     "sheet": "planter-dig",
     "pose": "shake",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3630,8 +3630,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3725,8 +3725,8 @@
     "sheet": "planter-dig",
     "pose": "return",
     "index": 7,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3746,8 +3746,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3841,8 +3841,8 @@
     "sheet": "planter-move",
     "pose": "lay-trowel",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3862,8 +3862,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -3957,8 +3957,8 @@
     "sheet": "planter-move",
     "pose": "lay-trowel",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -3978,8 +3978,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -4073,8 +4073,8 @@
     "sheet": "planter-unpot-a",
     "pose": "reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4094,8 +4094,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -4189,8 +4189,8 @@
     "sheet": "planter-unpot-a",
     "pose": "reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4210,8 +4210,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -4305,8 +4305,8 @@
     "sheet": "planter-unpot-a",
     "pose": "lift",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4326,8 +4326,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -4421,8 +4421,8 @@
     "sheet": "planter-unpot-a",
     "pose": "invert",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4442,8 +4442,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -4537,8 +4537,8 @@
     "sheet": "planter-unpot-a",
     "pose": "tap-1",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4558,8 +4558,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -4657,8 +4657,8 @@
     "sheet": "planter-unpot-a",
     "pose": "tap-1",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4678,8 +4678,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -4777,8 +4777,8 @@
     "sheet": "planter-unpot-a",
     "pose": "tap-2",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4798,8 +4798,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -4897,8 +4897,8 @@
     "sheet": "planter-unpot-b",
     "pose": "slide-off",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -4918,8 +4918,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5017,8 +5017,8 @@
     "sheet": "planter-unpot-b",
     "pose": "toss",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5038,8 +5038,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5137,8 +5137,8 @@
     "sheet": "planter-unpot-b",
     "pose": "tease",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5158,8 +5158,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5257,8 +5257,8 @@
     "sheet": "planter-unpot-b",
     "pose": "tease",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5278,8 +5278,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5377,8 +5377,8 @@
     "sheet": "planter-unpot-b",
     "pose": "upright",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5398,8 +5398,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5497,8 +5497,8 @@
     "sheet": "planter-unpot-b",
     "pose": "lower",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5518,8 +5518,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5617,8 +5617,8 @@
     "sheet": "planter-unpot-b",
     "pose": "release",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5638,8 +5638,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5737,8 +5737,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5758,8 +5758,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5857,8 +5857,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5878,8 +5878,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -5977,8 +5977,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-pull",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -5998,8 +5998,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -6097,8 +6097,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-pull",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6118,8 +6118,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -6217,8 +6217,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6238,8 +6238,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -6337,8 +6337,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6358,8 +6358,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -6457,8 +6457,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-pull",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6478,8 +6478,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -6577,8 +6577,8 @@
     "sheet": "planter-backfill",
     "pose": "press",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6598,8 +6598,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -6697,8 +6697,8 @@
     "sheet": "planter-backfill",
     "pose": "press",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6718,8 +6718,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -6817,8 +6817,8 @@
     "sheet": "planter-backfill",
     "pose": "sit-back",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6838,8 +6838,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -6937,8 +6937,8 @@
     "sheet": "planter-backfill",
     "pose": "sit-back",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -6958,8 +6958,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7057,8 +7057,8 @@
     "sheet": "planter-backfill",
     "pose": "look",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "hole-deep",
@@ -7078,8 +7078,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7177,8 +7177,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-1",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 0,
     "props": {
      "hole1": "planted",
@@ -7198,8 +7198,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7297,8 +7297,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-1",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 1,
     "props": {
      "hole1": "planted",
@@ -7318,8 +7318,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7417,8 +7417,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-2",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 3,
     "props": {
      "hole1": "planted",
@@ -7438,8 +7438,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7537,8 +7537,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-3",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 7,
     "props": {
      "hole1": "planted",
@@ -7558,8 +7558,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7657,8 +7657,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-1",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 13,
     "props": {
      "hole1": "planted",
@@ -7678,8 +7678,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7777,8 +7777,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-2",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 17,
     "props": {
      "hole1": "planted",
@@ -7798,8 +7798,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -7897,8 +7897,8 @@
     "sheet": "planter-move",
     "pose": "shuffle-3",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 19,
     "props": {
      "hole1": "planted",
@@ -7918,8 +7918,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -8017,8 +8017,8 @@
     "sheet": "planter-move",
     "pose": "pick-trowel",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8038,8 +8038,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -8137,8 +8137,8 @@
     "sheet": "planter-dig",
     "pose": "anticipation",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8158,8 +8158,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8257,8 +8257,8 @@
     "sheet": "planter-dig",
     "pose": "strike",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8278,8 +8278,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8377,8 +8377,8 @@
     "sheet": "planter-dig",
     "pose": "lever",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8398,8 +8398,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8497,8 +8497,8 @@
     "sheet": "planter-dig",
     "pose": "lift",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8518,8 +8518,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8617,8 +8617,8 @@
     "sheet": "planter-dig",
     "pose": "carry",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8638,8 +8638,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8737,8 +8737,8 @@
     "sheet": "planter-dig",
     "pose": "tip",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8758,8 +8758,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8857,8 +8857,8 @@
     "sheet": "planter-dig",
     "pose": "shake",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8878,8 +8878,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -8977,8 +8977,8 @@
     "sheet": "planter-dig",
     "pose": "return",
     "index": 7,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -8998,8 +8998,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9097,8 +9097,8 @@
     "sheet": "planter-dig",
     "pose": "anticipation",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9118,8 +9118,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9217,8 +9217,8 @@
     "sheet": "planter-dig",
     "pose": "strike",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9238,8 +9238,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9337,8 +9337,8 @@
     "sheet": "planter-dig",
     "pose": "lever",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9358,8 +9358,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9457,8 +9457,8 @@
     "sheet": "planter-dig",
     "pose": "lift",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9478,8 +9478,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9573,8 +9573,8 @@
     "sheet": "planter-dig",
     "pose": "carry",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9594,8 +9594,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9689,8 +9689,8 @@
     "sheet": "planter-dig",
     "pose": "tip",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9710,8 +9710,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9805,8 +9805,8 @@
     "sheet": "planter-dig",
     "pose": "shake",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9826,8 +9826,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 2,
     "props": {
      "ladder": {
@@ -9921,8 +9921,8 @@
     "sheet": "planter-dig",
     "pose": "return",
     "index": 7,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -9942,8 +9942,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10037,8 +10037,8 @@
     "sheet": "planter-unpot-a",
     "pose": "reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10058,8 +10058,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10153,8 +10153,8 @@
     "sheet": "planter-unpot-a",
     "pose": "reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10174,8 +10174,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10269,8 +10269,8 @@
     "sheet": "planter-unpot-a",
     "pose": "lift",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10290,8 +10290,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10385,8 +10385,8 @@
     "sheet": "planter-unpot-a",
     "pose": "invert",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10406,8 +10406,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10501,8 +10501,8 @@
     "sheet": "planter-unpot-a",
     "pose": "tap-1",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10522,8 +10522,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10617,8 +10617,8 @@
     "sheet": "planter-unpot-b",
     "pose": "slide-off",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10638,8 +10638,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10733,8 +10733,8 @@
     "sheet": "planter-unpot-b",
     "pose": "toss",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10754,8 +10754,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10849,8 +10849,8 @@
     "sheet": "planter-unpot-b",
     "pose": "upright",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10870,8 +10870,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -10965,8 +10965,8 @@
     "sheet": "planter-unpot-b",
     "pose": "lower",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -10986,8 +10986,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11081,8 +11081,8 @@
     "sheet": "planter-unpot-b",
     "pose": "release",
     "index": 5,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11102,8 +11102,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11197,8 +11197,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11218,8 +11218,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11312,8 +11312,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-reach",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11333,8 +11333,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11427,8 +11427,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-pull",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11448,8 +11448,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11542,8 +11542,8 @@
     "sheet": "planter-backfill",
     "pose": "sweep-pull",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11563,8 +11563,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 4,
     "props": {
      "ladder": {
@@ -11657,8 +11657,8 @@
     "sheet": "planter-backfill",
     "pose": "press",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11678,8 +11678,8 @@
     "sheet": "hedge-snip",
     "pose": "open",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -11772,8 +11772,8 @@
     "sheet": "planter-backfill",
     "pose": "press",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11793,8 +11793,8 @@
     "sheet": "hedge-snip",
     "pose": "hold",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -11887,8 +11887,8 @@
     "sheet": "planter-backfill",
     "pose": "sit-back",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -11908,8 +11908,8 @@
     "sheet": "hedge-snip",
     "pose": "close",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12002,8 +12002,8 @@
     "sheet": "planter-backfill",
     "pose": "sit-back",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12023,8 +12023,8 @@
     "sheet": "hedge-snip",
     "pose": "recoil",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12117,8 +12117,8 @@
     "sheet": "planter-backfill",
     "pose": "look",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12138,8 +12138,8 @@
     "sheet": "hedge-snip",
     "pose": "settle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12232,8 +12232,8 @@
     "sheet": "planter-backfill",
     "pose": "look",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12253,8 +12253,8 @@
     "sheet": "hedge-finish",
     "pose": "final",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12347,8 +12347,8 @@
     "sheet": "planter-kneel",
     "pose": "lean",
     "index": 6,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12368,8 +12368,8 @@
     "sheet": "hedge-finish",
     "pose": "final",
     "index": 0,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12462,8 +12462,8 @@
     "sheet": "planter-kneel",
     "pose": "knee-touch",
     "index": 4,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12483,8 +12483,8 @@
     "sheet": "hedge-finish",
     "pose": "lower",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12574,8 +12574,8 @@
     "sheet": "planter-kneel",
     "pose": "knee-lower",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12595,8 +12595,8 @@
     "sheet": "hedge-finish",
     "pose": "lower",
     "index": 1,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12686,8 +12686,8 @@
     "sheet": "planter-kneel",
     "pose": "bend",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12707,8 +12707,8 @@
     "sheet": "hedge-finish",
     "pose": "check",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12798,8 +12798,8 @@
     "sheet": "planter-kneel",
     "pose": "stand-look",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12819,8 +12819,8 @@
     "sheet": "hedge-finish",
     "pose": "check",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -12910,8 +12910,8 @@
     "sheet": "planter-finish",
     "pose": "clap-1",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -12931,8 +12931,8 @@
     "sheet": "hedge-finish",
     "pose": "check",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13022,8 +13022,8 @@
     "sheet": "planter-finish",
     "pose": "clap-2",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13043,8 +13043,8 @@
     "sheet": "hedge-finish",
     "pose": "check",
     "index": 2,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13134,8 +13134,8 @@
     "sheet": "planter-finish",
     "pose": "clap-1",
     "index": 0,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13155,8 +13155,8 @@
     "sheet": "hedge-finish",
     "pose": "shoulder",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13246,8 +13246,8 @@
     "sheet": "planter-finish",
     "pose": "clap-2",
     "index": 1,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13267,8 +13267,8 @@
     "sheet": "hedge-finish",
     "pose": "shoulder",
     "index": 3,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13358,8 +13358,8 @@
     "sheet": "planter-finish",
     "pose": "hips",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13379,8 +13379,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13470,8 +13470,8 @@
     "sheet": "planter-finish",
     "pose": "hips",
     "index": 2,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13491,8 +13491,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13582,8 +13582,8 @@
     "sheet": "planter-finish",
     "pose": "admire",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13603,8 +13603,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13694,8 +13694,8 @@
     "sheet": "planter-finish",
     "pose": "admire",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13715,8 +13715,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13806,8 +13806,8 @@
     "sheet": "planter-finish",
     "pose": "admire",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13827,8 +13827,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {
@@ -13918,8 +13918,8 @@
     "sheet": "planter-finish",
     "pose": "admire",
     "index": 3,
-    "x": 0.772,
-    "y": 0.713,
+    "x": 0.645,
+    "y": 0.605,
     "offsetPx": 20,
     "props": {
      "hole1": "planted",
@@ -13939,8 +13939,8 @@
     "sheet": "hedge-finish",
     "pose": "idle",
     "index": 4,
-    "x": 0.842,
-    "y": 0.622,
+    "x": 0.85,
+    "y": 0.6,
     "reachPx": 0,
     "props": {
      "ladder": {

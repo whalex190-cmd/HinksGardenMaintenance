@@ -1,0 +1,16 @@
+{
+ "id": "planter-move",
+ "poses": [
+  "lay-trowel",
+  "shuffle-1",
+  "shuffle-2",
+  "shuffle-3",
+  "pick-trowel"
+ ],
+ "cell": [
+  22,
+  24
+ ],
+ "anchorX": 11,
+ "fit": 23
+}

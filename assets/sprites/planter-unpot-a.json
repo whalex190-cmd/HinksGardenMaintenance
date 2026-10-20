@@ -1,0 +1,16 @@
+{
+ "id": "planter-unpot-a",
+ "poses": [
+  "reach",
+  "lift",
+  "invert",
+  "tap-1",
+  "tap-2"
+ ],
+ "cell": [
+  21,
+  24
+ ],
+ "anchorX": 10,
+ "fit": 23
+}

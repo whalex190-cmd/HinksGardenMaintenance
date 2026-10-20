@@ -1,0 +1,15 @@
+{
+ "id": "hedge-start",
+ "poses": [
+  "idle",
+  "shift",
+  "raise",
+  "ready"
+ ],
+ "cell": [
+  24,
+  31
+ ],
+ "anchorX": 9,
+ "fit": 30
+}

@@ -1,0 +1,16 @@
+{
+ "id": "planter-backfill",
+ "poses": [
+  "sweep-reach",
+  "sweep-pull",
+  "press",
+  "sit-back",
+  "look"
+ ],
+ "cell": [
+  26,
+  24
+ ],
+ "anchorX": 12,
+ "fit": 23
+}

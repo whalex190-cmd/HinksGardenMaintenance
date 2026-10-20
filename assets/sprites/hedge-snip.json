@@ -1,0 +1,16 @@
+{
+ "id": "hedge-snip",
+ "poses": [
+  "open",
+  "hold",
+  "close",
+  "recoil",
+  "settle"
+ ],
+ "cell": [
+  20,
+  31
+ ],
+ "anchorX": 9,
+ "fit": 30
+}

@@ -1,0 +1,19 @@
+{
+ "id": "planter-dig",
+ "poses": [
+  "anticipation",
+  "strike",
+  "lever",
+  "lift",
+  "carry",
+  "tip",
+  "shake",
+  "return"
+ ],
+ "cell": [
+  19,
+  24
+ ],
+ "anchorX": 9,
+ "fit": 23
+}

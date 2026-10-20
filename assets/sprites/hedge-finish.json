@@ -1,0 +1,16 @@
+{
+ "id": "hedge-finish",
+ "poses": [
+  "final",
+  "lower",
+  "check",
+  "shoulder",
+  "idle"
+ ],
+ "cell": [
+  24,
+  31
+ ],
+ "anchorX": 10,
+ "fit": 30
+}

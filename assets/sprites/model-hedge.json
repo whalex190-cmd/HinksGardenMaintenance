@@ -1,0 +1,15 @@
+{
+ "id": "model-hedge",
+ "poses": [
+  "front",
+  "back",
+  "right side",
+  "holding long-handled shears"
+ ],
+ "cell": [
+  25,
+  34
+ ],
+ "anchorX": 9,
+ "fit": 33
+}

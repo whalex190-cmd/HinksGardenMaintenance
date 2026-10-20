@@ -1,0 +1,18 @@
+{
+ "id": "prop-soil",
+ "poses": [
+  "hole-scuffed",
+  "hole-shallow",
+  "hole-deep",
+  "mound-1",
+  "mound-2",
+  "mound-3",
+  "mound-4"
+ ],
+ "cell": [
+  11,
+  7
+ ],
+ "anchorX": 5,
+ "fit": 6
+}

@@ -1,0 +1,17 @@
+{
+ "id": "prop-tray",
+ "poses": [
+  "tray-two",
+  "tray-one",
+  "tray-empty",
+  "pot-upturned",
+  "pot-upright",
+  "pot-stack"
+ ],
+ "cell": [
+  13,
+  9
+ ],
+ "anchorX": 5,
+ "fit": 8
+}
