@@ -74,10 +74,10 @@ Used sparingly for technical labels and metadata: card numbers (`01`), section l
 
 | Token | Family | Size | Weight | Line height | Tracking | Use |
 |---|---|---|---|---|---|---|
-| `display-xl` | Waldenburg | 48px | 300 | 1.08 | -0.96px | Hero H1, section H2 |
-| `display-lg` | Waldenburg | 36px | 300 | 1.12 | -0.72px | Prices, mobile H1/H2 |
+| `display-xl` | Waldenburg | 48px | 300 | 1.08 | -0.96px | Section H2 |
+| `display-lg` | Waldenburg | 36px | 300 | 1.12 | -0.72px | Hero H1 (in its card), prices, mobile H2 |
 | `display-md` | Waldenburg | 32px | 300 | 1.17 | -0.64px | Card headings, step numbers |
-| `body-lg` | Inter | 18px | 400 | 1.55 | normal | Hero lead, section intros, quotes |
+| `body-lg` | Inter | 18px | 400 | 1.55 | normal | Section intros, quotes |
 | `title` | Inter | 18px | 500 | 1.4 | normal | Step and list titles |
 | `body` | Inter | 16px | 400 | 1.6 | 0.01em | Default paragraph |
 | `body-sm` | Inter | 15px | 400 | 1.6 | 0.01em | Card text, FAQ answers, nav links |
@@ -150,7 +150,7 @@ Shadows are rare. Use them only on floating things: the dropdown, the contact fo
 
 - Easing: `cubic-bezier(.2, .7, .2, 1)` for everything.
 - Content fades and rises 16px into view on scroll (800ms), with siblings staggered by 80ms.
-- The hero photo settles with a slow 18-second zoom from 106% to 100%.
+- The hero animation (see Components) is the one long sequence on the page. Everything else stays subtle.
 - Trust items scroll in a continuous marquee and pause on hover.
 - Hover feedback is subtle: dark cards lift 6px, gallery photos zoom to 104%, and arrows nudge 3px.
 - Respect `prefers-reduced-motion`: turn off all animation and show content immediately.
@@ -158,7 +158,7 @@ Shadows are rare. Use them only on floating things: the dropdown, the contact fo
 ## Components
 
 - **Nav:** sticky, 54px tall, a frosted canvas background and a bottom rule. Logo on the left, centred links (Services opens a dropdown), phone number and a small charcoal CTA on the right.
-- **Hero:** a full-frame photo, mirrored so open sky sits behind the copy, with a canvas-coloured haze fading in from the left. It stacks a small stat line, a 3-line H1, the lead text, and two buttons: charcoal and white.
+- **Hero:** a full-bleed animated pixel-art garden (`js/hero.js`), the height of the screen minus the nav. It opens on an untidy garden. A gardener mows the lawn stripe by stripe, revealing the tidy lawn behind him, while the rest of the garden tidies with a soft front-to-back wipe. Three more gardeners work at the pool, the hedge and in the oak. A Replay button appears when he finishes. The copy sits in a frosted canvas-coloured card at the bottom left: a mono eyebrow, a 36px H1, the lead text, and two buttons (charcoal and white). On phones the card is compact (no lead, 24px H1, buttons side by side) so it never covers the lawn. Reduced motion shows the finished garden.
 - **Buttons:** 40px tall (44px for `--lg`) with a 6px radius and Inter 500 at 14px. *Dark* is charcoal on white text, *light* is white with ink text, and *card* is full-width `--card-btn` inside dark cards.
 - **Service cards:** `--card` background with a 10px radius. Inside: a mono number, a coloured label, a 32px light heading, grey body text, outlined uppercase tags, and a full-width light button pinned to the bottom. They sit on the sky-to-sun gradient.
 - **Tabs + steps:** text tabs with a 2px ink underline on the active tab. Steps sit in 4 columns separated by vertical rules, each with a large light-grey number, an Inter 500 title and grey body text.
@@ -173,6 +173,12 @@ Shadows are rare. Use them only on floating things: the dropdown, the contact fo
 
 - Bright, natural, wide-angle garden scenes with plenty of sky. Gardens should look aspirational but achievable.
 - Real project photos must replace the stock placeholders before launch.
+- AI-generated images and video (from `tools/`) are fine for **mood and atmosphere**: hero backgrounds, section scenery and texture. Never use them in "Recent work" or anywhere that implies a real job Hinks completed.
+- Video backgrounds must be muted, looping, ≤8 seconds, and have a still `poster` image. Show the still instead when `prefers-reduced-motion` is set.
+- **Hero animation:** an illustrated pixel-art scene. This is an allowed AI use, because it's clearly an illustration, not a claimed job.
+  - It has its own warm sunrise palette (`images/hero/palette.json`), separate from the UI tokens.
+  - It sits on a true pixel grid: 480×272 at ×4. Render it with `image-rendering: pixelated`.
+  - How to produce it: `images/hero/RUNBOOK.md`.
 - Export at no more than 1920px wide, as JPEG at roughly 80% quality, and lazy-load everything below the hero.
 
 ## Accessibility

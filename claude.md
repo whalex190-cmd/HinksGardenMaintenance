@@ -15,6 +15,7 @@ index.html       Single page: nav, hero, trust marquee, services (dark cards), s
                  tabs, estimator, work gallery, reviews, FAQ, scenic contact form, footer
 css/styles.css   All styles. Design tokens live in :root at the top
 js/main.js       All interactions (menu, dropdown, tabs, reveal, estimator, form), in one IIFE
+js/hero.js       The animated hero (mowing, wipe, station gardeners). Tweak values in CONFIG/SCENES at the top
 images/          Site photography (CC0 stock placeholders, see below)
 design.md        Design system: typography, colour, layout frame, motion, components
 ```
@@ -38,6 +39,31 @@ Key rules:
 - **JS:** plain ES2020+, no dependencies. Guard each feature with a null check so the script doesn't break on pages without that section.
 - **HTML:** semantic elements, `aria-*` on custom controls, a visible focus state for everything interactive.
 - **Copy:** UK English and £ / m². Write plainly and specifically, without hype. Every section should lead towards a quote.
+
+## AI image & video generation (OpenAI)
+
+Assets are generated **offline on the developer's PC** and saved into `images/`. The website never calls OpenAI and never contains the key.
+
+- **Key:** in `.env` as `OPENAI_API_KEY=...` (copy `.env.example`). `.env` is git-ignored. **Never put the key in `index.html`, `js/` or any committed file**, because the repo is public.
+- **Images:** `tools/generate-image.ps1 -Prompt "..." -Out images/name.jpg [-Size 1536x864] [-Quality high] [-Count 3]`. Defaults to `gpt-image-2`; any `WIDTHxHEIGHT` divisible by 16 works.
+- **Video:** `tools/generate-video.ps1 -Prompt "..." -Out images/name.mp4 [-Seconds 4|8|12] [-Size 1280x720] [-Reference images/photo.jpg]`. Uses Sora (`sora-2`, or `sora-2-pro` for higher quality). It polls until the clip is ready, which takes a few minutes.
+- Both scripts append a shared house style (see `$HouseStyle` in `tools/openai-common.ps1`) so the output matches design.md → Imagery. Pass `-NoHouseStyle` to turn it off.
+- Shared code lives in `tools/openai-common.ps1`. The scripts are PowerShell 5.1 with no dependencies, and use the built-in `curl.exe` for uploads.
+- Keep web assets small: re-encode images to ≤1920px wide, JPEG at about 80%. Keep hero videos short (≤8s), muted and looping, with a poster image.
+- Edit mode: `generate-image.ps1 -Image a.png[,ref.png...] [-Mask m.png] [-Transparent] -Style pixel|photo|none`. Edits go to `/v1/images/edits`; transparent pixels in the mask mark the area to change.
+
+## Hero animation assets (pixel art)
+
+The animated hero (an untidy garden tidied by Hinks gardeners) is built in **`js/hero.js`**, ported from the Claude Design prototype (https://claude.ai/artifact/CVS22ibfBZ3NeCiLEfUYc1). Its art is generated with **`images/hero/RUNBOOK.md`**.
+
+- **What the site loads:** the native-size scenes in `images/hero/web/` (480×272 and 272×480, scaled up crisply with `image-rendering: pixelated`), plus the sprite sheets in `images/hero/`. The ×4 PNGs in `images/hero/` are masters.
+- **Scenes:** `<picture>` chooses desktop or portrait at `(max-aspect-ratio: 4/5)`, and the script rebuilds for the art that loaded. `SCENES.*.lawn` must equal `lawn` in `regions-*.json`.
+- **Checking a moment:** add `#t=12` to the URL to jump 12 seconds in. Headless browsers don't advance the animation in virtual time, so screenshot with `#t=`.
+
+- `tools/hero-assets.ps1` handles the offline jobs, which are free: `mask`, `stripe`, `composite`, `pixelate`, `diff`, `slice`, `pack`, `crop`, `place` and `check`. It uses `tools/ImageTools.cs`, which must compile as C# 5 because that's what PowerShell 5.1 uses.
+- Never re-prompt a whole scene to get a variant. Make a masked edit, then `composite`, so the untidy and tidy scenes stay pixel-aligned. `check` must PASS.
+- The lawn stripes are drawn by `stripe` from the `lawn` geometry in `regions-*.json`. That geometry must match the engine's `CONFIG.lawn`.
+- Prompts live in `images/hero/prompts/`. Working files go in `images/hero/src/`, which is git-ignored except `reference/`. Finals go in `images/hero/`.
 
 ## Configurable values
 

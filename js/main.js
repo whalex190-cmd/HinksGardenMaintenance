@@ -46,7 +46,7 @@
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 
-  document.querySelectorAll(".cards, .reviews, .gallery, .hero__content").forEach((group) => {
+  document.querySelectorAll(".cards, .reviews, .gallery").forEach((group) => {
     [...group.querySelectorAll(":scope > .reveal")].forEach((el, i) => el.style.setProperty("--d", `${i * 0.08}s`));
   });
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
