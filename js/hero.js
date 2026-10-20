@@ -9,10 +9,13 @@
 
   /* ─── Tweak these ───────────────────────────────────────────────────────── */
   const CONFIG = {
-    stripeTime: 1.7,        // seconds to mow one stripe (his walking speed)
-    pause: 0.3,             // seconds at the end of a stripe
-    shiftTime: 0.45,        // seconds to step across to the next stripe
-    turnFade: 0.15,         // cross-fade between back and front views
+    stripeTime: 20,         // seconds to mow one stripe: a steady, realistic walking pace
+    walkRamp: 1.2,          // seconds to get up to speed / slow down at each end of a walk
+    pause: 1.2,             // seconds stood at the end of a stripe before turning
+    shiftTime: 3,           // seconds to turn the mower and line up on the next stripe
+    turnFade: 0.6,          // cross-fade between back and front views while he turns
+    stationSpeed: 0.6,      // station gardeners play their sheets at this fraction of the sheet fps
+    stepFade: 0.25,         // seconds of cross-fade between one station action and the next
     feather: 3,             // px soft edge on the lawn reveal
     clippings: 40,          // grass clippings per second at full speed
     clippingLife: 0.8,
@@ -63,21 +66,29 @@
   const GFX = {
     back:  { anim: "mower-walk-back",  cutAhead: 10, spawnY: 8 },
     front: { anim: "mower-walk-front", cutAhead: 6,  spawnY: 4 },
-    height: 46, stride: 18,              // walk-sheet height; sprite px per 8-frame cycle
+    height: 46, stride: 11,              // walk-sheet height; sprite px of lawn covered per 8-frame cycle (2 steps)
     shadow: [24, 7],
   };
   /* Station scripts: each step plays an animation `loops` times; `fill` stretches that step's loops so the station
      finishes at about the time the mowing does. Positions are scene fractions (feet = bottom-centre). */
+  /* Step kinds: { anim } plays once; { anim, fill } loops so the station's whole script ends with the mowing (the spare
+     time is shared between all fill steps); { anim, hold: frame, dur } holds one frame (a breather). `ground` draws a
+     pixel-art patch under the station (sprite px, relative to the feet) so it stands on real ground. */
+  const plantingCycle = (n) => Array.from({ length: n }, (_, i) => [
+    { anim: "planter-dig", fill: true }, { anim: "planter-dig", hold: 0, dur: 1.5 },
+    { anim: "planter-unpot" }, { anim: "planter-backfill", plant: true }, { anim: "planter-backfill", hold: 5, dur: 2.5 },
+    ...(i < n - 1 ? [{ anim: "planter-shuffle", move: 22 }] : []),
+  ]).flat();
   const STATIONS = {
     desktop: [
-      { name: "planter", x: 0.748, y: 0.712, delay: 0.6, steps: [
-        { anim: "planter-kneel" }, { anim: "planter-dig" }, { anim: "planter-unpot" }, { anim: "planter-backfill", plant: true },
-        { anim: "planter-shuffle", move: 12 }, { anim: "planter-dig" }, { anim: "planter-unpot" }, { anim: "planter-backfill", plant: true },
-        { anim: "planter-standup" }] },
-      { name: "hedge", x: 0.842, y: 0.622, delay: 1.2, steps: [
-        { anim: "hedge-ready" }, { anim: "hedge-snip", fill: true }, { anim: "hedge-finish" }] },
-      { name: "tree", x: 0.640, y: 0.318, delay: 1.8, steps: [
-        { anim: "tree-brace" }, { anim: "tree-sawstart" }, { anim: "tree-cutting", fill: true }, { anim: "tree-finish", dropBranch: 1 }] },
+      { name: "planter", x: 0.772, y: 0.713, delay: 1, ground: { kind: "soil", x: 26, w: 80, h: 9, y: -2 },
+        steps: [{ anim: "planter-kneel" }, ...plantingCycle(3), { anim: "planter-standup" }] },
+      { name: "hedge", x: 0.842, y: 0.622, delay: 2, ground: { kind: "mulch", x: 0, w: 58, h: 9, y: -1, feet: [-14, 14] },
+        steps: [{ anim: "hedge-ready" }, { anim: "hedge-snip", fill: true }, { anim: "hedge-snip", hold: 0, dur: 3 },
+          { anim: "hedge-snip", fill: true }, { anim: "hedge-snip", hold: 5, dur: 3 }, { anim: "hedge-snip", fill: true }, { anim: "hedge-finish" }] },
+      { name: "tree", x: 0.640, y: 0.318, delay: 3, steps: [
+        { anim: "tree-brace" }, { anim: "tree-brace", hold: 3, dur: 2 }, { anim: "tree-sawstart" }, { anim: "tree-cutting", fill: true },
+        { anim: "tree-cutting", hold: 0, dur: 3 }, { anim: "tree-cutting", fill: true }, { anim: "tree-finish", dropBranch: 1 }] },
     ],
     portrait: [],
   };
@@ -86,6 +97,14 @@
 
   const lerp = (a, b, t) => a + (b - a) * t;
   const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  // walking: ramp up, steady pace, ramp down (fraction of the walk covered after tl seconds)
+  const walkEase = (tl, dur) => {
+    const r = Math.min(CONFIG.walkRamp, dur / 3), v = 1 / (dur - r);
+    if (tl <= 0) return 0; if (tl >= dur) return 1;
+    if (tl < r) return (v * tl * tl) / (2 * r);
+    if (tl > dur - r) return 1 - (v * (dur - tl) ** 2) / (2 * r);
+    return v * (tl - r / 2);
+  };
   const q = (s) => hero.querySelector(s);
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -196,6 +215,7 @@
       add({ type: "idle", at: home, dur: 1e9, view: "front" });
     }
     const mowEnd = segs[segs.length - 2].t1;
+    hero.dataset.duration = mowEnd.toFixed(1);             // total length of the sequence (seconds), handy when tuning
 
     // ── screen geometry: where the cover-fitted scene sits, at any aspect ratio
     let W = 1, H = 1, box = { x: 0, y: 0, w: 1, h: 1 }, px = 1, sp = 1;   // sp = screen px per scene pixel
@@ -262,7 +282,7 @@
         if (s.type !== "walk") { s.endFrame = frame; return; }
         const cum = [0]; let acc = 0, prev = null;
         for (let i = 0; i <= 32; i++) {
-          const e = easeInOut(i / 32), fx = lerp(s.from.x, s.to.x, e), fy = lerp(s.from.y, s.to.y, e);
+          const e = i / 32, fx = lerp(s.from.x, s.to.x, e), fy = lerp(s.from.y, s.to.y, e);
           const p = { x: X(fx), y: Y(fy), k: kMan(fy) };
           if (prev) { acc += Math.hypot(p.x - prev.x, p.y - prev.y) / ((p.k + prev.k) / 2); cum.push(acc); }
           prev = p;
@@ -334,25 +354,32 @@
       const byName = Object.fromEntries(stationDefs.map((d) => [d.name, d]));
       const build = (def) => {
         if (!def) return null;
-        // the step timeline; `fill` steps loop until the station would end with the mowing
-        const dur = (anim) => gfx.anims[anim].length / (fps[anim] || 6);
-        const fixed = def.steps.filter((s) => !s.fill).reduce((a, s) => a + dur(s.anim), 0);
+        // the step timeline (slowed by stationSpeed); the spare time up to the end of the mowing is shared by the fill steps
+        const rate = (anim) => (fps[anim] || 6) * C.stationSpeed;
+        const once = (s) => (s.hold !== undefined ? s.dur : gfx.anims[s.anim].length / rate(s.anim));
+        const fixed = def.steps.filter((s) => !s.fill).reduce((a, s) => a + once(s), 0);
+        const fills = def.steps.filter((s) => s.fill).length;
+        const share = fills ? Math.max(0, mowEnd - def.delay - fixed) / fills : 0;
         let t = 0;
         const steps = def.steps.map((s) => {
-          const loops = s.fill ? Math.max(1, Math.round((mowEnd - def.delay - fixed) / dur(s.anim))) : 1;
-          const st = { ...s, t0: t, t1: t + dur(s.anim) * loops, n: gfx.anims[s.anim].length, fps: fps[s.anim] || 6 };
+          const loops = s.fill ? Math.max(1, Math.round(share / once(s))) : 1;
+          const st = { ...s, t0: t, t1: t + once(s) * loops, n: gfx.anims[s.anim].length, fps: rate(s.anim) };
           t = st.t1; return st;
         });
-        return { def, steps, end: t, props: [], sprite: null };
+        return { def, steps, end: t, sprite: null, prev: null };
       };
       const tree = build(byName.tree), hedge = build(byName.hedge), planter = build(byName.planter);
+      const ground = (st) => { if (st && st.def.ground) { st.ground = new P.Graphics(); stage.addChild(st.ground); st.groundKey = ""; } };
       // back to front: tree + branch, hedge, the mower man, the planter (nearest the camera) and his props
-      if (tree) { tree.branch = mk("prop-branch"); tree.sprite = mk(tree.steps[0].anim); }
-      if (hedge) hedge.sprite = mk(hedge.steps[0].anim);
+      if (tree) { tree.branch = mk("prop-branch"); tree.prev = mk(tree.steps[0].anim); tree.sprite = mk(tree.steps[0].anim); }
+      if (hedge) { ground(hedge); hedge.prev = mk(hedge.steps[0].anim); hedge.sprite = mk(hedge.steps[0].anim); }
       const man = { back: mk(GFX.back.anim), front: mk(GFX.front.anim), alpha: { back: 1, front: 0 } };
       if (planter) {
+        ground(planter);
         planter.pots = mk("prop-potstack");
+        planter.soil = mk("prop-soil"); planter.soil.visible = false;
         planter.plants = planter.steps.filter((s) => s.plant).map(() => { const s = mk("prop-plants"); s.texture = gfx.anims["prop-plants"][1]; s.visible = false; return s; });
+        planter.prev = mk(planter.steps[0].anim);
         planter.sprite = mk(planter.steps[0].anim);
       }
       return { stage, man, stations: [tree, hedge, planter].filter(Boolean), tree, planter };
@@ -360,28 +387,70 @@
     if (gfx) shadow.parentNode.style.zIndex = 3;           // the DOM shadow sits under the PixiJS layer
 
     // where a station is at time t: { step, frame, rel }
+    const lastFrame = (s) => (s.hold !== undefined ? s.hold : s.n - 1);
     const stationAt = (st, t) => {
       const rel = t - st.def.delay;
       if (rel <= 0) return { step: st.steps[0], frame: 0, rel, i: 0 };
       for (let i = 0; i < st.steps.length; i++) {
         const s = st.steps[i];
-        if (rel < s.t1) return { step: s, frame: Math.floor((rel - s.t0) * s.fps) % s.n, rel, i };
+        if (rel < s.t1) return { step: s, frame: s.hold !== undefined ? s.hold : Math.floor((rel - s.t0) * s.fps) % s.n, rel, i };
       }
       const s = st.steps[st.steps.length - 1];
-      return { step: s, frame: s.n - 1, rel, i: st.steps.length - 1, done: true };
+      return { step: s, frame: lastFrame(s), rel, i: st.steps.length - 1, done: true };
     };
+
+    // pixel-art ground patch on the sprite grid: a level oval with a ragged, dithered rim and a darker underside
+    // colours picked from the scene's own border soil and shadowed foliage, so the patches read as part of the garden
+    const GROUND = {
+      soil:  { base: [0x3b281b, 0x45301f, 0x332317], top: 0x4f3826, rim: 0x2a1c12, tuft: [0x5f7b2f, 0x4c6627] },   // freshly dug: darker than the spoil heap
+      mulch: { base: [0x4a3a26, 0x55432b, 0x3f3220], top: 0x665235, rim: 0x2f2619, tuft: [0x56722b, 0x667f33, 0x48612a] },
+    };
+    const drawGround = (st, k) => {
+      const g = st.ground, gd = st.def.ground, key = [k, X(st.def.x), Y(st.def.y)].join(",");
+      if (!g || st.groundKey === key) return;
+      st.groundKey = key; g.clear();
+      const pal = GROUND[gd.kind], cx = X(st.def.x) + gd.x * k, cy = Y(st.def.y) + gd.y * k;
+      const hw = gd.w / 2, hh = gd.h / 2;
+      const hash = (x, y) => { const v = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453; return v - Math.floor(v); };
+      const cell = (x, y, c) => g.rect(Math.round(cx + x * k), Math.round(cy + y * k), Math.ceil(k), Math.ceil(k)).fill(c);
+      for (let y = -Math.ceil(hh); y <= Math.ceil(hh); y++) {
+        for (let x = -Math.ceil(hw); x <= Math.ceil(hw); x++) {
+          // a flat, wide patch: squarer ends, ragged dithered rim (lots of 1-px bites so it doesn't read as a disc)
+          const r = Math.pow(Math.abs(x / hw), 4) + Math.pow(Math.abs(y / hh), 2), n = hash(x, y);
+          if (r > 1 || (r > 0.55 && n < (r - 0.55) * 2.2)) continue;
+          let c = pal.base[n < 0.6 ? 0 : n < 0.85 ? 1 : 2];
+          if (y < -hh * 0.35 && n > 0.55) c = pal.top;                             // lit top edge
+          if (y > hh * 0.5) c = pal.rim;                                           // shadowed front lip
+          if (r > 0.6 && n > 0.82) c = pal.tuft[Math.floor(n * 97) % pal.tuft.length];   // grass/foliage creeping in
+          cell(x, y, c);
+        }
+      }
+      for (const fx of gd.feet || []) { cell(fx - 1, 1, pal.rim); cell(fx, 1, pal.rim); cell(fx + 1, 1, pal.rim); cell(fx, 2, pal.rim); }  // ladder-leg shadows
+    };
+
     const updateGfxStations = (t) => {
       const k = sp * gfx.ratio;                            // stations stand still: exactly on the sprite grid
       for (const st of G.stations) {
         const a = stationAt(st, t), d = st.def;
-        let ox = 0;                                         // planter: sideways shuffle, in sprite px
+        drawGround(st, k);
+        let ox = 0;                                         // planter: sideways shuffle, in sprite px (eased)
         st.steps.forEach((s, i) => {
           if (!s.move || i > a.i) return;
-          ox += i < a.i || a.done ? s.move : s.move * Math.min(1, (a.rel - s.t0) / (s.t1 - s.t0));
+          ox += i < a.i || a.done ? s.move : s.move * easeInOut(Math.min(1, (a.rel - s.t0) / (s.t1 - s.t0)));
         });
+        const pos = [Math.round(X(d.x) + ox * k), Math.round(Y(d.y))];
         st.sprite.texture = gfx.anims[a.step.anim][a.frame];
-        st.sprite.position.set(Math.round(X(d.x) + ox * k), Math.round(Y(d.y)));
+        st.sprite.position.set(pos[0], pos[1]);
         st.sprite.scale.set(k);
+        // cross-fade out of the previous action so changes between sheets don't snap
+        const since = a.rel - a.step.t0, prevStep = st.steps[a.i - 1];
+        if (prevStep && !a.done && since < C.stepFade && prevStep.anim !== a.step.anim) {
+          st.prev.visible = true;
+          st.prev.texture = gfx.anims[prevStep.anim][lastFrame(prevStep)];
+          st.prev.position.set(pos[0], pos[1]); st.prev.scale.set(k);
+          st.prev.alpha = 1 - since / C.stepFade;
+          st.sprite.alpha = since / C.stepFade;
+        } else { st.prev.visible = false; st.sprite.alpha = 1; }
         if (st === G.planter) {
           let unpots = 0, plantI = 0, moved = 0;
           st.steps.forEach((s, i) => {
@@ -391,10 +460,24 @@
             if (s.plant) {
               const p = st.plants[plantI++];
               p.visible = finished;                        // the plant left in the ground once he moves on
-              p.position.set(Math.round(X(d.x) + (moved + 10) * k), Math.round(Y(d.y)));
+              p.position.set(Math.round(X(d.x) + (moved + 12) * k), Math.round(Y(d.y) + 1 * k));
               p.scale.set(k);
             }
           });
+          // the spoil heap beside the hole: grows while he digs, stays while he unpots, goes back in as he backfills
+          const step = a.step, prog = Math.min(1, Math.max(0, (a.rel - step.t0) / (step.t1 - step.t0)));
+          let heap = -1;
+          if (!a.done && a.rel > 0) {
+            if (step.anim === "planter-dig") heap = step.hold !== undefined ? 3 : Math.min(3, Math.floor(prog * 4));
+            else if (step.anim === "planter-unpot") heap = 3;
+            else if (step.anim === "planter-backfill" && step.hold === undefined) heap = prog < 0.75 ? 3 - Math.floor(prog * 4) : -1;
+          }
+          st.soil.visible = heap >= 0;
+          if (heap >= 0) {
+            st.soil.texture = gfx.anims["prop-soil"][heap];
+            st.soil.position.set(Math.round(X(d.x) + (ox + 20) * k), Math.round(Y(d.y) - 3 * k));
+            st.soil.scale.set(k);
+          }
           st.pots.texture = gfx.anims["prop-potstack"][Math.min(2, unpots)];
           st.pots.position.set(Math.round(X(d.x) - 15 * k), Math.round(Y(d.y)));
           st.pots.scale.set(k);
@@ -529,7 +612,7 @@
 
       let fx, fy, view = seg.view, frame = seg.startFrame, walking = false, prog = 0, manDx = 0, manDy = 0;
       if (seg.type === "walk") {
-        const e = easeInOut(tl / seg.dur);
+        const e = walkEase(tl, seg.dur);
         fx = lerp(seg.from.x, seg.to.x, e); fy = lerp(seg.from.y, seg.to.y, e);
         const f = Math.min(31.999, e * 32), i = Math.floor(f);
         const d = seg.cum[i] + (seg.cum[i + 1] - seg.cum[i]) * (f - i);
@@ -566,7 +649,7 @@
         const P = stripePoly(seg.stripe), xs = P.pts.map((p) => p[0]), ys = P.pts.map((p) => p[1]);
         ctx.live.clearRect(Math.min(...xs) - 2, Math.min(...ys) - 2, Math.max(...xs) - Math.min(...xs) + 4, Math.max(...ys) - Math.min(...ys) + 4);
         let lead = ay - CUT[view].cutAhead * k;
-        const e = easeInOut(tl / seg.dur);
+        const e = walkEase(tl, seg.dur);
         if (e > 0.85) {                                     // in the last stretch the cut runs out to the stripe's end
           const w = easeInOut((e - 0.85) / 0.15);
           lead = seg.dir === "up" ? Math.min(lead, lerp(lead, P.pts[2][1] - F, w)) : Math.max(lead, lerp(lead, P.pts[0][1] + F, w));

@@ -64,7 +64,8 @@ Assets are generated **offline on the developer's PC** and saved into `images/`.
 - **Pixel density:** `SPRITE_DENSITY` (4/3) makes the sprites one step finer than the 480×272 scene grid. `atlas.meta.pixelRatio` (0.75) and `atlas.meta.fps` tell `js/hero.js` how to scale and time each sheet.
 - **In the scene:** `js/hero.js` loads the atlas into PixiJS.
   - The mower man uses `mower-walk-back` and `mower-walk-front`.
-  - The station gardeners follow `STATIONS`: per-scene scripted step lists with positions in scene fractions. Steps can loop to fill the mowing time, the planter can shuffle sideways and leave plants behind, and the tree climber can drop the branch.
+  - The station gardeners follow `STATIONS`: per-scene scripted step lists with positions in scene fractions. Steps can loop to fill the mowing time (`fill`, sharing the spare time), hold a frame as a breather (`hold`), shuffle sideways (`move`), leave a plant (`plant`) or drop the branch. A `ground` patch is drawn under a station so it stands on real ground (the planter's dug bed, the mulch under the ladder).
+  - Pacing lives in `CONFIG`: `stripeTime` (20 s per stripe), `walkRamp`, `pause`, `shiftTime`, `turnFade`, `stationSpeed` and `stepFade`. The whole sequence is about 4 min 45 s; `#hero[data-duration]` shows the exact figure.
   - If PixiJS or the atlas can't load, the page falls back to the old DOM sprites in `public/assets/hero/`.
 
 ## Hero animation assets (pixel art)

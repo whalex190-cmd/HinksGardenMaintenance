@@ -169,8 +169,8 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 /* ---------- Hero: full-bleed animated pixel-art garden (js/hero.js) ----------
    Timings for the wipe live here; everything else (mowing speed, sizes, stations) is CONFIG in js/hero.js. */
 .hero {
-  --hold: 1.6s;          /* untidy garden shown before the wipe */
-  --wipe: 2.5s;          /* length of the front-to-back wipe */
+  --hold: 3s;            /* untidy garden shown before the wipe */
+  --wipe: 9s;            /* length of the front-to-back wipe (the rest of the garden tidying) */
   --feather: 15vh;       /* softness of the wipe edge */
   --travel: calc(100% + var(--feather));
   position: relative; overflow: hidden;
