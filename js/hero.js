@@ -93,7 +93,7 @@
     const portrait = /\/p-tidy\.png/.test(tidyImg.currentSrc || tidyImg.src);
     const S = portrait ? SCENES.portrait : SCENES.desktop;
     const L = S.lawn, N = L.stripes;
-    const stationUrls = S.stations.map((s) => "images/hero/" + s.sheet + ".png");
+    const stationUrls = S.stations.map((s) => "public/assets/hero/" + s.sheet + ".png");
     const sheetUrls = Object.values(layers).flatMap((l) => [urlOf(l.man), urlOf(l.mower)]).filter(Boolean);
     const untidyImg = q(".hero__pic--untidy img");
     Promise.all([loaded(tidyImg), loaded(untidyImg)].concat(sheetUrls.map(preload), stationUrls.map(preload)))
@@ -248,7 +248,7 @@
     const stations = S.stations.map((st) => {
       const anchor = document.createElement("div"); anchor.className = "hero__station";
       const layer = document.createElement("div"); layer.className = "hero__layer";
-      layer.style.backgroundImage = "url(images/hero/" + st.sheet + ".png)";
+      layer.style.backgroundImage = "url(public/assets/hero/" + st.sheet + ".png)";
       anchor.appendChild(layer); stationsEl.appendChild(anchor);
       return { st, anchor, layer, frame: -1 };
     });

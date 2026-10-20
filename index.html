@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <!-- Logo wordmark only: loads just the glyphs for "Hinks" -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&text=Hinks&display=block" rel="stylesheet">
-  <link rel="preload" as="image" href="images/hero/web/d-untidy.png" media="(min-aspect-ratio: 4/5)">
-  <link rel="preload" as="image" href="images/hero/web/p-untidy.png" media="(max-aspect-ratio: 4/5)">
+  <link rel="preload" as="image" href="public/assets/hero/d-untidy.png" media="(min-aspect-ratio: 4/5)">
+  <link rel="preload" as="image" href="public/assets/hero/p-untidy.png" media="(max-aspect-ratio: 4/5)">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -60,13 +60,13 @@
     <section class="band hero" id="hero" aria-label="Introduction">
       <!-- Tidy scene: the no-JS / reduced-motion view, and the source the animation reveals -->
       <picture class="hero__pic hero__pic--tidy">
-        <source media="(max-aspect-ratio: 4/5)" srcset="images/hero/web/p-tidy.png">
-        <img class="hero__tidy-src" src="images/hero/web/d-tidy.png" alt="A tidy English country garden at sunrise: striped lawn, clipped hedges, full borders and a clear pool" width="480" height="272">
+        <source media="(max-aspect-ratio: 4/5)" srcset="public/assets/hero/p-tidy.png">
+        <img class="hero__tidy-src" src="public/assets/hero/d-tidy.png" alt="A tidy English country garden at sunrise: striped lawn, clipped hedges, full borders and a clear pool" width="480" height="272">
       </picture>
       <!-- Untidy scene: what the animation opens on -->
       <picture class="hero__pic hero__pic--untidy" aria-hidden="true">
-        <source media="(max-aspect-ratio: 4/5)" srcset="images/hero/web/p-untidy.png">
-        <img src="images/hero/web/d-untidy.png" alt="" width="480" height="272">
+        <source media="(max-aspect-ratio: 4/5)" srcset="public/assets/hero/p-untidy.png">
+        <img src="public/assets/hero/d-untidy.png" alt="" width="480" height="272">
       </picture>
       <canvas class="hero__canvas hero__done" aria-hidden="true"></canvas>
       <canvas class="hero__canvas hero__live" aria-hidden="true"></canvas>

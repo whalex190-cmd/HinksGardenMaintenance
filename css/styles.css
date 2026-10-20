@@ -212,10 +212,10 @@ h3 { font: 500 18px/1.4 var(--font-inter); letter-spacing: 0; }
 .hero__fig { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; }
 .hero__fig.is-visible { opacity: 1; }
 .hero__layer { position: absolute; left: 0; bottom: 0; background-repeat: no-repeat; image-rendering: pixelated; image-rendering: crisp-edges; }
-.hero__sheet--back-man    { background-image: url(../images/hero/mower-man-back.png); }
-.hero__sheet--back-mower  { background-image: url(../images/hero/mower-back.png); }
-.hero__sheet--front-man   { background-image: url(../images/hero/mower-man-front.png); }
-.hero__sheet--front-mower { background-image: url(../images/hero/mower-front.png); }
+.hero__sheet--back-man    { background-image: url(../public/assets/hero/mower-man-back.png); }
+.hero__sheet--back-mower  { background-image: url(../public/assets/hero/mower-back.png); }
+.hero__sheet--front-man   { background-image: url(../public/assets/hero/mower-man-front.png); }
+.hero__sheet--front-mower { background-image: url(../public/assets/hero/mower-front.png); }
 
 /* Copy card, bottom-left, aligned with the page frame */
 .hero__card {

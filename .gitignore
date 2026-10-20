@@ -9,3 +9,10 @@ tools/output/
 # Hero asset working files (raw generations, masks, previews). Finals live in images/hero/.
 images/hero/src/*
 !images/hero/src/reference/
+
+# Node (build-time tooling only)
+node_modules/
+
+# Asset generation: raw API outputs are the local cache (never regenerated), QC previews
+assets-src/raw/
+qc/

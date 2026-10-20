@@ -52,6 +52,16 @@ Assets are generated **offline on the developer's PC** and saved into `images/`.
 - Keep web assets small: re-encode images to ≤1920px wide, JPEG at about 80%. Keep hero videos short (≤8s), muted and looping, with a poster image.
 - Edit mode: `generate-image.ps1 -Image a.png[,ref.png...] [-Mask m.png] [-Transparent] -Style pixel|photo|none`. Edits go to `/v1/images/edits`; transparent pixels in the mask mark the area to change.
 
+## Sprite generation (Node, build time only)
+
+`scripts/generate-assets.js` generates every gardener and prop sprite sheet with OpenAI. It's the only place the API is called. The website only loads static files from `public/assets/`.
+
+- **Run it:** `npm run assets` generates missing sheets, then post-processes. `npm run assets:process` post-processes only, with no API calls. You need Node 24, which is installed per-user under `%LOCALAPPDATA%\Programs\node-v24.20.0-win-x64`, plus `npm install` for the dev-only `pngjs` and `gifenc`.
+- **Key:** read from `OPENAI_API_KEY` or `.env`. It's never printed, logged or written to disk.
+- **Sheets:** defined in `SHEETS`, one per action, each with a frame-by-frame pose list. Each one is a single row on `#FF00FF`, generated with the edit endpoint using the references in `assets-src/refs/`.
+- **Cache:** `assets-src/raw/<id>.png` is git-ignored, and a cached sheet is never regenerated. To retry one, pass `--regenerate=<id>`. Each sheet gets 2 attempts at most (tracked in `assets-src/manifest.json`); after that, draw it in code instead.
+- **Output:** `public/assets/sprites/<id>.png` + `.json`, `atlas.png` + `atlas.json` (PixiJS spritesheet format, anchor at the feet), and `public/assets/palette.json`, which comes from the backgrounds. QC previews go in `qc/index.html`. Check them before wiring sheets into the scene.
+
 ## Hero animation assets (pixel art)
 
 The animated hero (an untidy garden tidied by Hinks gardeners) is built in **`js/hero.js`**, ported from the Claude Design prototype (https://claude.ai/artifact/CVS22ibfBZ3NeCiLEfUYc1). Its art is generated with **`images/hero/RUNBOOK.md`**.

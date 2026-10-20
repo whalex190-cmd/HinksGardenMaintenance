@@ -1,0 +1,14 @@
+{
+  "name": "hinks-garden-maintenance",
+  "private": true,
+  "description": "Static website. Node is only used at build time to generate pixel-art assets (scripts/generate-assets.js).",
+  "type": "commonjs",
+  "scripts": {
+    "assets": "node scripts/generate-assets.js",
+    "assets:process": "node scripts/generate-assets.js --no-generate"
+  },
+  "devDependencies": {
+    "gifenc": "^1.0.3",
+    "pngjs": "^7.0.0"
+  }
+}
