@@ -22,6 +22,7 @@ const regions = px.readJson(cfg.scene.regions);
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const m = /^--([^=]+)(?:=(.*))?$/.exec(a); return m ? [m[1], m[2] ?? true] : [a, true]; }));
 const STATIONS = typeof args.only === "string" ? args.only.split(",") : ["tree", "hedge", "mower", "planter"];
 const [W, H] = cfg.scene.native;
+const K = W / 480;                      // grid factor: the pipeline was tuned on a 480x272 grid; hand-placed px distances scale by K
 const sheetDef = Object.fromEntries(cat.sheets.map((s) => [s.id, s]));
 const pal = sh.palette(cfg);
 const A = cfg.ambient;
@@ -62,7 +63,8 @@ const inPlanterArea = (fx, fy) => fx >= P.area[0] && fx <= P.area[2] && fy >= P.
 const owned = new Uint8Array(W * H);
 for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
   const fx = (x + 0.5) / W, fy = (y + 0.5) / H;
-  if ((STATIONS.includes("mower") && inMowerStripe(fx, fy)) || (STATIONS.includes("hedge") && inHedgeTrim(fx, fy)) || (STATIONS.includes("planter") && inPlanterArea(fx, fy))) owned[y * W + x] = 1;
+  // (the planter's patch is not owned: the lawn around him tidies with the sweep, his planting shows through the props)
+  if ((STATIONS.includes("mower") && inMowerStripe(fx, fy)) || (STATIONS.includes("hedge") && inHedgeTrim(fx, fy))) owned[y * W + x] = 1;
 }
 
 /* ── ambient set-up (computed once) ── */
@@ -88,11 +90,11 @@ let sunX = 0, sunY = 0, sunN = 0;
 for (let y = 0; y < Math.round(0.45 * H); y++) for (let x = 0; x < W; x++) { const i = (y * W + x) * 4; if (lum(tidy.data, i) > 238) { sunX += x; sunY += y; sunN++; } }
 sunX = sunN ? sunX / sunN : W * 0.36; sunY = sunN ? sunY / sunN : H * 0.27;
 for (let y = 0; y < skyMaxRow; y++) for (let x = 0; x < W; x++) if (Math.hypot(x - sunX, y - sunY) < A.clouds.sunKeepPx) isSky[y * W + x] = 0;   // the sun stays put
-{ // erode by 2 px: only open sky drifts, so leaf tips at canopy edges are never copied out into the sky
-  const src = isSky.slice();
+{ // erode by 2 scene px: only open sky drifts, so leaf tips at canopy edges are never copied out into the sky
+  const src = isSky.slice(), E = Math.round(2 * K);
   for (let y = 0; y < skyMaxRow; y++) for (let x = 0; x < W; x++) {
     if (!src[y * W + x]) continue;
-    for (let dy = -2; dy <= 2 && isSky[y * W + x]; dy++) for (let dx = -2; dx <= 2; dx++) {
+    for (let dy = -E; dy <= E && isSky[y * W + x]; dy++) for (let dx = -E; dx <= E; dx++) {
       const X = x + dx, Y = y + dy;
       if (X >= 0 && X < W && Y >= 0 && Y < skyMaxRow && !src[Y * W + X]) { isSky[y * W + x] = 0; break; }
     }
@@ -117,14 +119,14 @@ function ambient(img, f) {
       img.data[i] = tidy.data[j]; img.data[i + 1] = tidy.data[j + 1]; img.data[i + 2] = tidy.data[j + 2];
     }
   }
-  // wind: foliage rows shift by up to 1px in a slow travelling wave (leaf clumps move together in 3-row bands)
+  // wind: foliage rows shift sideways in a slow travelling wave (leaf clumps move together in bands)
   const cur = new Uint8Array(img.data), ph = (2 * Math.PI * f) / A.wind.periodFrames;
   for (let y = 0; y < H; y++) {
-    const band = Math.floor(y / 3);
+    const band = Math.floor(y / (3 * K));
     for (let x = 0; x < W; x++) {
       const p = y * W + x;
       if (!windOk[p]) continue;
-      const d = Math.round(A.wind.amplitude * Math.sin(ph + band * 0.55 + x * 0.045) * (y < H * 0.45 ? 1.4 : 1));
+      const d = Math.round(A.wind.amplitude * Math.sin(ph + band * 0.55 + (x * 0.045) / K) * (y < H * 0.45 ? 1.4 : 1));
       if (!d) continue;
       const sx = Math.min(W - 1, Math.max(0, x - d)), q = y * W + sx;
       if (!windOk[q] && !isSky[q] && !windOk[p]) continue;
@@ -162,7 +164,8 @@ function background(fr) {
     const cutY = fr.mower.props.cutStripe.cutFrontY, b = M.cutBrighten || 1;
     for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
       const fx = (x + 0.5) / W, fy = (y + 0.5) / H;
-      if (!inMowerStripe(fx, fy) || y < cutY + 1 + Math.floor(hash(x, 7) * 2)) continue;
+      const rag = M.cutLineRaggedPx[0] + Math.floor(hash(x, 7) * (M.cutLineRaggedPx[1] - M.cutLineRaggedPx[0] + 1));   // ragged cut line, fixed per column
+      if (!inMowerStripe(fx, fy) || y < cutY + rag) continue;
       take(x, y); const i = (y * W + x) * 4;
       img.data[i] = Math.min(255, img.data[i] * b); img.data[i + 1] = Math.min(255, img.data[i + 1] * b); img.data[i + 2] = Math.min(255, img.data[i + 2] * b);
     }
@@ -191,14 +194,9 @@ function background(fr) {
       const r = px.rng(A.seed * 13 + s);
       for (let k = 0; k < 3; k++) {
         const x = Math.round(x0 + sw * (s + 0.1 + r() * 0.8)), tall = 3 + Math.floor(r() * 4), lean = r() < 0.5 ? -1 : 1, sway = (fr.frame + s) % 12 < 6 ? 0 : lean;
-        for (let j = 0; j < tall; j++) dot(img, x + (j === tall - 1 ? sway : 0) + (j > 1 ? lean : 0), topRow - j, SHOOT[(j + s) % SHOOT.length]);
+        for (let j = 0; j < tall; j++) blk(img, x + ((j === tall - 1 ? sway : 0) + (j > 1 ? lean : 0)) * K, topRow - j * K, SHOOT[(j + s) % SHOOT.length]);
       }
     }
-  }
-  // the planter's patch of lawn edge tidies as he works
-  if (STATIONS.includes("planter")) {
-    const bt = fr.planter.props.borderTidy;
-    if (bt > 0) for (let y = Math.floor(P.area[1] * H); y < Math.ceil(P.area[3] * H); y++) for (let x = Math.floor(P.area[0] * W); x < Math.ceil(P.area[2] * W); x++) put(x, y, bt);
   }
   ambient(img, fr.frame);
   return img;
@@ -234,6 +232,7 @@ function shadow(dst, cx, cy, rx, ry, strength) {
   }
 }
 function dot(dst, x, y, rgb) { x = Math.round(x); y = Math.round(y); if (x < 0 || y < 0 || x >= W || y >= H) return; const i = (y * W + x) * 4; dst.data[i] = rgb[0]; dst.data[i + 1] = rgb[1]; dst.data[i + 2] = rgb[2]; }
+function blk(dst, x, y, rgb) { for (let j = 0; j < K; j++) for (let i = 0; i < K; i++) dot(dst, Math.round(x) + i, Math.round(y) + j, rgb); }   // one "old grid" pixel
 const nearestPal = (rgb) => pal.reduce((b, c) => (px.dist2(...c, ...rgb) < px.dist2(...b, ...rgb) ? c : b));
 const CLIP = [[143, 191, 74], [167, 211, 90], [111, 159, 58]].map(nearestPal);
 const LEAF = [[96, 150, 60], [70, 120, 48], [130, 170, 70]].map(nearestPal);
@@ -255,10 +254,10 @@ function drawMower(img, fr, f) {
     const sx = p.x * W, sy = p.y * H - Math.round(M.mowerAheadPx * p.scale);
     for (let j = 0; j < n; j++) {
       const side = r() < 0.5 ? -1 : 1, life = cfg.particles.clippingLife;
-      const vx = side * (0.6 + r() * 0.9), vy = -(0.8 + r() * 0.8), land = 2 + r() * 6, age = f - k, c = CLIP[Math.floor(r() * CLIP.length)];
-      if (age >= life) { if (age < life + 40) dot(img, sx + side * 2 + vx * life * 0.5, Math.min(sy + land, L.nearY * H - 1), c); continue; }
+      const vx = side * (0.6 + r() * 0.9) * K, vy = -(0.8 + r() * 0.8) * K, land = (2 + r() * 6) * K, age = f - k, c = CLIP[Math.floor(r() * CLIP.length)];
+      if (age >= life) { if (age < life + 40) dot(img, sx + side * 2 * K + vx * life * 0.5, Math.min(sy + land, L.nearY * H - 1), c); continue; }
       const tt = age / life;
-      flying.push([sx + side * 3 + vx * age * 0.9, sy - 3 + vy * age + (land + 3) * tt * tt * 1.4, c]);
+      flying.push([sx + side * 3 * K + vx * age * 0.9, sy - 3 * K + vy * age + (land + 3 * K) * tt * tt * 1.4, c]);
     }
   }
   shadow(img, fx, fy - ahead / 2, Math.round((shW * s) / 2), Math.max(1, Math.round((shH * s) / 2)), shS);
@@ -267,8 +266,8 @@ function drawMower(img, fr, f) {
   let lastPuff = -1;
   for (let k = f; k >= Math.max(1, f - 3); k--) if (plan.frames[k - 1].mower.props.exhaust) { lastPuff = k; break; }
   if (lastPuff > 0) {
-    const age = f - lastPuff, ex = fx + jit + Math.round(3 * s), ey = fy - ahead - mowH + Math.round(6 * s) - age * 2;
-    for (let j = 0; j <= age; j++) { dot(img, ex + j, ey - j, SMOKE[age > 1 ? 1 : 0]); dot(img, ex + j + 1, ey - j, SMOKE[1]); }
+    const age = f - lastPuff, ex = fx + jit + Math.round(3 * s * K), ey = fy - ahead - mowH + Math.round(6 * s * K) - age * 2 * K;
+    for (let j = 0; j <= age; j++) { blk(img, ex + j * K, ey - j * K, SMOKE[age > 1 ? 1 : 0]); blk(img, ex + (j + 1) * K, ey - j * K, SMOKE[1]); }
   }
   placeSprite(img, m.sheet, m.index, manH, fx, fy);
   for (const [x, y, c] of flying) dot(img, x, y, c);
@@ -288,8 +287,8 @@ function drawPlanter(img, fr, f) {
   const soilPose = (name) => poseIdx("prop-soil", name);
   const drawHole = (base, state, plantName) => {
     const [hx, hy] = at(base, P.holeOffsetPx);
-    if (state === "planted") placeSprite(img, "prop-planting", poseIdx("prop-planting", plantName), fit("prop-planting") * s, hx, hy + 1);
-    else if (state) placeSprite(img, "prop-soil", soilPose(state), soilH, hx, hy + 1);
+    if (state === "planted") placeSprite(img, "prop-planting", poseIdx("prop-planting", plantName), fit("prop-planting") * s, hx, hy + K);
+    else if (state) placeSprite(img, "prop-soil", soilPose(state), soilH, hx, hy + K);
   };
   drawHole(hole1, pr.hole1, "lavender-planted");
   drawHole(hole2, pr.hole2, "geranium-planted");
@@ -298,16 +297,16 @@ function drawPlanter(img, fr, f) {
   placeSprite(img, "prop-tray", poseIdx("prop-tray", pr.tray), fit("prop-tray") * s, ...at(hole1, P.trayOffsetPx));
   // the plants still in the tray sit on top of it
   const [tx, ty] = at(hole1, P.trayOffsetPx), trayTop = ty - Math.round(fit("prop-tray") * s * 0.5);
-  if (pr.lavender === "lavender-pot" && pr.tray === "tray-two") placeSprite(img, "prop-planting", poseIdx("prop-planting", "lavender-pot"), fit("prop-planting") * s * 0.8, tx - 3 * s, trayTop);
-  if (pr.geranium === "geranium-pot" && pr.tray !== "tray-empty") placeSprite(img, "prop-planting", poseIdx("prop-planting", "geranium-pot"), fit("prop-planting") * s * 0.8, tx + 3 * s, trayTop);
+  if (pr.lavender === "lavender-pot" && pr.tray === "tray-two") placeSprite(img, "prop-planting", poseIdx("prop-planting", "lavender-pot"), fit("prop-planting") * s * 0.8, tx - 3 * s * K, trayTop);
+  if (pr.geranium === "geranium-pot" && pr.tray !== "tray-empty") placeSprite(img, "prop-planting", poseIdx("prop-planting", "geranium-pot"), fit("prop-planting") * s * 0.8, tx + 3 * s * K, trayTop);
   if (pr.pot) placeSprite(img, "prop-tray", poseIdx("prop-tray", pr.pot), fit("prop-tray") * s, ...at(hole1, P.potOffsetPx));
   // the gardener (kneeling sheets are drawn at their own, lower, fit)
-  shadow(img, pos.x + 2 * s, pos.y, Math.round(9 * s), Math.max(1, Math.round(2 * s)), 0.35);
+  shadow(img, pos.x + 2 * s * K, pos.y, Math.round(9 * s * K), Math.max(1, Math.round(2 * s * K)), 0.35);
   placeSprite(img, p.sheet, p.index, fit(p.sheet) * s, pos.x, pos.y);
   // particles: soil kicks while digging, dust when knees touch / palms press / gloves clap
   const r = px.rng(A.seed * 17 + f);
-  if (pr.soilKick) for (let j = 0; j < 3; j++) dot(img, pos.x + (P.holeOffsetPx + 2 + r() * 5) * s, pos.y - (2 + r() * 4) * s, SOIL[j % 2]);
-  if (pr.dustPuff || (p.sheet === "planter-finish" && p.pose === "clap-2")) for (let j = 0; j < 4; j++) dot(img, pos.x + (r() * 10 - 3) * s, pos.y - (p.sheet === "planter-finish" ? 14 : 1) * s - r() * 3, DUST[0]);
+  if (pr.soilKick) for (let j = 0; j < 3; j++) blk(img, pos.x + P.holeOffsetPx * s + (2 + r() * 5) * s * K, pos.y - (2 + r() * 4) * s * K, SOIL[j % 2]);
+  if (pr.dustPuff || (p.sheet === "planter-finish" && p.pose === "clap-2")) for (let j = 0; j < 4; j++) blk(img, pos.x + (r() * 10 - 3) * s * K, pos.y - (p.sheet === "planter-finish" ? 14 : 1) * s * K - r() * 3 * K, DUST[0]);
 }
 
 /* ── hedge trimmer: tall A-frame ladder on the patio, against the hedge ── */
@@ -315,32 +314,43 @@ function drawHedge(img, fr, f) {
   const h = fr.hedge, pr = h.props;
   const baseX = HG.x * W, baseY = HG.y * H, topY = HG.ladderTopY * H, ladderH = baseY - topY;
   const s = persp(HG.y), wob = pr.ladderWobblePx || 0;
-  if (pr.pile) placeSprite(img, "prop-ladder", poseIdx("prop-ladder", pr.pile), fit("prop-ladder") * s * 0.32, baseX + HG.pileOffsetPx * s, baseY + 1);
-  shadow(img, baseX + 2, baseY, Math.round(10 * s), 2, 0.35);
-  placeSprite(img, "prop-ladder", poseIdx("prop-ladder", "ladder"), ladderH, baseX + wob, baseY);
-  const feetY = topY + HG.manFeetBelowTopPx, manX = baseX + HG.manOffsetPx + wob + (h.reachPx || 0);
+  if (pr.pile) placeSprite(img, "prop-ladder", poseIdx("prop-ladder", pr.pile), fit("prop-ladder") * s * 0.32, baseX + HG.pileOffsetPx * s, baseY + K);
+  shadow(img, baseX + 2 * K, baseY, Math.round(10 * s * K), Math.round(2 * K), 0.35);
+  placeSprite(img, "prop-ladder", poseIdx("prop-ladder", "ladder"), ladderH, baseX + wob * K, baseY);
+  const feetY = topY + HG.manFeetBelowTopPx, manX = baseX + HG.manOffsetPx + (wob + (h.reachPx || 0)) * K;
   placeSprite(img, h.sheet, h.index, fit(h.sheet) * s, manX, feetY);
   // leaf burst on each close; clippings tumble down the hedge face for a few frames after
-  const tipX = manX + 7 * s, tipY = HG.trim.top[0] * H + 4;
-  if (pr.leafBurst) { const r = px.rng(A.seed * 7 + f); for (let j = 0; j < 4 + Math.floor(r() * 5); j++) dot(img, tipX + (r() * 8 - 4), tipY + (r() * 5 - 3), LEAF[j % 3]); }
+  const tipX = manX + 7 * s * K, tipY = HG.trim.top[0] * H + 4 * K;
+  if (pr.leafBurst) { const r = px.rng(A.seed * 7 + f); for (let j = 0; j < 4 + Math.floor(r() * 5); j++) blk(img, tipX + (r() * 8 - 4) * K, tipY + (r() * 5 - 3) * K, LEAF[j % 3]); }
   for (let k = Math.max(1, f - 6); k < f; k++) {
     if (!plan.frames[k - 1].hedge.props.leafBurst) continue;
     const r = px.rng(A.seed * 7 + k), age = f - k;
-    for (let j = 0; j < 3; j++) dot(img, tipX + (r() * 8 - 4) + Math.sin(age + j) , tipY + age * ((baseY - tipY) / 6) * (0.6 + r() * 0.4), LEAF[j % 3]);
+    for (let j = 0; j < 3; j++) blk(img, tipX + ((r() * 8 - 4) + Math.sin(age + j)) * K, tipY + age * ((baseY - tipY) / 6) * (0.6 + r() * 0.4), LEAF[j % 3]);
   }
 }
 
-/* ── tree cutter: on the oak's right limb, cutting a dead branch and lowering it to the lawn ── */
+/* ── tree cutter: sits on a plank seat hung from the branch above by two ropes, sawing a dead branch to his right ── */
 const T = cfg.tree;
 const ROPE = nearestPal([206, 172, 110]), KERF = nearestPal([40, 30, 24]), FLASH = nearestPal([250, 246, 230]);
 const SAWDUST = [[226, 196, 140], [200, 170, 120]].map(nearestPal);
-function line(dst, x0, y0, x1, y1, c) {
+function line(dst, x0, y0, x1, y1, c, thick = 1) {
   const n = Math.max(1, Math.ceil(Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0))));
-  for (let i = 0; i <= n; i++) dot(dst, x0 + ((x1 - x0) * i) / n, y0 + ((y1 - y0) * i) / n, c);
+  for (let i = 0; i <= n; i++) for (let t = 0; t < thick; t++) dot(dst, x0 + ((x1 - x0) * i) / n + t, y0 + ((y1 - y0) * i) / n, c);
+}
+// where the two seat ropes leave the top of a sprite frame: the opaque runs in its top row (fallback: plank ends)
+function ropeTops(frame) {
+  const runs = [];
+  for (let x = 0, start = -1; x <= frame.w; x++) {
+    const on = x < frame.w && frame.idx[x] >= 0;
+    if (on && start < 0) start = x;
+    if (!on && start >= 0) { runs.push((start + x - 1) / 2); start = -1; }
+  }
+  if (runs.length >= 2) return [runs[0], runs[runs.length - 1]];
+  return [frame.w * 0.3, frame.w * 0.7];
 }
 function drawTree(img, fr, f) {
   const t = fr.tree, pr = t.props, h = T.heightPx;
-  const fx = T.x * W + (pr.vibrationPx || 0), fy = T.y * H;
+  const fx = T.x * W, fy = T.y * H;
   const [cx, cy] = [T.cut[0] * W, T.cut[1] * H];
   // dead twigs in the canopy give way to healthy foliage once the branch is gone
   const cp = T.canopy, heal = pr.canopyHealed, spring = pr.canopySpringPx || 0;
@@ -350,26 +360,28 @@ function drawTree(img, fr, f) {
   if (b.alpha > 0) {
     const attached = b.pose === "attached" || b.pose === "sag";
     const px2 = b.x * W, py2 = b.y * H + (attached ? b.sagPx || 0 : -(b.bouncePx || 0));   // plan.js gives the path
-    if (b.pose !== "on-ground" && !attached) line(img, cx, cy - 2, px2, py2 - T.branchHeightPx * 0.5, ROPE);   // lowering rope
+    if (b.pose !== "on-ground" && !attached) line(img, cx, cy - 2 * K, px2, py2 - T.branchHeightPx * 0.5, ROPE);   // lowering rope
     placeSprite(img, "prop-branch", b.index, T.branchHeightPx, px2, py2, b.alpha);
     // the saw cut through the branch: undercut grows up from below, top cut grows down to meet it
     if (attached) {
-      const thick = 4, u = Math.round(pr.kerf.under * 3 * thick), d = Math.round(pr.kerf.top * 1.5 * thick);
-      for (let j = 0; j < Math.min(thick, u); j++) dot(img, cx, cy + (b.sagPx || 0) - j, KERF);
-      for (let j = 0; j < Math.min(thick, d); j++) dot(img, cx, cy - thick + 1 + j, KERF);
+      const thick = Math.round(4 * K), u = Math.round(pr.kerf.under * 3 * thick), d = Math.round(pr.kerf.top * 1.5 * thick);
+      for (let j = 0; j < Math.min(thick, u); j++) blk(img, cx, cy + (b.sagPx || 0) * K - j, KERF);
+      for (let j = 0; j < Math.min(thick, d); j++) blk(img, cx, cy - thick + 1 + j, KERF);
     }
   }
-  // climbing rope from its anchor above down to his harness
-  line(img, T.ropeAnchor[0] * W, T.ropeAnchor[1] * H, fx, fy - h * 0.55, ROPE);
-  placeSprite(img, t.sheet, t.index, h, fx, fy);
+  // the man on his plank seat; the two seat ropes continue from the top of the sprite up to the branch above
+  const fr2 = placeSprite(img, t.sheet, t.index, h, fx, fy);
+  const [r1, r2] = ropeTops(fr2), left = Math.round(fx - fr2.ax), top = Math.round(fy - fr2.h);
+  const [a1, a2] = T.ropeAnchors;
+  line(img, left + r1, top, a1[0] * W, a1[1] * H, ROPE, Math.round(K));
+  line(img, left + r2, top, a2[0] * W, a2[1] * H, ROPE, Math.round(K));
   const r = px.rng(A.seed * 23 + f);
   if (pr.sawdust) for (let k = Math.max(1, f - 7); k <= f; k++) {              // a stream drifting down from the cut
     const rr = px.rng(A.seed * 29 + k), age = f - k;
-    for (let j = 0; j < 3; j++) dot(img, cx + (rr() * 3 - 1) + age * 0.3, cy + 1 + age * 2 + rr() * 2, SAWDUST[j % 2]);
+    for (let j = 0; j < 3; j++) dot(img, cx + (rr() * 3 - 1) * K + age * 0.3 * K, cy + K + age * 2 * K + rr() * 2 * K, SAWDUST[j % 2]);
   }
-  if (pr.crackFlash) for (let j = 0; j < 5; j++) dot(img, cx + (r() * 4 - 2), cy - 2 + r() * 4, FLASH);
-  if (pr.crackFlash) for (let j = 0; j < 4; j++) dot(img, cx + 3 + r() * 8, cy - 4 + r() * 6, LEAF[j % 3]);
-  if (pr.smoke) for (let j = 0; j < 3; j++) dot(img, fx + 5 + j, fy - h * 0.6 - j, SMOKE[j % 2]);
+  if (pr.crackFlash) for (let j = 0; j < 5; j++) blk(img, cx + (r() * 4 - 2) * K, cy - 2 * K + r() * 4 * K, FLASH);
+  if (pr.crackFlash) for (let j = 0; j < 4; j++) blk(img, cx + (3 + r() * 8) * K, cy + (r() * 6 - 4) * K, LEAF[j % 3]);
 }
 
 function drawButterfly(img, fr) {

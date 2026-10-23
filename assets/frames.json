@@ -1,9 +1,9 @@
 {
- "generated": "2026-10-20T13:30:36.238Z",
+ "generated": "2026-10-23T14:13:29.457Z",
  "frameCount": 120,
  "native": [
-  480,
-  272
+  960,
+  544
  ],
  "frames": [
   {
@@ -12,7 +12,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -33,8 +33,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -103,15 +103,15 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 0.25,
+    "mistOffsetPx": 0.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
     "sunRisePx": 0,
@@ -125,7 +125,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -146,8 +146,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -216,18 +216,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 0.5,
+    "mistOffsetPx": 1,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.0336,
+    "sunRisePx": 0.0672,
     "butterfly": null,
     "particleSeed": 20261022
    }
@@ -238,7 +238,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -259,8 +259,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -329,18 +329,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 0.75,
+    "mistOffsetPx": 1.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.0672,
+    "sunRisePx": 0.1345,
     "butterfly": null,
     "particleSeed": 20261023
    }
@@ -351,7 +351,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -372,8 +372,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -442,18 +442,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 1,
+    "mistOffsetPx": 2,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.1008,
+    "sunRisePx": 0.2017,
     "butterfly": null,
     "particleSeed": 20261024
    }
@@ -464,7 +464,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -485,8 +485,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -555,18 +555,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 1.25,
+    "mistOffsetPx": 2.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.1345,
+    "sunRisePx": 0.2689,
     "butterfly": null,
     "particleSeed": 20261025
    }
@@ -577,7 +577,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -598,8 +598,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -668,18 +668,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 1.5,
+    "mistOffsetPx": 3,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.1681,
+    "sunRisePx": 0.3361,
     "butterfly": null,
     "particleSeed": 20261026
    }
@@ -690,7 +690,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -711,8 +711,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -781,18 +781,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 1.75,
+    "mistOffsetPx": 3.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.2017,
+    "sunRisePx": 0.4034,
     "butterfly": null,
     "particleSeed": 20261027
    }
@@ -803,7 +803,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -824,8 +824,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -894,18 +894,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 2,
+    "mistOffsetPx": 4,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.2353,
+    "sunRisePx": 0.4706,
     "butterfly": null,
     "particleSeed": 20261028
    }
@@ -916,7 +916,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -937,8 +937,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -1007,18 +1007,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 2.25,
+    "mistOffsetPx": 4.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.2689,
+    "sunRisePx": 0.5378,
     "butterfly": null,
     "particleSeed": 20261029
    }
@@ -1029,7 +1029,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1050,8 +1050,8 @@
       "stripe": 4,
       "toY": 0.6706,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -1120,18 +1120,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 2.5,
+    "mistOffsetPx": 5,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.3025,
+    "sunRisePx": 0.605,
     "butterfly": null,
     "particleSeed": 20261030
    }
@@ -1142,7 +1142,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1158,13 +1158,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6699,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -1233,18 +1233,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 2.75,
+    "mistOffsetPx": 5.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.3361,
+    "sunRisePx": 0.6723,
     "butterfly": null,
     "particleSeed": 20261031
    }
@@ -1255,7 +1255,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1276,8 +1276,8 @@
       "stripe": 4,
       "toY": 0.6692,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -1349,18 +1349,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 3,
+    "mistOffsetPx": 6,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.3697,
+    "sunRisePx": 0.7395,
     "butterfly": null,
     "particleSeed": 20261032
    }
@@ -1371,7 +1371,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1387,13 +1387,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6685,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -1465,18 +1465,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 3.25,
+    "mistOffsetPx": 6.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.4034,
+    "sunRisePx": 0.8067,
     "butterfly": null,
     "particleSeed": 20261033
    }
@@ -1487,7 +1487,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1508,8 +1508,8 @@
       "stripe": 4,
       "toY": 0.6678,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -1581,18 +1581,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 3.5,
+    "mistOffsetPx": 7,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.437,
+    "sunRisePx": 0.8739,
     "butterfly": null,
     "particleSeed": 20261034
    }
@@ -1603,7 +1603,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1619,13 +1619,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6671,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -1697,18 +1697,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 3.75,
+    "mistOffsetPx": 7.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.4706,
+    "sunRisePx": 0.9412,
     "butterfly": null,
     "particleSeed": 20261035
    }
@@ -1719,7 +1719,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1740,8 +1740,8 @@
       "stripe": 4,
       "toY": 0.6664,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -1813,18 +1813,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 4,
+    "mistOffsetPx": 8,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.5042,
+    "sunRisePx": 1.0084,
     "butterfly": null,
     "particleSeed": 20261036
    }
@@ -1835,7 +1835,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1851,13 +1851,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6657,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -1929,18 +1929,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 4.25,
+    "mistOffsetPx": 8.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.5378,
+    "sunRisePx": 1.0756,
     "butterfly": null,
     "particleSeed": 20261037
    }
@@ -1951,7 +1951,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -1972,8 +1972,8 @@
       "stripe": 4,
       "toY": 0.665,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -2045,18 +2045,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 4.5,
+    "mistOffsetPx": 9,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.5714,
+    "sunRisePx": 1.1429,
     "butterfly": null,
     "particleSeed": 20261038
    }
@@ -2067,7 +2067,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2083,13 +2083,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6643,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -2161,18 +2161,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 4.75,
+    "mistOffsetPx": 9.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.605,
+    "sunRisePx": 1.2101,
     "butterfly": null,
     "particleSeed": 20261039
    }
@@ -2183,7 +2183,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2204,8 +2204,8 @@
       "stripe": 4,
       "toY": 0.6636,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -2277,18 +2277,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 5,
+    "mistOffsetPx": 10,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.6387,
+    "sunRisePx": 1.2773,
     "butterfly": null,
     "particleSeed": 20261040
    }
@@ -2299,7 +2299,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2315,13 +2315,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6629,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -2393,18 +2393,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 5.25,
+    "mistOffsetPx": 10.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.6723,
+    "sunRisePx": 1.3445,
     "butterfly": null,
     "particleSeed": 20261041
    }
@@ -2415,7 +2415,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2436,8 +2436,8 @@
       "stripe": 4,
       "toY": 0.6622,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -2509,18 +2509,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 5.5,
+    "mistOffsetPx": 11,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.7059,
+    "sunRisePx": 1.4118,
     "butterfly": null,
     "particleSeed": 20261042
    }
@@ -2531,7 +2531,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2547,13 +2547,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6615,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -2625,18 +2625,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 5.75,
+    "mistOffsetPx": 11.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.7395,
+    "sunRisePx": 1.479,
     "butterfly": null,
     "particleSeed": 20261043
    }
@@ -2647,7 +2647,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2668,8 +2668,8 @@
       "stripe": 4,
       "toY": 0.6608,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -2741,18 +2741,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 6,
+    "mistOffsetPx": 12,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.7731,
+    "sunRisePx": 1.5462,
     "butterfly": null,
     "particleSeed": 20261044
    }
@@ -2763,7 +2763,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2779,13 +2779,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6601,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -2820,7 +2820,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -2857,18 +2857,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 6.25,
+    "mistOffsetPx": 12.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.8067,
+    "sunRisePx": 1.6134,
     "butterfly": null,
     "particleSeed": 20261045
    }
@@ -2879,7 +2879,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -2900,8 +2900,8 @@
       "stripe": 4,
       "toY": 0.6594,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -2936,7 +2936,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -2973,18 +2973,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 6.5,
+    "mistOffsetPx": 13,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.8403,
+    "sunRisePx": 1.6807,
     "butterfly": null,
     "particleSeed": 20261046
    }
@@ -2995,7 +2995,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3011,13 +3011,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6587,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -3052,7 +3052,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3089,18 +3089,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 6.75,
+    "mistOffsetPx": 13.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 0.8739,
+    "sunRisePx": 1.7479,
     "butterfly": null,
     "particleSeed": 20261047
    }
@@ -3111,7 +3111,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3132,8 +3132,8 @@
       "stripe": 4,
       "toY": 0.658,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -3168,7 +3168,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3205,18 +3205,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 7,
+    "mistOffsetPx": 14,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 0.9076,
+    "sunRisePx": 1.8151,
     "butterfly": null,
     "particleSeed": 20261048
    }
@@ -3227,7 +3227,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3243,13 +3243,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6573,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -3284,7 +3284,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3321,18 +3321,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 7.25,
+    "mistOffsetPx": 14.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 0.9412,
+    "sunRisePx": 1.8824,
     "butterfly": null,
     "particleSeed": 20261049
    }
@@ -3343,7 +3343,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3364,8 +3364,8 @@
       "stripe": 4,
       "toY": 0.6566,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -3400,7 +3400,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3437,18 +3437,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 7.5,
+    "mistOffsetPx": 15,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 0.9748,
+    "sunRisePx": 1.9496,
     "butterfly": null,
     "particleSeed": 20261050
    }
@@ -3459,7 +3459,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3475,13 +3475,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6559,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -3516,7 +3516,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3553,18 +3553,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 7.75,
+    "mistOffsetPx": 15.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.0084,
+    "sunRisePx": 2.0168,
     "butterfly": null,
     "particleSeed": 20261051
    }
@@ -3575,7 +3575,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3596,8 +3596,8 @@
       "stripe": 4,
       "toY": 0.6552,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -3632,7 +3632,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3669,18 +3669,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 8,
+    "mistOffsetPx": 16,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.042,
+    "sunRisePx": 2.084,
     "butterfly": null,
     "particleSeed": 20261052
    }
@@ -3691,7 +3691,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3707,13 +3707,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6545,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -3748,7 +3748,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3785,18 +3785,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 8.25,
+    "mistOffsetPx": 16.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.0756,
+    "sunRisePx": 2.1513,
     "butterfly": null,
     "particleSeed": 20261053
    }
@@ -3807,7 +3807,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3828,8 +3828,8 @@
       "stripe": 4,
       "toY": 0.6538,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -3864,7 +3864,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -3901,18 +3901,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 8.5,
+    "mistOffsetPx": 17,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.1092,
+    "sunRisePx": 2.2185,
     "butterfly": null,
     "particleSeed": 20261054
    }
@@ -3923,7 +3923,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -3939,13 +3939,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6531,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -3980,7 +3980,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4017,18 +4017,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 8.75,
+    "mistOffsetPx": 17.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.1429,
+    "sunRisePx": 2.2857,
     "butterfly": null,
     "particleSeed": 20261055
    }
@@ -4039,7 +4039,7 @@
     "tidyProgress": {
      "unassigned": 0,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4060,8 +4060,8 @@
       "stripe": 4,
       "toY": 0.6524,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -4096,7 +4096,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4133,18 +4133,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 9,
+    "mistOffsetPx": 18,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.1765,
+    "sunRisePx": 2.3529,
     "butterfly": null,
     "particleSeed": 20261056
    }
@@ -4155,7 +4155,7 @@
     "tidyProgress": {
      "unassigned": 0.0128,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4171,13 +4171,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6517,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -4212,7 +4212,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4249,18 +4249,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 9.25,
+    "mistOffsetPx": 18.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.2101,
+    "sunRisePx": 2.4202,
     "butterfly": null,
     "particleSeed": 20261057
    }
@@ -4271,7 +4271,7 @@
     "tidyProgress": {
      "unassigned": 0.0256,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4292,8 +4292,8 @@
       "stripe": 4,
       "toY": 0.651,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -4328,7 +4328,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4365,18 +4365,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 9.5,
+    "mistOffsetPx": 19,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.2437,
+    "sunRisePx": 2.4874,
     "butterfly": null,
     "particleSeed": 20261058
    }
@@ -4387,7 +4387,7 @@
     "tidyProgress": {
      "unassigned": 0.0385,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4403,13 +4403,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6503,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -4444,7 +4444,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4481,18 +4481,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 9.75,
+    "mistOffsetPx": 19.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.2773,
+    "sunRisePx": 2.5546,
     "butterfly": null,
     "particleSeed": 20261059
    }
@@ -4503,7 +4503,7 @@
     "tidyProgress": {
      "unassigned": 0.0513,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4524,8 +4524,8 @@
       "stripe": 4,
       "toY": 0.6496,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -4560,7 +4560,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4597,18 +4597,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 10,
+    "mistOffsetPx": 20,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.3109,
+    "sunRisePx": 2.6218,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.2,
@@ -4623,7 +4623,7 @@
     "tidyProgress": {
      "unassigned": 0.0641,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4639,13 +4639,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6489,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -4680,7 +4680,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4717,18 +4717,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 10.25,
+    "mistOffsetPx": 20.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.3445,
+    "sunRisePx": 2.6891,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.2105,
@@ -4743,7 +4743,7 @@
     "tidyProgress": {
      "unassigned": 0.0769,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4764,8 +4764,8 @@
       "stripe": 4,
       "toY": 0.6482,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -4800,7 +4800,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4837,18 +4837,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 10.5,
+    "mistOffsetPx": 21,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.3782,
+    "sunRisePx": 2.7563,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.221,
@@ -4863,7 +4863,7 @@
     "tidyProgress": {
      "unassigned": 0.0897,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -4879,13 +4879,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6475,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -4920,7 +4920,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -4957,18 +4957,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 10.75,
+    "mistOffsetPx": 21.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.4118,
+    "sunRisePx": 2.8235,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.2315,
@@ -4983,7 +4983,7 @@
     "tidyProgress": {
      "unassigned": 0.1026,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5004,8 +5004,8 @@
       "stripe": 4,
       "toY": 0.6468,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -5040,7 +5040,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5077,18 +5077,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 11,
+    "mistOffsetPx": 22,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.4454,
+    "sunRisePx": 2.8908,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.242,
@@ -5103,7 +5103,7 @@
     "tidyProgress": {
      "unassigned": 0.1154,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5119,13 +5119,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6461,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -5160,7 +5160,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5197,18 +5197,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 11.25,
+    "mistOffsetPx": 22.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.479,
+    "sunRisePx": 2.958,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.2525,
@@ -5223,7 +5223,7 @@
     "tidyProgress": {
      "unassigned": 0.1282,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5244,8 +5244,8 @@
       "stripe": 4,
       "toY": 0.6454,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -5280,7 +5280,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5317,18 +5317,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 11.5,
+    "mistOffsetPx": 23,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.5126,
+    "sunRisePx": 3.0252,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.263,
@@ -5343,7 +5343,7 @@
     "tidyProgress": {
      "unassigned": 0.141,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5359,13 +5359,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6447,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -5400,7 +5400,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5437,18 +5437,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 11.75,
+    "mistOffsetPx": 23.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.5462,
+    "sunRisePx": 3.0924,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.2735,
@@ -5463,7 +5463,7 @@
     "tidyProgress": {
      "unassigned": 0.1538,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5484,8 +5484,8 @@
       "stripe": 4,
       "toY": 0.644,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -5520,7 +5520,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5557,18 +5557,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 12,
+    "mistOffsetPx": 24,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.5798,
+    "sunRisePx": 3.1597,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.284,
@@ -5583,7 +5583,7 @@
     "tidyProgress": {
      "unassigned": 0.1667,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5599,13 +5599,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6433,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -5640,7 +5640,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5677,18 +5677,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 12.25,
+    "mistOffsetPx": 24.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.6134,
+    "sunRisePx": 3.2269,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.2945,
@@ -5703,7 +5703,7 @@
     "tidyProgress": {
      "unassigned": 0.1795,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5724,8 +5724,8 @@
       "stripe": 4,
       "toY": 0.6426,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -5760,7 +5760,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5797,18 +5797,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 12.5,
+    "mistOffsetPx": 25,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.6471,
+    "sunRisePx": 3.2941,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.305,
@@ -5823,7 +5823,7 @@
     "tidyProgress": {
      "unassigned": 0.1923,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5839,13 +5839,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6419,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -5880,7 +5880,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -5917,18 +5917,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 12.75,
+    "mistOffsetPx": 25.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.6807,
+    "sunRisePx": 3.3613,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.3155,
@@ -5943,7 +5943,7 @@
     "tidyProgress": {
      "unassigned": 0.2051,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -5964,8 +5964,8 @@
       "stripe": 4,
       "toY": 0.6412,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -6000,7 +6000,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -6037,18 +6037,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 13,
+    "mistOffsetPx": 26,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.7143,
+    "sunRisePx": 3.4286,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.326,
@@ -6063,7 +6063,7 @@
     "tidyProgress": {
      "unassigned": 0.2179,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6079,13 +6079,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6405,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -6120,7 +6120,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -6157,18 +6157,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 13.25,
+    "mistOffsetPx": 26.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.7479,
+    "sunRisePx": 3.4958,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.3365,
@@ -6183,7 +6183,7 @@
     "tidyProgress": {
      "unassigned": 0.2308,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6204,8 +6204,8 @@
       "stripe": 4,
       "toY": 0.6398,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -6240,7 +6240,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -6277,18 +6277,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 13.5,
+    "mistOffsetPx": 27,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.7815,
+    "sunRisePx": 3.563,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.347,
@@ -6303,7 +6303,7 @@
     "tidyProgress": {
      "unassigned": 0.2436,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6319,13 +6319,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6391,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -6397,18 +6397,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 13.75,
+    "mistOffsetPx": 27.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.8151,
+    "sunRisePx": 3.6303,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.3575,
@@ -6423,7 +6423,7 @@
     "tidyProgress": {
      "unassigned": 0.2564,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6444,8 +6444,8 @@
       "stripe": 4,
       "toY": 0.6384,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -6517,18 +6517,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 14,
+    "mistOffsetPx": 28,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.8487,
+    "sunRisePx": 3.6975,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.368,
@@ -6543,7 +6543,7 @@
     "tidyProgress": {
      "unassigned": 0.2692,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6559,13 +6559,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6377,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -6637,18 +6637,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 14.25,
+    "mistOffsetPx": 28.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 1.8824,
+    "sunRisePx": 3.7647,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.3785,
@@ -6663,7 +6663,7 @@
     "tidyProgress": {
      "unassigned": 0.2821,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6684,8 +6684,8 @@
       "stripe": 4,
       "toY": 0.637,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -6757,18 +6757,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 14.5,
+    "mistOffsetPx": 29,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 1.916,
+    "sunRisePx": 3.8319,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.389,
@@ -6783,7 +6783,7 @@
     "tidyProgress": {
      "unassigned": 0.2949,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6799,13 +6799,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6363,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -6877,18 +6877,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 14.75,
+    "mistOffsetPx": 29.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 1.9496,
+    "sunRisePx": 3.8992,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.3995,
@@ -6903,7 +6903,7 @@
     "tidyProgress": {
      "unassigned": 0.3077,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -6924,8 +6924,8 @@
       "stripe": 4,
       "toY": 0.6356,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -6997,18 +6997,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 15,
+    "mistOffsetPx": 30,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 1.9832,
+    "sunRisePx": 3.9664,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.41,
@@ -7023,7 +7023,7 @@
     "tidyProgress": {
      "unassigned": 0.3205,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7039,13 +7039,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6349,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -7117,18 +7117,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 15.25,
+    "mistOffsetPx": 30.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.0168,
+    "sunRisePx": 4.0336,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.4205,
@@ -7143,7 +7143,7 @@
     "tidyProgress": {
      "unassigned": 0.3333,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7164,8 +7164,8 @@
       "stripe": 4,
       "toY": 0.6342,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -7237,18 +7237,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 15.5,
+    "mistOffsetPx": 31,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.0504,
+    "sunRisePx": 4.1008,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.431,
@@ -7263,7 +7263,7 @@
     "tidyProgress": {
      "unassigned": 0.3462,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7279,13 +7279,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6335,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -7299,7 +7299,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 1,
+    "offsetPx": 2,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7357,18 +7357,18 @@
       "sheet": "prop-branch",
       "pose": "attached",
       "index": 0,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 15.75,
+    "mistOffsetPx": 31.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.084,
+    "sunRisePx": 4.1681,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.4415,
@@ -7383,7 +7383,7 @@
     "tidyProgress": {
      "unassigned": 0.359,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7404,8 +7404,8 @@
       "stripe": 4,
       "toY": 0.6328,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -7419,7 +7419,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 3,
+    "offsetPx": 7,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7477,18 +7477,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 16,
+    "mistOffsetPx": 32,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.1176,
+    "sunRisePx": 4.2353,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.452,
@@ -7503,7 +7503,7 @@
     "tidyProgress": {
      "unassigned": 0.3718,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7519,13 +7519,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6321,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -7539,7 +7539,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 7,
+    "offsetPx": 15,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7597,18 +7597,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 16.25,
+    "mistOffsetPx": 32.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.1513,
+    "sunRisePx": 4.3025,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.4625,
@@ -7623,7 +7623,7 @@
     "tidyProgress": {
      "unassigned": 0.3846,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7644,8 +7644,8 @@
       "stripe": 4,
       "toY": 0.6314,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -7659,7 +7659,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 13,
+    "offsetPx": 25,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7717,18 +7717,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 16.5,
+    "mistOffsetPx": 33,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.1849,
+    "sunRisePx": 4.3697,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.473,
@@ -7743,7 +7743,7 @@
     "tidyProgress": {
      "unassigned": 0.3974,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7759,13 +7759,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6307,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -7779,7 +7779,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 17,
+    "offsetPx": 33,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7837,18 +7837,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 16.75,
+    "mistOffsetPx": 33.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.2185,
+    "sunRisePx": 4.437,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.4835,
@@ -7863,7 +7863,7 @@
     "tidyProgress": {
      "unassigned": 0.4103,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7884,8 +7884,8 @@
       "stripe": 4,
       "toY": 0.63,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -7899,7 +7899,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 19,
+    "offsetPx": 38,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -7957,18 +7957,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 17,
+    "mistOffsetPx": 34,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.2521,
+    "sunRisePx": 4.5042,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.494,
@@ -7983,7 +7983,7 @@
     "tidyProgress": {
      "unassigned": 0.4231,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -7999,13 +7999,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6293,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -8019,7 +8019,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": null,
@@ -8077,18 +8077,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 17.25,
+    "mistOffsetPx": 34.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.2857,
+    "sunRisePx": 4.5714,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.5045,
@@ -8103,7 +8103,7 @@
     "tidyProgress": {
      "unassigned": 0.4359,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8124,8 +8124,8 @@
       "stripe": 4,
       "toY": 0.6286,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -8139,7 +8139,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8160,7 +8160,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8197,18 +8197,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 17.5,
+    "mistOffsetPx": 35,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.3193,
+    "sunRisePx": 4.6387,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.515,
@@ -8223,7 +8223,7 @@
     "tidyProgress": {
      "unassigned": 0.4487,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8239,13 +8239,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6279,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -8259,7 +8259,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8280,7 +8280,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8317,18 +8317,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 17.75,
+    "mistOffsetPx": 35.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.3529,
+    "sunRisePx": 4.7059,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.5255,
@@ -8343,7 +8343,7 @@
     "tidyProgress": {
      "unassigned": 0.4615,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8364,8 +8364,8 @@
       "stripe": 4,
       "toY": 0.6272,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -8379,7 +8379,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8400,7 +8400,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8437,18 +8437,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 18,
+    "mistOffsetPx": 36,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.3866,
+    "sunRisePx": 4.7731,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.536,
@@ -8463,7 +8463,7 @@
     "tidyProgress": {
      "unassigned": 0.4744,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8479,13 +8479,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6265,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -8499,7 +8499,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8520,7 +8520,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8557,18 +8557,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 18.25,
+    "mistOffsetPx": 36.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.4202,
+    "sunRisePx": 4.8403,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.5465,
@@ -8583,7 +8583,7 @@
     "tidyProgress": {
      "unassigned": 0.4872,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8604,8 +8604,8 @@
       "stripe": 4,
       "toY": 0.6258,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -8619,7 +8619,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8640,7 +8640,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8677,18 +8677,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 18.5,
+    "mistOffsetPx": 37,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.4538,
+    "sunRisePx": 4.9076,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.557,
@@ -8703,7 +8703,7 @@
     "tidyProgress": {
      "unassigned": 0.5,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8719,13 +8719,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6251,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -8739,7 +8739,7 @@
     "index": 5,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8760,7 +8760,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8797,18 +8797,18 @@
       "sheet": "prop-branch",
       "pose": "sag",
       "index": 1,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "sagPx": 2,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 18.75,
+    "mistOffsetPx": 37.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.4874,
+    "sunRisePx": 4.9748,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.5675,
@@ -8823,7 +8823,7 @@
     "tidyProgress": {
      "unassigned": 0.5128,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8844,8 +8844,8 @@
       "stripe": 4,
       "toY": 0.6244,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -8859,7 +8859,7 @@
     "index": 6,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -8880,7 +8880,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -8917,18 +8917,18 @@
       "sheet": "prop-branch",
       "pose": "swing-1",
       "index": 2,
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 19,
+    "mistOffsetPx": 38,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.521,
+    "sunRisePx": 5.042,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.578,
@@ -8943,7 +8943,7 @@
     "tidyProgress": {
      "unassigned": 0.5256,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -8959,13 +8959,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6236,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -8979,7 +8979,7 @@
     "index": 7,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-scuffed",
@@ -9000,7 +9000,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9037,18 +9037,18 @@
       "sheet": "prop-branch",
       "pose": "swing-1",
       "index": 2,
-      "x": 0.6989,
-      "y": 0.2712,
+      "x": 0.7009,
+      "y": 0.2414,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 19.25,
+    "mistOffsetPx": 38.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.5546,
+    "sunRisePx": 5.1092,
     "butterfly": {
      "pose": "wing-2",
      "x": 0.5885,
@@ -9063,7 +9063,7 @@
     "tidyProgress": {
      "unassigned": 0.5385,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9084,8 +9084,8 @@
       "stripe": 4,
       "toY": 0.6229,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -9099,7 +9099,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9120,7 +9120,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9157,18 +9157,18 @@
       "sheet": "prop-branch",
       "pose": "swing-1",
       "index": 2,
-      "x": 0.7001,
-      "y": 0.2748,
+      "x": 0.7021,
+      "y": 0.2454,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 19.5,
+    "mistOffsetPx": 39,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.5882,
+    "sunRisePx": 5.1765,
     "butterfly": {
      "pose": "wing-3",
      "x": 0.599,
@@ -9183,7 +9183,7 @@
     "tidyProgress": {
      "unassigned": 0.5513,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9199,13 +9199,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6222,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -9219,7 +9219,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9240,7 +9240,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9277,18 +9277,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6983,
-      "y": 0.2807,
+      "x": 0.7002,
+      "y": 0.2522,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 19.75,
+    "mistOffsetPx": 39.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.6218,
+    "sunRisePx": 5.2437,
     "butterfly": {
      "pose": "wing-4",
      "x": 0.6095,
@@ -9303,7 +9303,7 @@
     "tidyProgress": {
      "unassigned": 0.5641,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9324,8 +9324,8 @@
       "stripe": 4,
       "toY": 0.6215,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -9339,7 +9339,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9360,7 +9360,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9397,18 +9397,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6934,
-      "y": 0.2891,
+      "x": 0.6952,
+      "y": 0.2617,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 20,
+    "mistOffsetPx": 40,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.6555,
+    "sunRisePx": 5.3109,
     "butterfly": {
      "pose": "wing-1",
      "x": 0.62,
@@ -9423,7 +9423,7 @@
     "tidyProgress": {
      "unassigned": 0.5769,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9439,13 +9439,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6208,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -9459,7 +9459,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9480,7 +9480,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9517,18 +9517,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6855,
-      "y": 0.2998,
+      "x": 0.6872,
+      "y": 0.2739,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 20.25,
+    "mistOffsetPx": 40.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.6891,
+    "sunRisePx": 5.3782,
     "butterfly": null,
     "particleSeed": 20261101
    }
@@ -9539,7 +9539,7 @@
     "tidyProgress": {
      "unassigned": 0.5897,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9560,8 +9560,8 @@
       "stripe": 4,
       "toY": 0.6201,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -9575,7 +9575,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9596,7 +9596,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9633,18 +9633,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6751,
-      "y": 0.3129,
+      "x": 0.6767,
+      "y": 0.2889,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 20.5,
+    "mistOffsetPx": 41,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.7227,
+    "sunRisePx": 5.4454,
     "butterfly": null,
     "particleSeed": 20261102
    }
@@ -9655,7 +9655,7 @@
     "tidyProgress": {
      "unassigned": 0.6026,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9671,13 +9671,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6194,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -9691,7 +9691,7 @@
     "index": 5,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9712,7 +9712,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9749,18 +9749,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6629,
-      "y": 0.3284,
+      "x": 0.6644,
+      "y": 0.3065,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 20.75,
+    "mistOffsetPx": 41.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.7563,
+    "sunRisePx": 5.5126,
     "butterfly": null,
     "particleSeed": 20261103
    }
@@ -9771,7 +9771,7 @@
     "tidyProgress": {
      "unassigned": 0.6154,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9792,8 +9792,8 @@
       "stripe": 4,
       "toY": 0.6187,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -9807,7 +9807,7 @@
     "index": 6,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9828,7 +9828,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 2,
+    "reachPx": 4,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9865,18 +9865,18 @@
       "sheet": "prop-branch",
       "pose": "swing-2",
       "index": 3,
-      "x": 0.6495,
-      "y": 0.3462,
+      "x": 0.6508,
+      "y": 0.3269,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 21,
+    "mistOffsetPx": 42,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.7899,
+    "sunRisePx": 5.5798,
     "butterfly": null,
     "particleSeed": 20261104
    }
@@ -9887,7 +9887,7 @@
     "tidyProgress": {
      "unassigned": 0.6282,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -9903,13 +9903,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.618,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -9923,7 +9923,7 @@
     "index": 7,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -9944,7 +9944,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -9981,18 +9981,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.6355,
-      "y": 0.3665,
+      "x": 0.6366,
+      "y": 0.3499,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 21.25,
+    "mistOffsetPx": 42.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.8235,
+    "sunRisePx": 5.6471,
     "butterfly": null,
     "particleSeed": 20261105
    }
@@ -10003,7 +10003,7 @@
     "tidyProgress": {
      "unassigned": 0.641,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10024,8 +10024,8 @@
       "stripe": 4,
       "toY": 0.6173,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -10039,7 +10039,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10060,7 +10060,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10097,18 +10097,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.6213,
-      "y": 0.3885,
+      "x": 0.6222,
+      "y": 0.3751,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 21.5,
+    "mistOffsetPx": 43,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.8571,
+    "sunRisePx": 5.7143,
     "butterfly": null,
     "particleSeed": 20261106
    }
@@ -10119,7 +10119,7 @@
     "tidyProgress": {
      "unassigned": 0.6538,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10135,13 +10135,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6166,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -10155,7 +10155,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10176,7 +10176,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10213,18 +10213,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.6093,
-      "y": 0.4088,
+      "x": 0.61,
+      "y": 0.3981,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 21.75,
+    "mistOffsetPx": 43.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 2.8908,
+    "sunRisePx": 5.7815,
     "butterfly": null,
     "particleSeed": 20261107
    }
@@ -10235,7 +10235,7 @@
     "tidyProgress": {
      "unassigned": 0.6667,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10256,8 +10256,8 @@
       "stripe": 4,
       "toY": 0.6159,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -10271,7 +10271,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10292,7 +10292,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10329,18 +10329,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.5996,
-      "y": 0.4266,
+      "x": 0.6002,
+      "y": 0.4185,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 22,
+    "mistOffsetPx": 44,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 2.9244,
+    "sunRisePx": 5.8487,
     "butterfly": null,
     "particleSeed": 20261108
    }
@@ -10351,7 +10351,7 @@
     "tidyProgress": {
      "unassigned": 0.6795,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10367,13 +10367,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6152,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -10387,7 +10387,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10408,7 +10408,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10445,18 +10445,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.5919,
-      "y": 0.4421,
+      "x": 0.5923,
+      "y": 0.4361,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 22.25,
+    "mistOffsetPx": 44.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 2.958,
+    "sunRisePx": 5.916,
     "butterfly": null,
     "particleSeed": 20261109
    }
@@ -10467,7 +10467,7 @@
     "tidyProgress": {
      "unassigned": 0.6923,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10488,8 +10488,8 @@
       "stripe": 4,
       "toY": 0.6145,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -10503,7 +10503,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10524,7 +10524,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10561,18 +10561,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.5858,
-      "y": 0.4552,
+      "x": 0.5861,
+      "y": 0.4511,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 22.5,
+    "mistOffsetPx": 45,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 2.9916,
+    "sunRisePx": 5.9832,
     "butterfly": null,
     "particleSeed": 20261110
    }
@@ -10583,7 +10583,7 @@
     "tidyProgress": {
      "unassigned": 0.7051,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10599,13 +10599,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6138,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -10619,7 +10619,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10640,7 +10640,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10677,18 +10677,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.5809,
-      "y": 0.4659,
+      "x": 0.581,
+      "y": 0.4633,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 22.75,
+    "mistOffsetPx": 45.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.0252,
+    "sunRisePx": 6.0504,
     "butterfly": null,
     "particleSeed": 20261111
    }
@@ -10699,7 +10699,7 @@
     "tidyProgress": {
      "unassigned": 0.7179,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10720,8 +10720,8 @@
       "stripe": 4,
       "toY": 0.6131,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -10735,7 +10735,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10756,7 +10756,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10793,18 +10793,18 @@
       "sheet": "prop-branch",
       "pose": "swing-3",
       "index": 4,
-      "x": 0.5768,
-      "y": 0.4743,
+      "x": 0.5769,
+      "y": 0.4728,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 23,
+    "mistOffsetPx": 46,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.0588,
+    "sunRisePx": 6.1176,
     "butterfly": null,
     "particleSeed": 20261112
    }
@@ -10815,7 +10815,7 @@
     "tidyProgress": {
      "unassigned": 0.7308,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10831,13 +10831,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6124,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -10851,7 +10851,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10872,7 +10872,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -10909,18 +10909,18 @@
       "sheet": "prop-branch",
       "pose": "on-ground",
       "index": 5,
-      "x": 0.5736,
-      "y": 0.4802,
+      "x": 0.5737,
+      "y": 0.4796,
       "bouncePx": 1,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 23.25,
+    "mistOffsetPx": 46.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.0924,
+    "sunRisePx": 6.1849,
     "butterfly": null,
     "particleSeed": 20261113
    }
@@ -10931,7 +10931,7 @@
     "tidyProgress": {
      "unassigned": 0.7436,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -10952,8 +10952,8 @@
       "stripe": 4,
       "toY": 0.6117,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -10967,7 +10967,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -10988,7 +10988,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11026,17 +11026,17 @@
       "pose": "on-ground",
       "index": 5,
       "x": 0.5713,
-      "y": 0.4838,
+      "y": 0.4836,
       "bouncePx": 0,
       "alpha": 1
      }
     }
    },
    "ambient": {
-    "mistOffsetPx": 23.5,
+    "mistOffsetPx": 47,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.1261,
+    "sunRisePx": 6.2521,
     "butterfly": null,
     "particleSeed": 20261114
    }
@@ -11047,7 +11047,7 @@
     "tidyProgress": {
      "unassigned": 0.7564,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11063,13 +11063,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.611,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -11083,7 +11083,7 @@
     "index": 5,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11104,7 +11104,7 @@
     "index": 0,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11149,10 +11149,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 23.75,
+    "mistOffsetPx": 47.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.1597,
+    "sunRisePx": 6.3193,
     "butterfly": null,
     "particleSeed": 20261115
    }
@@ -11163,7 +11163,7 @@
     "tidyProgress": {
      "unassigned": 0.7692,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11184,8 +11184,8 @@
       "stripe": 4,
       "toY": 0.6103,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -11199,7 +11199,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11220,7 +11220,7 @@
     "index": 1,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11264,10 +11264,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 24,
+    "mistOffsetPx": 48,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.1933,
+    "sunRisePx": 6.3866,
     "butterfly": null,
     "particleSeed": 20261116
    }
@@ -11278,7 +11278,7 @@
     "tidyProgress": {
      "unassigned": 0.7821,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11294,13 +11294,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6096,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -11314,7 +11314,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11335,7 +11335,7 @@
     "index": 2,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11379,10 +11379,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 24.25,
+    "mistOffsetPx": 48.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.2269,
+    "sunRisePx": 6.4538,
     "butterfly": null,
     "particleSeed": 20261117
    }
@@ -11393,7 +11393,7 @@
     "tidyProgress": {
      "unassigned": 0.7949,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11414,8 +11414,8 @@
       "stripe": 4,
       "toY": 0.6089,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -11429,7 +11429,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11450,7 +11450,7 @@
     "index": 3,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11494,10 +11494,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 24.5,
+    "mistOffsetPx": 49,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.2605,
+    "sunRisePx": 6.521,
     "butterfly": null,
     "particleSeed": 20261118
    }
@@ -11508,7 +11508,7 @@
     "tidyProgress": {
      "unassigned": 0.8077,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11524,13 +11524,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6082,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -11544,7 +11544,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11565,7 +11565,7 @@
     "index": 4,
     "x": 0.85,
     "y": 0.6,
-    "reachPx": 4,
+    "reachPx": 8,
     "props": {
      "ladder": {
       "sheet": "prop-ladder",
@@ -11609,10 +11609,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 24.75,
+    "mistOffsetPx": 49.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.2941,
+    "sunRisePx": 6.5882,
     "butterfly": null,
     "particleSeed": 20261119
    }
@@ -11623,7 +11623,7 @@
     "tidyProgress": {
      "unassigned": 0.8205,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11644,8 +11644,8 @@
       "stripe": 4,
       "toY": 0.6075,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 7,
@@ -11659,7 +11659,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11724,10 +11724,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 25,
+    "mistOffsetPx": 50,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.3277,
+    "sunRisePx": 6.6555,
     "butterfly": null,
     "particleSeed": 20261120
    }
@@ -11738,7 +11738,7 @@
     "tidyProgress": {
      "unassigned": 0.8333,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11754,13 +11754,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6068,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 0,
@@ -11774,7 +11774,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11839,10 +11839,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 25.25,
+    "mistOffsetPx": 50.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.3613,
+    "sunRisePx": 6.7227,
     "butterfly": null,
     "particleSeed": 20261121
    }
@@ -11853,7 +11853,7 @@
     "tidyProgress": {
      "unassigned": 0.8462,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11874,8 +11874,8 @@
       "stripe": 4,
       "toY": 0.6061,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 1,
@@ -11889,7 +11889,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -11954,10 +11954,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 25.5,
+    "mistOffsetPx": 51,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.395,
+    "sunRisePx": 6.7899,
     "butterfly": null,
     "particleSeed": 20261122
    }
@@ -11968,7 +11968,7 @@
     "tidyProgress": {
      "unassigned": 0.859,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -11984,13 +11984,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6054,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 2,
@@ -12004,7 +12004,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -12069,10 +12069,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 25.75,
+    "mistOffsetPx": 51.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.4286,
+    "sunRisePx": 6.8571,
     "butterfly": null,
     "particleSeed": 20261123
    }
@@ -12083,7 +12083,7 @@
     "tidyProgress": {
      "unassigned": 0.8718,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12104,8 +12104,8 @@
       "stripe": 4,
       "toY": 0.6047,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 3,
@@ -12119,7 +12119,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -12184,10 +12184,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 26,
+    "mistOffsetPx": 52,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.4622,
+    "sunRisePx": 6.9244,
     "butterfly": null,
     "particleSeed": 20261124
    }
@@ -12198,7 +12198,7 @@
     "tidyProgress": {
      "unassigned": 0.8846,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12214,13 +12214,13 @@
       "pose": "wheels-c",
       "index": 2
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.604,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 4,
@@ -12234,7 +12234,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "hole-deep",
@@ -12299,10 +12299,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 26.25,
+    "mistOffsetPx": 52.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.4958,
+    "sunRisePx": 6.9916,
     "butterfly": null,
     "particleSeed": 20261125
    }
@@ -12313,7 +12313,7 @@
     "tidyProgress": {
      "unassigned": 0.8974,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12334,8 +12334,8 @@
       "stripe": 4,
       "toY": 0.6033,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 5,
@@ -12349,7 +12349,7 @@
     "index": 6,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12414,10 +12414,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 26.5,
+    "mistOffsetPx": 53,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.5294,
+    "sunRisePx": 7.0588,
     "butterfly": null,
     "particleSeed": 20261126
    }
@@ -12428,7 +12428,7 @@
     "tidyProgress": {
      "unassigned": 0.9103,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12444,13 +12444,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.6026,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      },
      "hatLagFrame": 6,
@@ -12464,7 +12464,7 @@
     "index": 4,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12529,10 +12529,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 26.75,
+    "mistOffsetPx": 53.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.563,
+    "sunRisePx": 7.1261,
     "butterfly": null,
     "particleSeed": 20261127
    }
@@ -12543,7 +12543,7 @@
     "tidyProgress": {
      "unassigned": 0.9231,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12564,8 +12564,8 @@
       "stripe": 4,
       "toY": 0.6026,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -12576,7 +12576,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12641,10 +12641,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 27,
+    "mistOffsetPx": 54,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.5966,
+    "sunRisePx": 7.1933,
     "butterfly": null,
     "particleSeed": 20261128
    }
@@ -12655,7 +12655,7 @@
     "tidyProgress": {
      "unassigned": 0.9359,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12671,13 +12671,13 @@
       "pose": "wheels-a",
       "index": 0
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.602,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -12688,7 +12688,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12753,10 +12753,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 27.25,
+    "mistOffsetPx": 54.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.6303,
+    "sunRisePx": 7.2605,
     "butterfly": null,
     "particleSeed": 20261129
    }
@@ -12767,7 +12767,7 @@
     "tidyProgress": {
      "unassigned": 0.9487,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12788,8 +12788,8 @@
       "stripe": 4,
       "toY": 0.6014,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -12800,7 +12800,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12865,10 +12865,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 27.5,
+    "mistOffsetPx": 55,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.6639,
+    "sunRisePx": 7.3277,
     "butterfly": null,
     "particleSeed": 20261130
    }
@@ -12879,7 +12879,7 @@
     "tidyProgress": {
      "unassigned": 0.9615,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -12895,13 +12895,13 @@
       "pose": "wheels-b",
       "index": 1
      },
-     "jitterPx": 1,
+     "jitterPx": 2,
      "cutStripe": {
       "stripe": 4,
       "toY": 0.601,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -12912,7 +12912,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -12977,10 +12977,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 27.75,
+    "mistOffsetPx": 55.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.6975,
+    "sunRisePx": 7.395,
     "butterfly": null,
     "particleSeed": 20261131
    }
@@ -12991,7 +12991,7 @@
     "tidyProgress": {
      "unassigned": 0.9744,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13012,8 +13012,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13024,7 +13024,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13089,10 +13089,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 28,
+    "mistOffsetPx": 56,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.7311,
+    "sunRisePx": 7.4622,
     "butterfly": null,
     "particleSeed": 20261132
    }
@@ -13103,7 +13103,7 @@
     "tidyProgress": {
      "unassigned": 0.9872,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13124,8 +13124,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13136,7 +13136,7 @@
     "index": 0,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13201,10 +13201,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 28.25,
+    "mistOffsetPx": 56.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.7647,
+    "sunRisePx": 7.5294,
     "butterfly": null,
     "particleSeed": 20261133
    }
@@ -13215,7 +13215,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13236,8 +13236,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13248,7 +13248,7 @@
     "index": 1,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13313,10 +13313,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 28.5,
+    "mistOffsetPx": 57,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.7983,
+    "sunRisePx": 7.5966,
     "butterfly": null,
     "particleSeed": 20261134
    }
@@ -13327,7 +13327,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13348,8 +13348,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13360,7 +13360,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13425,10 +13425,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 28.75,
+    "mistOffsetPx": 57.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.8319,
+    "sunRisePx": 7.6639,
     "butterfly": null,
     "particleSeed": 20261135
    }
@@ -13439,7 +13439,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13460,8 +13460,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13472,7 +13472,7 @@
     "index": 2,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13537,10 +13537,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 29,
+    "mistOffsetPx": 58,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 3.8655,
+    "sunRisePx": 7.7311,
     "butterfly": null,
     "particleSeed": 20261136
    }
@@ -13551,7 +13551,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13572,8 +13572,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13584,7 +13584,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13649,10 +13649,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 29.25,
+    "mistOffsetPx": 58.5,
     "poolShimmerPhase": 1,
     "flowerSway": 0,
-    "sunRisePx": 3.8992,
+    "sunRisePx": 7.7983,
     "butterfly": null,
     "particleSeed": 20261137
    }
@@ -13663,7 +13663,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13684,8 +13684,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13696,7 +13696,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13761,10 +13761,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 29.5,
+    "mistOffsetPx": 59,
     "poolShimmerPhase": 2,
     "flowerSway": 1,
-    "sunRisePx": 3.9328,
+    "sunRisePx": 7.8655,
     "butterfly": null,
     "particleSeed": 20261138
    }
@@ -13775,7 +13775,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13796,8 +13796,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13808,7 +13808,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13873,10 +13873,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 29.75,
+    "mistOffsetPx": 59.5,
     "poolShimmerPhase": 3,
     "flowerSway": 1,
-    "sunRisePx": 3.9664,
+    "sunRisePx": 7.9328,
     "butterfly": null,
     "particleSeed": 20261139
    }
@@ -13887,7 +13887,7 @@
     "tidyProgress": {
      "unassigned": 1,
      "direction": "front-to-back",
-     "feather": 6
+     "feather": 12
     }
    },
    "mower": {
@@ -13908,8 +13908,8 @@
       "stripe": 4,
       "toY": 0.6009,
       "ragged": [
-       1,
-       2
+       2,
+       4
       ]
      }
     }
@@ -13920,7 +13920,7 @@
     "index": 3,
     "x": 0.645,
     "y": 0.605,
-    "offsetPx": 20,
+    "offsetPx": 40,
     "props": {
      "hole1": "planted",
      "hole2": "planted",
@@ -13985,10 +13985,10 @@
     }
    },
    "ambient": {
-    "mistOffsetPx": 30,
+    "mistOffsetPx": 60,
     "poolShimmerPhase": 0,
     "flowerSway": 0,
-    "sunRisePx": 4,
+    "sunRisePx": 8,
     "butterfly": null,
     "particleSeed": 20261140
    }

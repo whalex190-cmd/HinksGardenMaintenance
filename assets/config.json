@@ -3,8 +3,8 @@
   "frameCount": 120,
   "scene": {
     "native": [
-      480,
-      272
+      960,
+      544
     ],
     "untidy": "assets/garden-untidy-clean.png",
     "tidy": "assets/garden-tidy-clean.png",
@@ -14,7 +14,8 @@
       "mobileScale": 0.5,
       "format": "webp",
       "lossless": true
-    }
+    },
+    "gridScale": 2
   },
   "global": {
     "untidyUntil": 35,
@@ -22,7 +23,7 @@
     "tidyTo": 114,
     "fullyTidyFrom": 115,
     "direction": "front-to-back",
-    "maskFeather": 6,
+    "maskFeather": 12,
     "unassignedRegions": [
       "hedges-l",
       "borders-l",
@@ -76,7 +77,7 @@
         120
       ]
     },
-    "jitterPx": 1,
+    "jitterPx": 2,
     "wheelPhases": 3,
     "exhaustEvery": 16,
     "clippingsPerStep": [
@@ -84,13 +85,13 @@
       6
     ],
     "cutLineRaggedPx": [
-      1,
-      2
+      2,
+      4
     ],
-    "mowerAheadPx": 3,
+    "mowerAheadPx": 6,
     "shadow": [
-      18,
-      4,
+      36,
+      8,
       0.35
     ],
     "cutBrighten": 1.08
@@ -98,7 +99,7 @@
   "planter": {
     "x": 0.645,
     "y": 0.605,
-    "shufflePx": 20,
+    "shufflePx": 40,
     "ranges": {
       "stand": [
         1,
@@ -181,14 +182,14 @@
         85
       ]
     ],
-    "holeOffsetPx": 12,
-    "moundOffsetPx": 19,
-    "trayOffsetPx": -15,
+    "holeOffsetPx": 24,
+    "moundOffsetPx": 38,
+    "trayOffsetPx": -30,
     "shuffleDir": [
       -0.84,
       -0.54
     ],
-    "potOffsetPx": -22,
+    "potOffsetPx": -44,
     "area": [
       0.6,
       0.54,
@@ -229,15 +230,15 @@
     "sections": 18,
     "freshFadeFrames": 12,
     "reachEvery": 3,
-    "reachPx": 2,
+    "reachPx": 4,
     "wobbleEvery": 5,
     "leafBurst": [
       4,
       8
     ],
     "ladderTopY": 0.45,
-    "manFeetBelowTopPx": 9,
-    "manOffsetPx": -1,
+    "manFeetBelowTopPx": 18,
+    "manOffsetPx": -2,
     "trim": {
       "x": [
         0.8,
@@ -253,15 +254,15 @@
       ]
     },
     "freshBrighten": 1.12,
-    "pileOffsetPx": 8,
+    "pileOffsetPx": 16,
     "topEdgeY": 0.443
   },
   "tree": {
     "x": 0.652,
     "y": 0.268,
     "branch": {
-      "x": 0.695,
-      "y": 0.27,
+      "x": 0.697,
+      "y": 0.24,
       "landX": 0.57,
       "landY": 0.485
     },
@@ -328,27 +329,34 @@
       118
     ],
     "sawdustPerFrame": [
-      2,
-      4
+      4,
+      8
     ],
-    "heightPx": 18,
-    "ropeAnchor": [
-      0.635,
-      0.14
-    ],
+    "heightPx": 44,
     "cut": [
-      0.676,
-      0.262
+      0.678,
+      0.232
     ],
-    "branchHeightPx": 22,
+    "branchHeightPx": 44,
     "canopy": {
       "x": 0.672,
-      "y": 0.262,
-      "heightPx": 9
-    }
+      "y": 0.234,
+      "heightPx": 18
+    },
+    "ropeAnchors": [
+      [
+        0.636,
+        0.175
+      ],
+      [
+        0.668,
+        0.17
+      ]
+    ],
+    "plankBelowFeetPx": 14
   },
   "ambient": {
-    "mistPxPerFrame": 0.25,
+    "mistPxPerFrame": 0.5,
     "poolShimmerRows": 4,
     "flowerSwayPeriod": 2,
     "butterfly": {
@@ -364,24 +372,24 @@
         0.62,
         0.42
       ],
-      "heightPx": 4
+      "heightPx": 8
     },
-    "sunRisePx": 4,
+    "sunRisePx": 8,
     "seed": 20261020,
     "clouds": {
       "maxY": 0.19,
-      "pxPerFrame": 0.3,
-      "sunKeepPx": 9
+      "pxPerFrame": 0.6,
+      "sunKeepPx": 18
     },
     "sunGlow": {
-      "radius": 24,
+      "radius": 48,
       "bands": 4,
       "strength": 9,
       "pulseFrames": 30
     },
     "wind": {
       "periodFrames": 24,
-      "amplitude": 0.6,
+      "amplitude": 1.2,
       "exclude": [
         "lawn",
         "pool",
@@ -399,28 +407,28 @@
   },
   "spriteFit": {
     "_note": "Native-px height of the tallest pose in each sheet at perspective scale 1.",
-    "default": 33,
-    "prop-mower": 22,
-    "prop-planting": 10,
-    "prop-tray": 8,
-    "prop-soil": 6,
-    "prop-ladder": 41,
-    "prop-branch": 18,
-    "prop-canopy": 14,
-    "ambient-butterfly": 5,
-    "hedge-start": 34,
-    "hedge-snip": 34,
-    "hedge-finish": 34,
-    "tree-prep": 40,
-    "tree-start": 40,
-    "tree-undercut": 40,
-    "tree-topcut": 40,
-    "tree-finish": 40,
-    "planter-dig": 23,
-    "planter-unpot-a": 23,
-    "planter-unpot-b": 23,
-    "planter-backfill": 23,
-    "planter-move": 23
+    "default": 66,
+    "prop-mower": 44,
+    "prop-planting": 20,
+    "prop-tray": 16,
+    "prop-soil": 12,
+    "prop-ladder": 82,
+    "prop-branch": 36,
+    "prop-canopy": 28,
+    "ambient-butterfly": 10,
+    "hedge-start": 68,
+    "hedge-snip": 68,
+    "hedge-finish": 68,
+    "tree-prep": 80,
+    "tree-start": 80,
+    "tree-undercut": 80,
+    "tree-topcut": 80,
+    "tree-finish": 80,
+    "planter-dig": 46,
+    "planter-unpot-a": 46,
+    "planter-unpot-b": 46,
+    "planter-backfill": 46,
+    "planter-move": 46
   },
   "stationOrder": "by-depth"
 }

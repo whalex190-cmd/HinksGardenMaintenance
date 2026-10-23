@@ -5,7 +5,7 @@
     "mower": "gardener in green overalls over a white shirt and a straw hat",
     "planter": "gardener in green overalls with knee pads, a green cap and gloves",
     "hedge": "gardener in green overalls, a green cap and gloves",
-    "tree": "tree surgeon in green overalls, an orange helmet with a mesh visor and ear defenders, a climbing harness"
+    "tree": "tree surgeon in green overalls over a white shirt, an orange safety helmet with a mesh visor and ear defenders, a climbing harness, and heavy gloves"
   },
   "sheets": [
     {
@@ -45,12 +45,12 @@
       "id": "model-tree",
       "character": "tree",
       "poses": [
-        "front",
-        "back",
-        "side hanging in harness",
-        "holding a top-handle chainsaw"
+        "front, standing",
+        "back, standing",
+        "right side, standing",
+        "sitting on a short wooden plank seat holding a hand saw with a long toothed steel blade and a wooden handle, legs dangling"
       ],
-      "desc": "character model sheet, rope rising from the harness"
+      "desc": "character model sheet"
     },
     {
       "id": "mower-start",
@@ -591,128 +591,123 @@
     {
       "id": "tree-prep",
       "character": "tree",
-      "view": "front, slightly from the left",
-      "desc": "in a tree canopy: feet on an (undrawn) limb, leaning back into the harness, rope rising taut from the harness to the top of the cell",
+      "desc": "sitting on a short wooden plank seat (a swing-style bosun's chair) with his legs dangling below the plank; draw the plank clearly under him and draw the two ropes rising straight up from the two ends of the plank to the very top of the cell; seen from the front, slightly from the left. No saw in this sheet",
       "poses": [
         {
           "name": "hang-idle",
-          "desc": "hanging still, hands on the rope"
+          "desc": "sitting still, both hands holding the ropes beside his shoulders"
         },
         {
           "name": "step-feet",
-          "desc": "walking his feet one step sideways"
+          "desc": "leaning to his right, pulling the right rope so the seat swings slightly"
         },
         {
           "name": "pull-rope",
-          "desc": "pulling down on the rope"
+          "desc": "both hands pulling down on the ropes to adjust his height"
         },
         {
           "name": "settle",
-          "desc": "settled again, leaning back"
+          "desc": "settled again, upright, one hand on each rope"
         }
       ]
     },
     {
       "id": "tree-start",
       "character": "tree",
-      "view": "front, slightly from the left",
-      "desc": "in the harness, rope taut, with a top-handle chainsaw on a lanyard",
+      "desc": "sitting on a short wooden plank seat (a swing-style bosun's chair) with his legs dangling below the plank; draw the plank clearly under him and draw the two ropes rising straight up from the two ends of the plank to the very top of the cell; seen from the front, slightly from the left, with a hand saw with a long toothed steel blade and a wooden handle hanging from a clip on his harness",
       "poses": [
         {
           "name": "unclip",
-          "desc": "unclipping the chainsaw from his harness"
+          "desc": "right hand unclipping the saw from his harness"
         },
         {
           "name": "cord-pull-1",
-          "desc": "pulling the starter cord, arm extended"
+          "desc": "lifting the saw up to chest height, blade pointing down"
         },
         {
           "name": "cord-snap",
-          "desc": "arm snapped back, saw jolted"
+          "desc": "turning the saw so the blade points out to his right, horizontal"
         },
         {
           "name": "cord-pull-2",
-          "desc": "second pull of the cord"
+          "desc": "saw held out to his right at shoulder height, blade horizontal, ready"
         },
         {
           "name": "running",
-          "desc": "holding the running saw ready"
+          "desc": "saw blade resting on an unseen branch to his right, the first short stroke"
         }
       ]
     },
     {
       "id": "tree-undercut",
       "character": "tree",
-      "view": "front, slightly from the left",
-      "desc": "in the harness, cutting the underside of an (undrawn) branch to his right with the chainsaw",
+      "desc": "sitting on a short wooden plank seat (a swing-style bosun's chair) with his legs dangling below the plank; draw the plank clearly under him and draw the two ropes rising straight up from the two ends of the plank to the very top of the cell; seen from the front, slightly from the left, sawing the underside of an (undrawn) branch to his right with a hand saw with a long toothed steel blade and a wooden handle; left hand holding the left rope",
       "poses": [
         {
           "name": "enter",
-          "desc": "saw blade angled up into the branch underside"
+          "desc": "saw blade angled up into the branch underside, arm extended"
         },
         {
           "name": "cut-a",
-          "desc": "cutting, arms braced"
+          "desc": "sawing, saw pushed forward, arm extended"
         },
         {
           "name": "cut-b",
-          "desc": "cutting, arms shifted 1px"
+          "desc": "sawing, saw pulled back, elbow bent"
         },
         {
           "name": "withdraw",
-          "desc": "pulling the saw back out"
+          "desc": "pulling the saw out and down, blade clear of the branch"
         }
       ]
     },
     {
       "id": "tree-topcut",
       "character": "tree",
-      "view": "front, slightly from the left",
-      "desc": "in the harness, cutting down through the top of an (undrawn) branch to his right with the chainsaw",
+      "desc": "sitting on a short wooden plank seat (a swing-style bosun's chair) with his legs dangling below the plank; draw the plank clearly under him and draw the two ropes rising straight up from the two ends of the plank to the very top of the cell; seen from the front, slightly from the left, sawing down through the top of an (undrawn) branch to his right with a hand saw with a long toothed steel blade and a wooden handle; left hand holding the left rope",
       "poses": [
         {
           "name": "reposition",
-          "desc": "moving the saw above the branch"
+          "desc": "lifting the saw up above the branch, blade horizontal"
         },
         {
           "name": "cut-a",
-          "desc": "blade cutting down, arms braced"
+          "desc": "sawing down, saw pushed forward, arm extended"
         },
         {
           "name": "cut-b",
-          "desc": "blade cutting down, arms shifted 1px"
+          "desc": "sawing down, saw pulled back, elbow bent"
         },
         {
           "name": "flinch",
-          "desc": "leaning back as the branch cracks away"
+          "desc": "leaning back on the seat as the branch cracks away, saw held up and clear"
         }
       ]
     },
     {
       "id": "tree-finish",
       "character": "tree",
-      "view": "front, slightly from the left",
-      "desc": "in the harness with the chainsaw",
+      "desc": "sitting on a short wooden plank seat (a swing-style bosun's chair) with his legs dangling below the plank; draw the plank clearly under him and draw the two ropes rising straight up from the two ends of the plank to the very top of the cell; seen from the front, slightly from the left, with a hand saw with a long toothed steel blade and a wooden handle",
       "poses": [
         {
           "name": "flush-a",
-          "desc": "final flush cut against the trunk"
+          "desc": "final tidy cut against the trunk to his right, saw pushed forward"
         },
         {
           "name": "flush-b",
-          "desc": "final cut, arms shifted 1px"
+          "desc": "final cut, saw pulled back"
         },
         {
           "name": "stop",
-          "desc": "stopping the saw, holding it away"
+          "desc": "lowering the saw to his lap, blade pointing down"
         },
         {
           "name": "clip",
-          "desc": "clipping the saw to his harness"
+          "desc": "clipping the saw back onto his harness"
         },
         {
           "name": "look-down",
-          "desc": "hands on the rope, looking down at his work"
+          "desc": "both hands on the ropes, looking down at his work with a nod"
         }
       ]
     },
@@ -720,15 +715,15 @@
       "id": "prop-branch",
       "character": null,
       "view": "side",
-      "desc": "one dead oak branch (bare grey-brown twigs, a few brown leaves) with a lowering rope tied round it",
+      "desc": "one dead oak branch: bare grey-brown wood with a few forked twigs and a few dry brown leaves, thick at its left (cut) end and tapering to the right. The same branch in every frame. Draw NO rope, NO string and NO other object",
       "poses": [
         {
           "name": "attached",
-          "desc": "horizontal"
+          "desc": "horizontal, thick end on the left"
         },
         {
           "name": "sag",
-          "desc": "tilted down slightly at its tip"
+          "desc": "tilted down slightly at its thin right end"
         },
         {
           "name": "swing-1",
@@ -744,7 +739,7 @@
         },
         {
           "name": "on-ground",
-          "desc": "lying flat on grass"
+          "desc": "lying flat on grass, thick end on the left"
         }
       ]
     },

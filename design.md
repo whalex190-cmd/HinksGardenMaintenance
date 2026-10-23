@@ -177,7 +177,7 @@ Shadows are rare. Use them only on floating things: the dropdown, the contact fo
 - Video backgrounds must be muted, looping, ≤8 seconds, and have a still `poster` image. Show the still instead when `prefers-reduced-motion` is set.
 - **Hero animation:** an illustrated pixel-art scene. This is an allowed AI use, because it's clearly an illustration, not a claimed job.
   - It has its own warm sunrise palette (`images/hero/palette.json`), separate from the UI tokens.
-  - It sits on a true pixel grid: 480×272 at ×4. Render it with `image-rendering: pixelated`.
+  - It sits on a true pixel grid: 960×544 (×2 in the 1920-wide masters). Characters are about 66 grid pixels tall at the front of the lawn. Scale it up by whole numbers with smoothing off, then step down to size.
   - How to produce it: `images/hero/RUNBOOK.md`.
 - Export at no more than 1920px wide, as JPEG at roughly 80% quality, and lazy-load everything below the hero.
 

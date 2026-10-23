@@ -28,6 +28,10 @@
 
   const frames = new Array(COUNT);           // HTMLImageElement once decoded
   let current = reduced ? COUNT - 1 : 0, drawn = -1;
+  // Frames are drawn in two steps: a whole-number upscale with smoothing off (crisp pixels), then one even step
+  // down to the exact size. Drawing straight at a fractional scale with smoothing off makes some rows a pixel
+  // taller than others, which shows as faint lines across the picture.
+  const off = document.createElement("canvas"), octx = off.getContext("2d");
 
   /* ── drawing: cover the stage on landscape screens; on portrait phones zoom in on the working area and
         centre it in the space above the copy card ── */
@@ -49,15 +53,23 @@
       const room = (card ? card.offsetTop : stage.clientHeight) * (H / stage.clientHeight);   // canvas px above the card
       dy = Math.max(0, Math.round((room - dh) / 2));
     }
-    ctx.imageSmoothingEnabled = false;
+    const k = Math.max(1, Math.ceil(s - 0.001));
+    if (off.width !== iw * k || off.height !== ih * k) { off.width = iw * k; off.height = ih * k; }
+    octx.imageSmoothingEnabled = false;
+    octx.drawImage(img, 0, 0, off.width, off.height);
     if (portrait || dw < W || dh < H) { ctx.fillStyle = getComputedStyle(hero).backgroundColor; ctx.fillRect(0, 0, W, H); }
-    ctx.drawImage(img, dx, dy, dw, dh);
+    ctx.imageSmoothingEnabled = Math.abs(k - s) > 0.001;
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(off, dx, dy, dw, dh);
     drawn = j;
   }
   function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     canvas.width = Math.round(stage.clientWidth * dpr);
     canvas.height = Math.round(stage.clientHeight * dpr);
+    // size the element to exactly backing/dpr so the browser never rescales the canvas itself
+    canvas.style.width = canvas.width / dpr + "px";
+    canvas.style.height = canvas.height / dpr + "px";
     draw(current, true);
   }
 
