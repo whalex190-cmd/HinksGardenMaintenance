@@ -1,15 +1,15 @@
 {
  "id": "model-planter",
  "poses": [
-  "front",
-  "back",
-  "right side",
-  "kneeling right side"
+  "front view, standing straight, arms at his sides",
+  "back view, standing straight",
+  "right side view, standing straight",
+  "action pose: kneeling on both knees holding a hand trowel"
  ],
  "cell": [
-  25,
-  34
+  44,
+  67
  ],
- "anchorX": 13,
- "fit": 33
+ "anchorX": 20,
+ "fit": 66
 }

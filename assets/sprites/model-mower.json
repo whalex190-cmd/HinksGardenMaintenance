@@ -1,15 +1,15 @@
 {
  "id": "model-mower",
  "poses": [
-  "front",
-  "back",
-  "left side",
-  "three-quarter back"
+  "front view, standing straight, arms at his sides",
+  "back view, standing straight",
+  "right side view, standing straight",
+  "action pose: pushing a lawnmower: hands forward on an (undrawn) handle, leaning slightly"
  ],
  "cell": [
-  17,
-  34
+  68,
+  67
  ],
- "anchorX": 8,
- "fit": 33
+ "anchorX": 28,
+ "fit": 66
 }

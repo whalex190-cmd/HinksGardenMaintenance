@@ -21,6 +21,7 @@ const sh = require("./lib/sheets");
 
 const cfg = px.readJson("assets/config.json");
 const cat = px.readJson("assets/sprites.json");
+const sheetDef = Object.fromEntries(cat.sheets.map((s) => [s.id, s]));
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const m = /^--([^=]+)(?:=(.*))?$/.exec(a); return m ? [m[1], m[2] ?? true] : [a, true]; }));
 const list = (v) => (typeof v === "string" ? v.split(",").map((s) => s.trim()).filter(Boolean) : []);
 
@@ -171,11 +172,24 @@ function process1(s) {
   gif.finish();
   fs.writeFileSync(path.join(px.ROOT, "qc", "sprites", s.id + ".gif"), Buffer.from(gif.bytes()));
   const hs = frames.map((f) => f.h);
-  return `${s.id}: ${n} poses, cell ${cw}x${ch}, heights ${Math.min(...hs)}-${Math.max(...hs)}px${sheet.method !== "gaps" ? "  ⚠ frames not cleanly separated" : ""}`;
+  // consistency vs the character's reference sheet: colour fidelity per pose, and size against the model sheet
+  let note = "";
+  if (s.character) {
+    const model = sh.loadSheet(sheetDef["model-" + s.character], cfg);
+    // the reference sheet's own fidelity is the yardstick (raw generations always carry some anti-aliased pixels)
+    const bar = (model ? model.fidelity.reduce((a, b) => a + b, 0) / model.fidelity.length : 1) * QC_FIDELITY;
+    const low = sheet.fidelity.map((v, i) => [v, i]).filter(([v]) => v < bar);
+    const sizeRatio = model && model !== sheet ? (sheet.tallest / model.tallest).toFixed(2) : "1.00";
+    note = `  colour ${Math.round(Math.min(...sheet.fidelity) * 100)}-${Math.round(Math.max(...sheet.fidelity) * 100)}% on palette, size x${sizeRatio}` + (low.length ? `  ⚠ off-palette poses: ${low.map(([v, i]) => `${i + 1} (${Math.round(v * 100)}%)`).join(", ")}` : "");
+    consistency[s.id] = { fidelity: sheet.fidelity.map((v) => +v.toFixed(3)), sizeRatio: +sizeRatio, flagged: low.map(([, i]) => i + 1) };
+  }
+  return `${s.id}: ${n} poses, cell ${cw}x${ch}, heights ${Math.min(...hs)}-${Math.max(...hs)}px${sheet.method !== "gaps" ? "  ⚠ frames not cleanly separated" : ""}${note}`;
 }
+const QC_FIDELITY = 0.9, consistency = {};   // a pose is flagged below 90% of its reference sheet's own colour fidelity
 
 (async () => {
   px.ensureDir(sh.CACHE); px.ensureDir(path.join(px.ROOT, "assets", "sprites")); px.ensureDir(path.join(px.ROOT, "qc", "sprites"));
   if (!args["no-generate"]) await generate();
   for (const s of selected) { const r = process1(s); console.log(r ? "  " + r : `- ${s.id}: not generated`); }
+  if (Object.keys(consistency).length) fs.writeFileSync(path.join(px.ROOT, "qc", "sprites", "consistency.json"), JSON.stringify(consistency, null, 1) + "\n");
 })().catch((e) => { console.error(e.message || e); process.exit(1); });

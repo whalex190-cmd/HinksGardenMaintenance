@@ -1,56 +1,56 @@
 {
   "_note": "Every unique sprite sheet the API must generate. One row per sheet on #FF00FF, equal cells, shared baseline. Each pose is listed once; frames.json reuses them. Model sheets lock the four character designs and are attached as references to that character's other sheets.",
-  "style": "Polished hi-bit pixel art matching the reference garden: crisp pixel clusters, no blur, no anti-aliasing, warm sunrise light from the left. Stylised game sprite about 3 heads tall, dot eyes, simple rounded shapes, 2-3 tone flat shading, 1px darker outline, at most 10 colours, same pixel grid size as the scenery.",
+  "style": "Polished hi-bit pixel art matching the reference garden: crisp pixel clusters, no blur, no anti-aliasing, no smooth gradients, warm sunrise light from the left so shadows fall to the right. Stylised game sprite about 3 heads tall, dot eyes, simple rounded shapes, 2-3 tone flat shading, 1px darker outline, at most 12 colours per character, exactly the same pixel size as the scenery.",
   "characters": {
-    "mower": "gardener in green overalls over a white shirt and a straw hat",
-    "planter": "gardener in green overalls with knee pads, a green cap and gloves",
-    "hedge": "gardener in green overalls, a green cap and gloves",
-    "tree": "tree surgeon in green overalls over a white shirt, an orange safety helmet with a mesh visor and ear defenders, a climbing harness, and heavy gloves"
+    "mower": "the MOWER gardener (always identical): stocky, about 3 heads tall; olive-green dungaree overalls over a white short-sleeved shirt; a wide-brimmed straw hat with a dark green band; brown boots; tan gloves; short brown hair; friendly dot eyes",
+    "planter": "the PLANTER gardener (always identical): slim, about 3 heads tall; olive-green dungaree overalls with dark brown knee pads over a cream short-sleeved t-shirt; a dark green flat cap; brown boots; dark green gloves; short black hair; friendly dot eyes",
+    "hedge": "the HEDGE gardener (always identical): about 3 heads tall; olive-green dungaree overalls over a pale yellow t-shirt; a khaki baseball cap; brown boots; tan gloves; ginger hair; friendly dot eyes",
+    "tree": "the TREE SURGEON (always identical): about 3 heads tall; olive-green dungaree overalls over a white t-shirt; an orange safety helmet with a black mesh visor and orange ear defenders; a black climbing harness around his waist and thighs with a rope clipped to it; black gloves; dark brown boots"
   },
   "sheets": [
     {
       "id": "model-mower",
       "character": "mower",
       "poses": [
-        "front",
-        "back",
-        "left side",
-        "three-quarter back"
+        "front view, standing straight, arms at his sides",
+        "back view, standing straight",
+        "right side view, standing straight",
+        "action pose: pushing a lawnmower: hands forward on an (undrawn) handle, leaning slightly"
       ],
-      "desc": "character model sheet, standing, arms relaxed"
+      "desc": "character reference model sheet, the same character at exactly the same size in every frame"
     },
     {
       "id": "model-planter",
       "character": "planter",
       "poses": [
-        "front",
-        "back",
-        "right side",
-        "kneeling right side"
+        "front view, standing straight, arms at his sides",
+        "back view, standing straight",
+        "right side view, standing straight",
+        "action pose: kneeling on both knees holding a hand trowel"
       ],
-      "desc": "character model sheet holding a hand trowel"
+      "desc": "character reference model sheet, the same character at exactly the same size in every frame"
     },
     {
       "id": "model-hedge",
       "character": "hedge",
       "poses": [
-        "front",
-        "back",
-        "right side",
-        "holding long-handled shears"
+        "front view, standing straight, arms at his sides",
+        "back view, standing straight",
+        "right side view, standing straight",
+        "action pose: standing holding long-handled shears up at shoulder height"
       ],
-      "desc": "character model sheet"
+      "desc": "character reference model sheet, the same character at exactly the same size in every frame"
     },
     {
       "id": "model-tree",
       "character": "tree",
       "poses": [
-        "front, standing",
-        "back, standing",
-        "right side, standing",
-        "sitting on a short wooden plank seat holding a hand saw with a long toothed steel blade and a wooden handle, legs dangling"
+        "front view, standing straight, arms at his sides",
+        "back view, standing straight",
+        "right side view, standing straight",
+        "action pose: leaning back into his harness, legs bent with feet braced against an (undrawn) trunk, holding a pole saw (a short saw blade on a long pole) angled upwards with both hands"
       ],
-      "desc": "character model sheet"
+      "desc": "character reference model sheet, the same character at exactly the same size in every frame"
     },
     {
       "id": "mower-start",

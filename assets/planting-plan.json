@@ -1,0 +1,59 @@
+{
+  "_note": "Planting plan for the hero garden: an asymmetrical English cottage garden. Positions are fractions of the scene (x left→right, y top→bottom); 'box' is [x0, y0, x1, y1] on the ground plane where the group sits. Heights are real-world metres. The left and right sides differ in plants, grouping, height and rhythm but balance as a whole: the left is soft pinks, blues and lime with tall spires at the back; the right is bold yellows, apricots and purples with silver herbs, anchored by the sunflower stand and the olive.",
+  "light": { "direction": "sunrise from the left of the oak", "shadowsCastTowards": "right", "shadowSoftness": "soft" },
+  "palette": "assets/palette-960.json",
+  "fixed": [
+    { "id": "lawn", "note": "unchanged: mown stripes, the mower's stripe is stripe 4 of 11" },
+    { "id": "pool", "note": "unchanged" },
+    { "id": "patio", "note": "paving right of the pool; stays clear where the ladder stands (x 0.80–0.90, y 0.45–0.62)" },
+    { "id": "oak", "note": "unchanged" },
+    { "id": "hedges", "note": "the clipped box edging along both lawn edges and the tall hedge at the back right stay; plants now overlap their bases" }
+  ],
+  "sides": {
+    "left": {
+      "character": "soft and romantic: pinks, blues and lime; spires at the back stepping down to low mounds that spill over the paving",
+      "groups": [
+        { "n": 1,  "plant": "hollyhock",   "tier": "tall", "count": 5, "height_m": 2.0, "colour": "cream and soft pink",      "box": [0.02, 0.40, 0.12, 0.58], "note": "against the left tree line, a loose drift" },
+        { "n": 2,  "plant": "delphinium",  "tier": "tall", "count": 3, "height_m": 1.5, "colour": "deep blue",                "box": [0.13, 0.44, 0.21, 0.56] },
+        { "n": 3,  "plant": "peony",       "tier": "mid",  "count": 3, "height_m": 0.9, "colour": "blush pink, full blooms",  "box": [0.04, 0.58, 0.15, 0.68] },
+        { "n": 4,  "plant": "acer",        "tier": "structure", "count": 1, "height_m": 2.2, "colour": "deep red leaves",     "box": [0.15, 0.33, 0.27, 0.60], "note": "the small tree on the left, now a red acer" },
+        { "n": 5,  "plant": "salvia",      "tier": "mid",  "count": 7, "height_m": 0.6, "colour": "violet spikes",            "box": [0.15, 0.63, 0.30, 0.74] },
+        { "n": 6,  "plant": "alchemilla",  "tier": "low",  "count": 5, "height_m": 0.4, "colour": "lime-green froth",         "box": [0.01, 0.76, 0.15, 0.94], "note": "spills over the paving edge by the pool" },
+        { "n": 7,  "plant": "catmint",     "tier": "low",  "count": 3, "height_m": 0.4, "colour": "lavender-blue",            "box": [0.15, 0.74, 0.28, 0.86] },
+        { "n": 8,  "plant": "rosemary in a terracotta pot", "tier": "structure", "count": 1, "height_m": 0.7, "colour": "grey-green", "box": [0.29, 0.60, 0.35, 0.70] },
+        { "n": 9,  "plant": "foxglove",    "tier": "tall", "count": 5, "height_m": 1.4, "colour": "pink and white spires",    "box": [0.43, 0.45, 0.48, 0.52], "note": "far end of the left lawn-edge border, towards the oak" },
+        { "n": 10, "plant": "allium",      "tier": "mid",  "count": 5, "height_m": 0.9, "colour": "purple globes",            "box": [0.40, 0.50, 0.45, 0.56] },
+        { "n": 11, "plant": "echinacea",   "tier": "mid",  "count": 9, "height_m": 0.8, "colour": "pink-purple daisies",      "box": [0.36, 0.55, 0.44, 0.62] },
+        { "n": 12, "plant": "geranium",    "tier": "low",  "count": 7, "height_m": 0.3, "colour": "magenta",                  "box": [0.36, 0.59, 0.46, 0.64], "note": "along the front of the box edging" }
+      ]
+    },
+    "right": {
+      "character": "bold and sunny: yellows, apricots and purples with silver herbs; a tall sunflower stand at the back, loose rose mounds, lavender and herbs at the front, pots and an olive on the patio",
+      "groups": [
+        { "n": 13, "plant": "sunflower",   "tier": "tall", "count": 5, "height_m": 1.8, "colour": "yellow, brown centres",   "box": [0.55, 0.44, 0.63, 0.56], "note": "the established drift the planter extends with two young staked plants at [0.62, 0.57, 0.66, 0.61]" },
+        { "n": 14, "plant": "rose",        "tier": "mid",  "count": 5, "height_m": 1.0, "colour": "apricot shrub roses",      "box": [0.58, 0.52, 0.70, 0.60] },
+        { "n": 15, "plant": "lavender",    "tier": "low",  "count": 7, "height_m": 0.5, "colour": "purple",                   "box": [0.54, 0.58, 0.72, 0.63], "note": "along the right box edging" },
+        { "n": 16, "plant": "sage",        "tier": "herb", "count": 3, "height_m": 0.5, "colour": "silver-grey",              "box": [0.66, 0.59, 0.72, 0.63], "note": "mixed into the lavender" },
+        { "n": 17, "plant": "allium",      "tier": "mid",  "count": 5, "height_m": 0.9, "colour": "purple globes",            "box": [0.53, 0.46, 0.57, 0.50], "note": "far end of the right border, towards the oak" },
+        { "n": 18, "plant": "thyme and sage strip", "tier": "herb", "count": 7, "height_m": 0.3, "colour": "green and silver", "box": [0.78, 0.52, 1.00, 0.58], "note": "a slim bed at the base of the tall hedge, behind the patio, overlapping the hedge base" },
+        { "n": 19, "plant": "sunflower",   "tier": "tall", "count": 7, "height_m": 1.8, "colour": "yellow",                   "box": [0.90, 0.36, 1.00, 0.52], "note": "the existing stand at the hedge end" },
+        { "n": 20, "plant": "terracotta pots: box ball, sage, rosemary", "tier": "structure", "count": 3, "height_m": 0.6, "colour": "terracotta, green, silver", "box": [0.75, 0.70, 0.83, 0.84], "note": "clustered at the patio's lawn-side edge" },
+        { "n": 21, "plant": "olive tree in a large pot", "tier": "structure", "count": 1, "height_m": 2.0, "colour": "silver-green", "box": [0.92, 0.58, 0.99, 0.80], "note": "right edge of the patio" },
+        { "n": 22, "plant": "thyme",       "tier": "low",  "count": 5, "height_m": 0.1, "colour": "green with pink flowers",  "box": [0.72, 0.60, 0.78, 0.68], "note": "in a few paving joints and spilling over the patio edge onto the lawn" }
+      ]
+    }
+  },
+  "planter": {
+    "plants": "sunflower (group 13)",
+    "technique": "young plants about 30 cm tall in pots, each with a cane stake: dig a deep hole, set the plant in, backfill, firm in with both hands, tie loosely to the stake, water in with a watering can",
+    "newPlants": 2,
+    "position": [0.62, 0.57, 0.66, 0.61],
+    "matches": "same species, colour and style as group 13 next to them, just younger and smaller; they stay in place and settle for the rest of the sequence"
+  },
+  "boundaries": [
+    { "id": "patio-lawn",   "treatment": "a clean brick edging strip where the paving meets the lawn, thyme spilling over it, moss in a few joints", "line": [[0.735, 0.648], [0.80, 0.59]] },
+    { "id": "lawn-border",  "treatment": "a crisp cut lawn edge with a slim strip of dark soil in front of the box edging, both sides", "line": [[0.36, 0.64], [0.47, 0.47]], "line2": [[0.54, 0.64], [0.54, 0.47]] },
+    { "id": "border-hedge", "treatment": "plants overlap the hedge bases; no hard line or gap", "line": [[0.78, 0.56], [1.0, 0.56]] },
+    { "id": "pool-paving",  "treatment": "the stone coping meets the paving cleanly; a little thyme and alchemilla soften the left corner", "line": [[0.20, 0.72], [0.30, 0.66]] }
+  ]
+}

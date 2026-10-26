@@ -210,7 +210,8 @@ function blit(dst, f, x0, y0, alpha = 1) {
       const dx = x0 + x; if (dx < 0 || dx >= W) continue;
       const v = f.idx[y * f.w + x]; if (v < 0) continue;
       if (alpha < 1 && hash(dx, dy) > alpha) continue;
-      const i = (dy * W + dx) * 4; dst.data[i] = pal[v][0]; dst.data[i + 1] = pal[v][1]; dst.data[i + 2] = pal[v][2];
+      const P = f.pal || pal;    // characters carry their own locked palette; props use the scene's
+      const i = (dy * W + dx) * 4; dst.data[i] = P[v][0]; dst.data[i + 1] = P[v][1]; dst.data[i + 2] = P[v][2];
     }
   }
 }

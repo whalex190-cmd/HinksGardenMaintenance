@@ -1,15 +1,15 @@
 {
  "id": "model-tree",
  "poses": [
-  "front, standing",
-  "back, standing",
-  "right side, standing",
-  "sitting on a short wooden plank seat holding a hand saw with a long toothed steel blade and a wooden handle, legs dangling"
+  "front view, standing straight, arms at his sides",
+  "back view, standing straight",
+  "right side view, standing straight",
+  "action pose: leaning back into his harness, legs bent with feet braced against an (undrawn) trunk, holding a pole saw (a short saw blade on a long pole) angled upwards with both hands"
  ],
  "cell": [
-  28,
-  34
+  48,
+  67
  ],
- "anchorX": 10,
- "fit": 33
+ "anchorX": 19,
+ "fit": 66
 }

@@ -1,15 +1,15 @@
 {
  "id": "model-hedge",
  "poses": [
-  "front",
-  "back",
-  "right side",
-  "holding long-handled shears"
+  "front view, standing straight, arms at his sides",
+  "back view, standing straight",
+  "right side view, standing straight",
+  "action pose: standing holding long-handled shears up at shoulder height"
  ],
  "cell": [
-  25,
-  34
+  49,
+  67
  ],
- "anchorX": 9,
- "fit": 33
+ "anchorX": 20,
+ "fit": 66
 }
