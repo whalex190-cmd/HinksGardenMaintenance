@@ -42,11 +42,12 @@ function mower(f) {
   const M = cfg.mower, R = M.ranges, y0 = M.start.y, y1 = yAtScale(M.end.scale);
   const walkFrames = R.walk[1] - R.walk[0] + 1;
   // distance covered: ease in over 10-11, constant through the walk, ease out over 108-112
-  const total = walkFrames + 1 + 2.5;           // walk + ease-in share + slow-down share, in "frame units" of travel
+  const easeFrames = R.easeIn[1] - R.easeIn[0] + 1, slowFrames = R.slow[1] - R.slow[0] + 1;
+  const total = walkFrames + easeFrames * 0.5 + slowFrames * 0.5;   // walk + half-speed ease-in + half-speed slow-down, in "frame units" of travel
   let d = 0;
-  if (f >= R.easeIn[0]) d += Math.min(1, prog(f, R.easeIn)) * 1;
+  if (f >= R.easeIn[0]) d += Math.min(1, prog(f, [R.easeIn[0], R.easeIn[1] + 1])) * easeFrames * 0.5;
   if (f >= R.walk[0]) d += Math.min(walkFrames, f - R.walk[0] + 1);
-  if (f >= R.slow[0]) d += 2.5 * Math.sin((Math.PI / 2) * prog(f, R.slow));
+  if (f >= R.slow[0]) d += slowFrames * 0.5 * Math.sin((Math.PI / 2) * prog(f, [R.slow[0], R.slow[1] + 1]));
   const t = Math.min(1, d / total);
   const y = lerp(y0, y1, t), x = stripeX(M.stripe, y), scale = scaleAtY(y);
   let p, extras = {};
@@ -57,7 +58,7 @@ function mower(f) {
     p = pose("mower-walk", "P" + (i + 1));
     extras = { hatLagFrame: i === 0 ? 7 : i - 1, exhaust: (f - R.walk[0]) % M.exhaustEvery === 0, clippings: i % 4 === 0 };
   } else if (inR(f, R.slow)) p = pose("mower-finish", f < R.slow[1] - 1 ? "half-step" : "stop");
-  else if (inR(f, R.wipeBrow)) p = pose("mower-finish", ["hand-off", "wipe-1", "wipe-2", "hand-off"][f - R.wipeBrow[0]]);
+  else if (inR(f, R.wipeBrow)) p = pose("mower-finish", spread(f, R.wipeBrow, ["hand-off", "wipe-1", "wipe-2", "wipe-1", "hand-off"]));
   else p = pose("mower-finish", "rest");
   const moving = f >= R.easeIn[0] && f <= R.slow[1];
   return {
@@ -77,7 +78,7 @@ function planter(f) {
   let p;
   const dig = (range) => pose("planter-dig", sheetPoses["planter-dig"][(f - range[0]) % 8]);
   if (inR(f, R.stand)) p = pose("planter-kneel", "stand-look");
-  else if (inR(f, R.kneel)) p = pose("planter-kneel", ["step", "bend", "knee-lower", "knee-touch", "settle", "lean"][f - R.kneel[0]]);
+  else if (inR(f, R.kneel)) p = pose("planter-kneel", spread(f, R.kneel, ["step", "bend", "knee-lower", "knee-touch", "settle", "lean"]));
   else if (inR(f, R.dig1)) p = dig(R.dig1);
   else if (inR(f, R.trowelDown)) p = pose("planter-move", "lay-trowel");
   else if (inR(f, R.unpot1)) p = spread(f, R.unpot1, [
@@ -87,6 +88,8 @@ function planter(f) {
   else if (inR(f, R.backfill1)) p = spread(f, R.backfill1, [
     ["planter-backfill", "sweep-reach"], ["planter-backfill", "sweep-pull"], ["planter-backfill", "sweep-reach"], ["planter-backfill", "sweep-pull"],
     ["planter-backfill", "press"], ["planter-backfill", "sit-back"], ["planter-backfill", "look"]]).reduce((s, n) => pose(s, n));
+  else if (inR(f, R.stake1)) p = pose("planter-stake", spread(f, R.stake1, ["stake-grab", "stake-push", "stake-push", "stake-firm", "tie-wrap", "tie-wrap", "tie-knot", "tie-check"]));
+  else if (inR(f, R.water1)) p = pose("planter-water", spread(f, R.water1, ["can-reach", "can-lift", "can-tip-1", "can-tip-2", "can-tip-2", "can-level", "can-down"]));
   else if (inR(f, R.shuffle)) p = pose("planter-move", spread(f, R.shuffle, ["shuffle-1", "shuffle-2", "shuffle-3", "shuffle-1", "shuffle-2", "shuffle-3", "pick-trowel"]));
   else if (inR(f, R.dig2)) p = dig(R.dig2);
   else if (inR(f, R.unpot2)) p = spread(f, R.unpot2, [
@@ -94,33 +97,47 @@ function planter(f) {
     ["planter-unpot-b", "slide-off"], ["planter-unpot-b", "toss"], ["planter-unpot-b", "upright"], ["planter-unpot-b", "lower"], ["planter-unpot-b", "release"]]).reduce((s, n) => pose(s, n));
   else if (inR(f, R.backfill2)) p = spread(f, R.backfill2, [
     ["planter-backfill", "sweep-reach"], ["planter-backfill", "sweep-pull"], ["planter-backfill", "press"], ["planter-backfill", "sit-back"], ["planter-backfill", "look"]]).reduce((s, n) => pose(s, n));
-  else if (inR(f, R.standUp)) p = pose("planter-kneel", ["lean", "knee-touch", "knee-lower", "bend", "stand-look"][f - R.standUp[0]]);   // the kneel played in reverse
+  else if (inR(f, R.stake2)) p = pose("planter-stake", spread(f, R.stake2, ["stake-grab", "stake-push", "stake-firm", "tie-wrap", "tie-knot", "tie-check"]));
+  else if (inR(f, R.standUp)) p = pose("planter-kneel", spread(f, R.standUp, ["lean", "knee-touch", "knee-lower", "bend", "stand-look"]));   // the kneel played in reverse
   else if (inR(f, R.brush)) p = pose("planter-finish", (f - R.brush[0]) % 2 ? "clap-2" : "clap-1");
-  else p = pose("planter-finish", f < R.admire[0] + 2 ? "hips" : "admire");
+  else p = pose("planter-finish", f < R.admire[0] + 1 ? "hips" : "admire");
 
   // holes and mounds
   const stage = (stages) => stages.reduce((s, r, i) => (f >= r[0] ? i : s), -1);
-  const hole1 = f < R.dig1[0] ? null : f > R.backfill1[1] ? "planted" : ["hole-scuffed", "hole-shallow", "hole-deep"][Math.max(0, stage(P.hole1Stages))];
-  const hole2 = f < R.dig2[0] ? null : f > R.backfill2[1] ? "planted" : ["hole-scuffed", "hole-shallow", "hole-deep"][Math.max(0, stage(P.hole2Stages))];
+  const holeState = (dig, fill, stages) => (f < dig[0] ? null : f > fill[1] ? "planted" : ["hole-scuffed", "hole-shallow", "hole-deep"][Math.max(0, stage(stages))]);
+  const hole1 = holeState(R.dig1, R.backfill1, P.hole1Stages), hole2 = holeState(R.dig2, R.backfill2, P.hole2Stages);
   const moundFor = (dig, fill) => {
     if (f < dig[0]) return null;
     if (f <= dig[1]) return "mound-" + (1 + Math.min(3, Math.floor(prog(f, dig) * 4)));
     if (f < fill[0]) return "mound-4";
-    if (f <= fill[0] + 5) return ["mound-4", "mound-3", "mound-2", "mound-1"][Math.min(3, Math.floor((f - fill[0]) / 1.5))];
+    if (f <= fill[0] + 7) return ["mound-4", "mound-3", "mound-2", "mound-1"][Math.min(3, Math.floor((f - fill[0]) / 2))];
     return null;
   };
-  const lavender = f < R.unpot1[0] ? "lavender-pot" : f <= R.unpot1[1] ? (prog(f, R.unpot1) < 0.45 ? "lavender-pot" : "lavender-rootball") : "lavender-planted";
-  const geranium = f < R.unpot2[0] ? "geranium-pot" : f <= R.unpot2[1] ? (prog(f, R.unpot2) < 0.45 ? "geranium-pot" : "geranium-rootball") : "geranium-planted";
+  // each young sunflower: in the pot → root ball in his hands → planted → staked → watered → settled
+  const plantState = (unpot, fill, stake, water) => {
+    if (f < unpot[0]) return "young-pot";
+    if (f <= unpot[1]) return prog(f, unpot) < 0.45 ? "young-pot" : "young-rootball";
+    if (f <= fill[1] || f < stake[0] + 3) return "young-planted";
+    if (!water || f < water[0] + 3) return "young-staked";
+    if (f <= water[1] + 10) return "young-watered";
+    return "young-settled";
+  };
+  const plant1 = plantState(R.unpot1, R.backfill1, R.stake1, R.water1);
+  const plant2 = plantState(R.unpot2, R.backfill2, R.stake2, null);
   const tray = f < R.unpot1[0] + 2 ? "tray-two" : f < R.unpot2[0] + 2 ? "tray-one" : "tray-empty";
-  const pot = f < R.unpot1[0] + 6 ? null : f <= R.backfill2[1] ? (f < R.unpot2[0] + 5 ? "pot-upturned" : "pot-stack") : "pot-upright";
+  const pot = f < R.unpot1[0] + 6 ? null : f < R.unpot2[0] + 5 ? "pot-upturned" : "pot-stack";
+  const inHand = p.sheet === "planter-unpot-a" && ["lift", "invert", "tap-1", "tap-2"].includes(p.pose) || p.sheet === "planter-unpot-b" && ["slide-off", "toss", "tease", "upright", "lower"].includes(p.pose);
+  const watering = p.sheet === "planter-water" && ["can-tip-1", "can-tip-2", "can-level"].includes(p.pose);
   return {
     ...p, x: P.x, y: P.y, offsetPx: Math.round(moved),
     props: {
       hole1, hole2, mound1: moundFor(R.dig1, R.backfill1), mound2: moundFor(R.dig2, R.backfill2),
-      lavender, geranium, tray, pot,
-      dustPuff: [R.kneel[0] + 3, R.backfill1[0] + 7, R.backfill2[0] + 5].includes(f),
+      plant1, plant2, tray, pot, inHand, watering,
+      stake1OnGround: f >= R.unpot1[0] && f < R.stake1[0] + 2, stake2OnGround: f >= R.unpot2[0] && f < R.stake2[0] + 2,
+      can: f < R.water1[0] || f > R.water1[1] ? "ground" : p.pose === "can-reach" || p.pose === "can-down" ? "ground" : "hand",
+      wetSoil1: f >= R.water1[0] + 3,
+      dustPuff: [R.kneel[0] + 4, R.backfill1[0] + 8, R.backfill2[0] + 5].includes(f),
       soilKick: p.sheet === "planter-dig" && (p.pose === "strike" || p.pose === "tip"),
-      borderTidy: r4(Math.max(prog(f, [R.backfill1[0], R.backfill1[1]]) * 0.5, f >= R.backfill2[0] ? 0.5 + prog(f, R.backfill2) * 0.5 : 0)),
     },
   };
 }
@@ -129,11 +146,11 @@ function hedge(f) {
   const H = cfg.hedge, R = H.ranges;
   let p, snip = -1, phase = -1;
   if (inR(f, R.idle)) p = pose("hedge-start", "idle");
-  else if (inR(f, R.raise)) p = pose("hedge-start", ["shift", "raise", "raise", "ready"][f - R.raise[0]]);
+  else if (inR(f, R.raise)) p = pose("hedge-start", spread(f, R.raise, ["shift", "raise", "raise", "ready"]));
   else if (inR(f, R.snips)) {
     snip = Math.floor((f - R.snips[0]) / H.snipFrames); phase = (f - R.snips[0]) % H.snipFrames;
     p = pose("hedge-snip", sheetPoses["hedge-snip"][phase]);
-  } else if (inR(f, R.finalSnip)) p = pose("hedge-snip", sheetPoses["hedge-snip"][f - R.finalSnip[0]]);
+  } else if (inR(f, R.finalSnip)) p = pose("hedge-snip", spread(f, R.finalSnip, sheetPoses["hedge-snip"]));
   else if (inR(f, R.check)) p = pose("hedge-finish", spread(f, R.check, ["final", "lower", "check", "check"]));
   else p = pose("hedge-finish", f < R.rest[0] + 2 ? "shoulder" : "idle");
   const closes = (fr) => (fr < R.snips[0] ? 0 : Math.min(H.sections, Math.floor((fr - R.snips[0] - 2) / H.snipFrames) + 1));
@@ -162,8 +179,8 @@ function tree(f) {
     return pose(sheet, f % 2 ? "cut-a" : "cut-b");                 // alternating = 1px vibration
   };
   if (inR(f, R.idle)) p = pose("tree-prep", "hang-idle");
-  else if (inR(f, R.reposition)) p = pose("tree-prep", ["step-feet", "step-feet", "pull-rope", "settle", "settle"][f - R.reposition[0]]);
-  else if (inR(f, R.startSaw)) p = pose("tree-start", ["unclip", "cord-pull-1", "cord-snap", "cord-pull-2", "cord-snap", "running", "running"][f - R.startSaw[0]]);
+  else if (inR(f, R.reposition)) p = pose("tree-prep", spread(f, R.reposition, ["step-feet", "step-feet", "pull-rope", "settle", "settle"]));
+  else if (inR(f, R.startSaw)) p = pose("tree-start", spread(f, R.startSaw, ["unclip", "cord-pull-1", "cord-snap", "cord-pull-2", "cord-snap", "running", "running"]));
   else if (inR(f, R.undercut)) p = cut("tree-undercut", R.undercut, true);
   else if (inR(f, R.topCut)) p = cut("tree-topcut", R.topCut, false);
   else if (inR(f, R.crack)) p = pose("tree-topcut", "flinch");

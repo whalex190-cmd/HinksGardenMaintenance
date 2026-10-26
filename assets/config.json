@@ -1,6 +1,6 @@
 {
   "_note": "Every frame range, position, scale, particle amount and mask setting for the scroll hero. Positions are fractions of the scene (0-1); sizes in scene pixels on the 480x272 grid. Changing this and re-running `npm run plan` / `npm run frames` never calls the API.",
-  "frameCount": 120,
+  "frameCount": 180,
   "scene": {
     "native": [
       960,
@@ -18,10 +18,10 @@
     "gridScale": 2
   },
   "global": {
-    "untidyUntil": 35,
-    "tidyFrom": 36,
-    "tidyTo": 114,
-    "fullyTidyFrom": 115,
+    "untidyUntil": 50,
+    "tidyFrom": 51,
+    "tidyTo": 172,
+    "fullyTidyFrom": 173,
     "direction": "front-to-back",
     "maskFeather": 12,
     "unassignedRegions": [
@@ -50,31 +50,31 @@
     "ranges": {
       "idle": [
         1,
-        9
+        12
       ],
       "postureShift": [
-        5,
-        7
+        6,
+        9
       ],
       "easeIn": [
-        10,
-        11
+        13,
+        15
       ],
       "walk": [
-        12,
-        107
+        16,
+        160
       ],
       "slow": [
-        108,
-        112
+        161,
+        167
       ],
       "wipeBrow": [
-        113,
-        116
+        168,
+        173
       ],
       "rest": [
-        117,
-        120
+        174,
+        180
       ]
     },
     "jitterPx": 2,
@@ -97,105 +97,118 @@
     "cutBrighten": 1.08
   },
   "planter": {
-    "x": 0.645,
-    "y": 0.605,
-    "shufflePx": 40,
+    "x": 0.615,
+    "y": 0.575,
+    "shufflePx": 36,
     "ranges": {
       "stand": [
         1,
-        3
+        4
       ],
       "kneel": [
-        4,
-        9
+        5,
+        12
       ],
       "dig1": [
-        10,
-        33
+        13,
+        44
       ],
       "trowelDown": [
-        34,
-        35
+        45,
+        46
       ],
       "unpot1": [
-        36,
-        49
+        47,
+        64
       ],
       "backfill1": [
-        50,
-        61
+        65,
+        78
+      ],
+      "stake1": [
+        79,
+        92
+      ],
+      "water1": [
+        93,
+        104
       ],
       "shuffle": [
-        62,
-        69
-      ],
-      "dig2": [
-        70,
-        85
-      ],
-      "unpot2": [
-        86,
-        95
-      ],
-      "backfill2": [
-        96,
-        105
-      ],
-      "standUp": [
-        106,
-        110
-      ],
-      "brush": [
-        111,
+        105,
         114
       ],
-      "admire": [
+      "dig2": [
         115,
-        120
+        138
+      ],
+      "unpot2": [
+        139,
+        152
+      ],
+      "backfill2": [
+        153,
+        162
+      ],
+      "stake2": [
+        163,
+        170
+      ],
+      "standUp": [
+        171,
+        175
+      ],
+      "brush": [
+        176,
+        178
+      ],
+      "admire": [
+        179,
+        180
       ]
     },
     "hole1Stages": [
       [
-        10,
-        17
+        13,
+        22
       ],
       [
-        18,
-        25
-      ],
-      [
-        26,
+        23,
         33
+      ],
+      [
+        34,
+        44
       ]
     ],
     "hole2Stages": [
       [
-        70,
-        77
+        115,
+        122
       ],
       [
-        78,
-        85
+        123,
+        130
       ],
       [
-        78,
-        85
+        131,
+        138
       ]
     ],
-    "holeOffsetPx": 24,
-    "moundOffsetPx": 38,
-    "trayOffsetPx": -30,
+    "holeOffsetPx": 22,
+    "moundOffsetPx": 36,
+    "trayOffsetPx": -28,
     "shuffleDir": [
-      -0.84,
-      -0.54
+      -0.8,
+      -0.6
     ],
-    "potOffsetPx": -44,
+    "potOffsetPx": -42,
     "area": [
       0.6,
       0.54,
       0.7,
       0.62
-    ]
+    ],
+    "canOffsetPx": -14
   },
   "hedge": {
     "x": 0.85,
@@ -203,31 +216,31 @@
     "ranges": {
       "idle": [
         1,
-        5
+        7
       ],
       "raise": [
-        6,
-        9
+        8,
+        13
       ],
       "snips": [
-        10,
-        99
+        14,
+        149
       ],
       "finalSnip": [
-        100,
-        104
+        150,
+        156
       ],
       "check": [
-        105,
-        112
+        157,
+        168
       ],
       "rest": [
-        113,
-        120
+        169,
+        180
       ]
     },
     "snipFrames": 5,
-    "sections": 18,
+    "sections": 27,
     "freshFadeFrames": 12,
     "reachEvery": 3,
     "reachPx": 4,
@@ -269,64 +282,64 @@
     "ranges": {
       "idle": [
         1,
-        4
+        6
       ],
       "reposition": [
-        5,
-        9
+        7,
+        13
       ],
       "startSaw": [
-        10,
-        16
+        14,
+        22
       ],
       "undercut": [
-        17,
-        41
+        23,
+        62
       ],
       "topCut": [
-        42,
-        73
+        63,
+        110
       ],
       "crack": [
-        74,
-        75
+        111,
+        112
       ],
       "lower": [
-        76,
-        95
+        113,
+        142
       ],
       "flushCut": [
-        96,
-        103
+        143,
+        154
       ],
       "stopSaw": [
-        104,
-        109
+        155,
+        163
       ],
       "look": [
-        110,
-        120
+        164,
+        180
       ]
     },
     "undercutDepth": 0.33,
     "sag": {
-      "64": 1,
-      "70": 2
+      "96": 1,
+      "105": 2
     },
     "canopySpring": {
       "frames": [
-        76,
-        78
+        113,
+        116
       ],
       "px": 2
     },
     "canopyHeal": [
-      96,
-      110
+      143,
+      165
     ],
     "branchFade": [
-      110,
-      118
+      165,
+      177
     ],
     "sawdustPerFrame": [
       4,
@@ -361,8 +374,8 @@
     "flowerSwayPeriod": 2,
     "butterfly": {
       "frames": [
-        40,
-        80
+        60,
+        120
       ],
       "from": [
         0.2,
@@ -409,8 +422,8 @@
     "_note": "Native-px height of the tallest pose in each sheet at perspective scale 1.",
     "default": 66,
     "prop-mower": 44,
-    "prop-planting": 20,
-    "prop-tray": 16,
+    "prop-planting": 26,
+    "prop-tray": 18,
     "prop-soil": 12,
     "prop-ladder": 82,
     "prop-branch": 36,
@@ -428,7 +441,9 @@
     "planter-unpot-a": 46,
     "planter-unpot-b": 46,
     "planter-backfill": 46,
-    "planter-move": 46
+    "planter-move": 46,
+    "planter-stake": 46,
+    "planter-water": 46
   },
   "stationOrder": "by-depth"
 }

@@ -171,20 +171,20 @@
     {
       "id": "planter-kneel",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "getting down to work at a border",
+      "view": "right side profile, facing right",
+      "desc": "getting down to plant at a border",
       "poses": [
         {
           "name": "stand-look",
-          "desc": "standing upright, looking down at the ground in front"
+          "desc": "standing upright, looking down at the border, a young potted sunflower (about knee height, with a thin cane stake) in his left hand and a hand trowel in his right"
         },
         {
           "name": "step",
-          "desc": "left foot stepping forward"
+          "desc": "left foot stepping forward, still holding pot and trowel"
         },
         {
           "name": "bend",
-          "desc": "bending at the hips and knees"
+          "desc": "bending at hips and knees"
         },
         {
           "name": "knee-lower",
@@ -192,23 +192,23 @@
         },
         {
           "name": "knee-touch",
-          "desc": "right knee touching the ground, left knee up"
+          "desc": "right knee on the ground, left knee up, setting the pot down in front of him"
         },
         {
           "name": "settle",
-          "desc": "kneeling on both knees, back straight"
+          "desc": "kneeling on both knees, back straight, trowel in right hand, pot on the ground ahead"
         },
         {
           "name": "lean",
-          "desc": "kneeling, leaning forward over the ground"
+          "desc": "kneeling, leaning forward over the ground, trowel raised"
         }
       ]
     },
     {
       "id": "planter-dig",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "kneeling, digging with a hand trowel in the right hand, left hand flat on the ground in every frame",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, digging a deep planting hole with a hand trowel in his right hand; his left hand is flat on the ground in every frame",
       "poses": [
         {
           "name": "anticipation",
@@ -220,7 +220,7 @@
         },
         {
           "name": "lever",
-          "desc": "wrist bent back, levering the soil"
+          "desc": "wrist bent back, levering soil"
         },
         {
           "name": "lift",
@@ -247,36 +247,36 @@
     {
       "id": "planter-unpot-a",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "kneeling, taking a plant in a small black pot out of its pot",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, taking a young sunflower plant (knee-high, broad green leaves, a thin cane stake in the pot) out of its small black pot",
       "poses": [
         {
           "name": "reach",
-          "desc": "reaching down to the left for the pot"
+          "desc": "reaching down to his left for the pot"
         },
         {
           "name": "lift",
-          "desc": "pot lifted to chest height in both hands"
+          "desc": "pot lifted to chest height in both hands, plant upright"
         },
         {
           "name": "invert",
-          "desc": "pot upside down, fingers spread around the stem"
+          "desc": "pot tipped on its side, fingers spread around the stem"
         },
         {
           "name": "tap-1",
-          "desc": "tapping the pot base with the palm"
+          "desc": "tapping the pot base with his palm"
         },
         {
           "name": "tap-2",
-          "desc": "second tap, hand raised slightly"
+          "desc": "second tap, hand raised"
         }
       ]
     },
     {
       "id": "planter-unpot-b",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "kneeling, finishing unpotting and placing the plant",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, setting a young sunflower plant (knee-high, broad green leaves) into a deep planting hole",
       "poses": [
         {
           "name": "slide-off",
@@ -292,27 +292,27 @@
         },
         {
           "name": "upright",
-          "desc": "plant turned upright in both hands"
+          "desc": "plant upright in both hands"
         },
         {
           "name": "lower",
-          "desc": "lowering the plant into the hole"
+          "desc": "lowering the plant deep into the hole"
         },
         {
           "name": "release",
-          "desc": "hands opening, plant standing in the hole"
+          "desc": "hands open, plant standing in the hole"
         }
       ]
     },
     {
       "id": "planter-backfill",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "kneeling, filling a planting hole",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, backfilling and firming in a young sunflower plant",
       "poses": [
         {
           "name": "sweep-reach",
-          "desc": "cupped hands reaching to the soil heap"
+          "desc": "cupped hands reaching to the soil heap on his right"
         },
         {
           "name": "sweep-pull",
@@ -333,10 +333,74 @@
       ]
     },
     {
+      "id": "planter-stake",
+      "character": "planter",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, staking and tying a young sunflower (knee-high) next to a thin cane stake",
+      "poses": [
+        {
+          "name": "stake-grab",
+          "desc": "right hand picking up a thin cane stake from the ground"
+        },
+        {
+          "name": "stake-push",
+          "desc": "both hands pushing the cane into the soil beside the plant"
+        },
+        {
+          "name": "stake-firm",
+          "desc": "cane upright, one hand steadying it"
+        },
+        {
+          "name": "tie-wrap",
+          "desc": "both hands looping a soft tie around stem and cane"
+        },
+        {
+          "name": "tie-knot",
+          "desc": "fingers tying a loose knot"
+        },
+        {
+          "name": "tie-check",
+          "desc": "hands away, tie in place, head tilted checking it"
+        }
+      ]
+    },
+    {
+      "id": "planter-water",
+      "character": "planter",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border, watering in a newly planted sunflower with a green metal watering can",
+      "poses": [
+        {
+          "name": "can-reach",
+          "desc": "reaching to his left for a green watering can on the ground"
+        },
+        {
+          "name": "can-lift",
+          "desc": "lifting the can in both hands"
+        },
+        {
+          "name": "can-tip-1",
+          "desc": "tipping the can, spout over the plant base, a thin stream starting"
+        },
+        {
+          "name": "can-tip-2",
+          "desc": "can tipped further, stream pouring onto the soil"
+        },
+        {
+          "name": "can-level",
+          "desc": "can levelled, last drops"
+        },
+        {
+          "name": "can-down",
+          "desc": "setting the can back down on his left"
+        }
+      ]
+    },
+    {
       "id": "planter-move",
       "character": "planter",
-      "view": "side facing right",
-      "desc": "kneeling",
+      "view": "right side profile, facing right",
+      "desc": "kneeling on both knees on the lawn edge, seen from the right side (his left profile), facing right towards the border",
       "poses": [
         {
           "name": "lay-trowel",
@@ -363,7 +427,7 @@
     {
       "id": "planter-finish",
       "character": "planter",
-      "view": "side facing right",
+      "view": "right side profile, facing right",
       "desc": "standing after planting",
       "poses": [
         {
@@ -388,31 +452,31 @@
       "id": "prop-planting",
       "character": null,
       "view": "side",
-      "desc": "two small garden plants",
+      "desc": "a young sunflower plant in stages, exactly matching the established sunflowers in the reference garden (broad green leaves, thick green stem) but young: about knee height, no flower yet, just a tight green bud",
       "poses": [
         {
-          "name": "lavender-pot",
-          "desc": "lavender (grey-green narrow leaves, purple spikes) in a small black pot"
+          "name": "young-pot",
+          "desc": "in a small black plastic pot with a thin cane stake"
         },
         {
-          "name": "lavender-rootball",
-          "desc": "the lavender out of its pot, brown root ball with pale root lines"
+          "name": "young-rootball",
+          "desc": "out of its pot, brown root ball with pale root lines, no stake"
         },
         {
-          "name": "lavender-planted",
-          "desc": "the lavender planted, ring of dark fresh soil at its base"
+          "name": "young-planted",
+          "desc": "planted in dark fresh soil, standing upright, no stake"
         },
         {
-          "name": "geranium-pot",
-          "desc": "pink geranium (round leaves, pink flower cluster) in a small black pot"
+          "name": "young-staked",
+          "desc": "planted, tied loosely to a thin cane stake beside it with a soft tie"
         },
         {
-          "name": "geranium-rootball",
-          "desc": "the geranium out of its pot, root ball showing"
+          "name": "young-watered",
+          "desc": "planted and staked, the soil around it dark and wet, leaves perked up"
         },
         {
-          "name": "geranium-planted",
-          "desc": "the geranium planted, ring of dark fresh soil"
+          "name": "young-settled",
+          "desc": "planted and staked, leaves a little fuller, bud starting to show yellow"
         }
       ]
     },
@@ -420,31 +484,35 @@
       "id": "prop-tray",
       "character": null,
       "view": "side",
-      "desc": "a black plastic seed tray and small black pots",
+      "desc": "planting kit on the ground",
       "poses": [
         {
           "name": "tray-two",
-          "desc": "tray holding the two potted plants"
+          "desc": "a black plastic tray holding two young potted sunflowers with cane stakes"
         },
         {
           "name": "tray-one",
-          "desc": "tray holding one potted geranium"
+          "desc": "the tray holding one young potted sunflower"
         },
         {
           "name": "tray-empty",
-          "desc": "empty tray"
+          "desc": "the empty black tray"
         },
         {
           "name": "pot-upturned",
-          "desc": "one empty black pot lying upside down"
-        },
-        {
-          "name": "pot-upright",
-          "desc": "one empty black pot standing upright"
+          "desc": "one empty black pot lying on its side"
         },
         {
           "name": "pot-stack",
           "desc": "two empty black pots stacked"
+        },
+        {
+          "name": "can",
+          "desc": "a green metal watering can standing on the ground"
+        },
+        {
+          "name": "stake",
+          "desc": "a thin cane stake lying on the ground"
         }
       ]
     },
@@ -456,15 +524,15 @@
       "poses": [
         {
           "name": "hole-scuffed",
-          "desc": "scuffed bare soil, a few weeds"
+          "desc": "scuffed bare soil"
         },
         {
           "name": "hole-shallow",
-          "desc": "shallow dug hole"
+          "desc": "a shallow dug hole"
         },
         {
           "name": "hole-deep",
-          "desc": "full-depth hole with a dark interior"
+          "desc": "a deep hole with a dark interior"
         },
         {
           "name": "mound-1",
@@ -481,6 +549,10 @@
         {
           "name": "mound-4",
           "desc": "large soil heap"
+        },
+        {
+          "name": "wet",
+          "desc": "a dark wet patch of soil"
         }
       ]
     },
